@@ -9,5 +9,6 @@
 			<accessrule kind="accessible" pattern="javafx/**"/>
 		</accessrules>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/flatlaf-1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
