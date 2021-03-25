@@ -26,10 +26,12 @@ import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JScrollPane;
 
 public class Test2 {
 
-	private JFrame frame;
+	private JFrame frmRecettesDeCuisine;
 
 	/**
 	 * Launch the application.
@@ -39,7 +41,7 @@ public class Test2 {
 			public void run() {
 				try {
 					Test2 window = new Test2();
-					window.frame.setVisible(true);
+					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -66,12 +68,13 @@ public class Test2 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 560, 427);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmRecettesDeCuisine = new JFrame();
+		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
+		frmRecettesDeCuisine.setBounds(100, 100, 560, 427);
+		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
-		frame.setJMenuBar(menuBar);
+		frmRecettesDeCuisine.setJMenuBar(menuBar);
 		
 		JMenu mnNewMenu = new JMenu("Rechercher");
 		menuBar.add(mnNewMenu);
@@ -102,38 +105,20 @@ public class Test2 {
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Blabla");
 		mnNewMenu_2.add(mntmNewMenuItem_6);
-		frame.getContentPane().setLayout(null);
-		
-		JList list = new JList();
-		list.setBounds(10, 47, 272, 311);
-		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 13));
-		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Quiche en ramequin", "Salade grecque", "Oeufs au mimosa", "Rouleau de saumon", "Mousse de courgettes", "Saut\u00E9 de boeuf", "Poulet coco tha\u00EF", "Maff\u00E9 de boeuf ", "Thon coco au riz", "Tortilla", "Risotto", "Soupe au potiron", "Hamburger classique", "Fajitas", "Oeufs cocottes", "Oeufs \u00E0 l'italienne", "Cr\u00E8pes", "Tiramisu traditionnel", "Panacotta", "Pancakes vegan \u00E0 la banane", "Mousse au chocolat"};
-			public int getSize() {
-				return values.length;
-			}
-			public Object getElementAt(int index) {
-				return values[index];
-			}
-		});
-		frame.getContentPane().add(list);
+		frmRecettesDeCuisine.getContentPane().setLayout(null);
 		
 		JTextArea txtrRechercheRapide = new JTextArea();
 		txtrRechercheRapide.setBounds(10, 10, 272, 22);
 		txtrRechercheRapide.setText("Recherche rapide");
-		frame.getContentPane().add(txtrRechercheRapide);
-		
-		JScrollBar scrollBar = new JScrollBar();
-		scrollBar.setBounds(265, 47, 17, 311);
-		frame.getContentPane().add(scrollBar);
+		frmRecettesDeCuisine.getContentPane().add(txtrRechercheRapide);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(292, 10, 244, 348);
-		frame.getContentPane().add(panel);
+		frmRecettesDeCuisine.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Image illustration");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageRecette\\crepe.jpg"));
 		lblNewLabel.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel.setBounds(10, 10, 224, 130);
 		panel.add(lblNewLabel);
@@ -149,5 +134,24 @@ public class Test2 {
 		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		btnNewButton.setBounds(83, 317, 85, 21);
 		panel.add(btnNewButton);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 42, 272, 316);
+		frmRecettesDeCuisine.getContentPane().add(scrollPane);
+		
+		JList list = new JList();
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 13));
+		list.setModel(new AbstractListModel() {
+			String[] values = new String[] {"Quiche en ramequin", "Salade grecque", "Oeufs au mimosa", "Rouleau de saumon", "Mousse de courgettes", "Saut\u00E9 de boeuf", "Poulet coco tha\u00EF", "Maff\u00E9 de boeuf ", "Thon coco au riz", "Tortilla", "Risotto", "Soupe au potiron", "Hamburger classique", "Fajitas", "Oeufs cocottes", "Oeufs \u00E0 l'italienne", "Cr\u00E8pes", "Tiramisu traditionnel", "Panacotta", "Pancakes vegan \u00E0 la banane", "Mousse au chocolat"};
+			public int getSize() {
+				return values.length;
+			}
+			public Object getElementAt(int index) {
+				return values[index];
+			}
+		});
+		list.setSelectedIndex(0);
+		scrollPane.setViewportView(list);
 	}
 }
