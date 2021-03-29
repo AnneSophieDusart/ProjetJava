@@ -28,6 +28,12 @@ import javax.swing.UIManager;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JScrollPane;
+import javax.swing.JFormattedTextField;
+import javax.swing.JToggleButton;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Test2 {
 
@@ -69,6 +75,8 @@ public class Test2 {
 	 */
 	private void initialize() {
 		frmRecettesDeCuisine = new JFrame();
+		frmRecettesDeCuisine.setResizable(false);
+		frmRecettesDeCuisine.setBackground(Color.WHITE);
 		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
 		frmRecettesDeCuisine.setBounds(100, 100, 560, 427);
 		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -107,11 +115,6 @@ public class Test2 {
 		mnNewMenu_2.add(mntmNewMenuItem_6);
 		frmRecettesDeCuisine.getContentPane().setLayout(null);
 		
-		JTextArea txtrRechercheRapide = new JTextArea();
-		txtrRechercheRapide.setBounds(10, 10, 272, 22);
-		txtrRechercheRapide.setText("Recherche rapide");
-		frmRecettesDeCuisine.getContentPane().add(txtrRechercheRapide);
-		
 		JPanel panel = new JPanel();
 		panel.setBounds(292, 10, 244, 348);
 		frmRecettesDeCuisine.getContentPane().add(panel);
@@ -131,6 +134,14 @@ public class Test2 {
 		panel.add(lblNewLabel_1);
 		
 		JButton btnNewButton = new JButton("Au travail !");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Le bouton \"Au travail : \" vient d'être cliqué.");
+				Swing_Etape recette =  new Swing_Etape();
+				recette.setVisible();
+			}
+		});
 		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 		btnNewButton.setBounds(83, 317, 85, 21);
 		panel.add(btnNewButton);
@@ -153,5 +164,27 @@ public class Test2 {
 		});
 		list.setSelectedIndex(0);
 		scrollPane.setViewportView(list);
+		
+		JFormattedTextField frmtdtxtfldRechercheRapide = new JFormattedTextField();
+		frmtdtxtfldRechercheRapide.setText("Recherche rapide");
+		frmtdtxtfldRechercheRapide.setBounds(10, 10, 272, 19);
+		frmRecettesDeCuisine.getContentPane().add(frmtdtxtfldRechercheRapide);
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
 	}
 }
