@@ -11,6 +11,9 @@ import javax.swing.UIManager;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.swing.JButton;
+import javax.swing.JProgressBar;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Swing_Etape {
 
@@ -48,7 +51,7 @@ public class Swing_Etape {
 	public void setVisible() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
+				try { 
 					Swing_Etape window = new Swing_Etape();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -64,7 +67,7 @@ public class Swing_Etape {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 550);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -76,11 +79,32 @@ public class Swing_Etape {
 		lblNewLabel.setBounds(10, 10, 416, 30);
 		panel.add(lblNewLabel);
 		
+		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setValue(40);
+		progressBar.setBounds(10, 464, 416, 5);
+		panel.add(progressBar);
+		
 		JButton btnNewButton_1 = new JButton("< Previous");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Le bouton \"< Previous \" a été cliqué.");
+				progressBar.setValue(progressBar.getValue()-10);
+			}
+			
+		});
 		btnNewButton_1.setBounds(10, 482, 87, 21);
 		panel.add(btnNewButton_1);
 		
 		JButton btnNewButton_1_1 = new JButton("Next >");
+		btnNewButton_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Le bouton \"Next >\" a été cliqué.");
+				progressBar.setValue(progressBar.getValue()+10);
+			}
+		});
 		btnNewButton_1_1.setBounds(339, 482, 87, 21);
 		panel.add(btnNewButton_1_1);
 	}

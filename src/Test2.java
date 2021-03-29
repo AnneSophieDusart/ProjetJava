@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.swing.AbstractListModel;
@@ -111,8 +112,22 @@ public class Test2 {
 		JMenu mnNewMenu_2 = new JMenu("Pr\u00E9f\u00E9rences");
 		menuBar.add(mnNewMenu_2);
 		
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Blabla");
-		mnNewMenu_2.add(mntmNewMenuItem_6);
+		JMenu mnNewMenu_3 = new JMenu("Interface");
+		mnNewMenu_2.add(mnNewMenu_3);
+		
+		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Mode clair");
+		mnNewMenu_3.add(mntmNewMenuItem_7);
+		
+		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Mode sombre");
+		mntmNewMenuItem_8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Le bouton \"Mode sombre \" vient d'être cliqué.");
+				setDarkMode();
+				
+			}
+		});
+		mnNewMenu_3.add(mntmNewMenuItem_8);
 		frmRecettesDeCuisine.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
@@ -186,5 +201,28 @@ public class Test2 {
 				popup.show(e.getComponent(), e.getX(), e.getY());
 			}
 		});
+	}
+	
+	private void setDarkMode() {
+		System.exit(0);
+		
+		try {
+		    UIManager.setLookAndFeel( new FlatDarkLaf() );
+		} catch( Exception ex ) {
+		    System.err.println( "Failed to initialize LaF" );
+		}
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Test2 window = new Test2();
+					window.frmRecettesDeCuisine.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+		
+		
 	}
 }
