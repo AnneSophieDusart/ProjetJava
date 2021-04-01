@@ -36,7 +36,7 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Test2 {
+public class Swing_RechercheTitre {
 	
 	boolean modeClair = true;
 
@@ -49,7 +49,7 @@ public class Test2 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Test2 window = new Test2(true);
+					Swing_RechercheTitre window = new Swing_RechercheTitre(true);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -61,7 +61,7 @@ public class Test2 {
 	/**
 	 * Create the application.
 	 */
-	public Test2(boolean modeClair) {
+	public Swing_RechercheTitre(boolean modeClair) {
 		this.modeClair = modeClair;
 		
 		if (this.modeClair) {
@@ -95,40 +95,10 @@ public class Test2 {
 		frmRecettesDeCuisine.setBackground(Color.WHITE);
 		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
 		frmRecettesDeCuisine.setBounds(100, 100, 560, 427);
-		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frmRecettesDeCuisine.setJMenuBar(menuBar);
-		
-		JMenu mnNewMenu = new JMenu("Rechercher");
-		menuBar.add(mnNewMenu);
-		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Par nom");
-		mnNewMenu.add(mntmNewMenuItem);
-		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Par ingr\u00E9dient");
-		mnNewMenu.add(mntmNewMenuItem_1);
-		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Par type");
-		mnNewMenu.add(mntmNewMenuItem_2);
-		
-		JMenu mnNewMenu_1 = new JMenu("Recettes");
-		menuBar.add(mnNewMenu_1);
-		
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Supprimer une recette");
-		mntmNewMenuItem_4.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mousePressed(MouseEvent e) {
-				System.out.println("Le bouton \"Supprimer une recette \" vient d'être cliqué.");
-			}
-		});
-		mnNewMenu_1.add(mntmNewMenuItem_4);
-		
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Ajouter une recette");
-		mnNewMenu_1.add(mntmNewMenuItem_3);
-		
-		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Modifier une recette");
-		mnNewMenu_1.add(mntmNewMenuItem_5);
 		
 		JMenu mnNewMenu_2 = new JMenu("Pr\u00E9f\u00E9rences");
 		menuBar.add(mnNewMenu_2);
@@ -235,7 +205,7 @@ public class Test2 {
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
 		this.modeClair=false;
-		Test2 win = new Test2(false);
+		Swing_RechercheTitre win = new Swing_RechercheTitre(false);
 		win.setVisible2(false);
 	}
 	
@@ -243,7 +213,7 @@ public class Test2 {
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
 		this.modeClair=true;
-		Test2 win = new Test2(true);
+		Swing_RechercheTitre win = new Swing_RechercheTitre(true);
 		win.setVisible2(true);
 	}
 	
@@ -251,7 +221,7 @@ public class Test2 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Test2 window = new Test2(bool);
+					Swing_RechercheTitre window = new Swing_RechercheTitre(bool);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
