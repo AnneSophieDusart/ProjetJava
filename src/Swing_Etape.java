@@ -8,6 +8,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.swing.JButton;
@@ -26,7 +27,7 @@ public class Swing_Etape {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_Etape window = new Swing_Etape();
+					Swing_Etape window = new Swing_Etape(true);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,21 +39,30 @@ public class Swing_Etape {
 	/**
 	 * Create the application.
 	 */
-	public Swing_Etape() {
-		try {
-		    UIManager.setLookAndFeel( new FlatLightLaf() );
-		} catch( Exception ex ) {
-		    System.err.println( "Failed to initialize LaF" );
+	public Swing_Etape(boolean modeClair) {
+		if (modeClair) {
+			try {
+			    UIManager.setLookAndFeel( new FlatLightLaf() );
+			} catch( Exception ex ) {
+			    System.err.println( "Failed to initialize LaF" );
+			}
+		} else {
+			try {
+			    UIManager.setLookAndFeel( new FlatDarkLaf() );
+			} catch( Exception ex ) {
+			    System.err.println( "Failed to initialize LaF" );
+			}
 		}
+		
 		
 		initialize();
 	}
 	
-	public void setVisible() {
+	public void setVisible(boolean modeClair) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_Etape window = new Swing_Etape();
+					Swing_Etape window = new Swing_Etape(modeClair);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

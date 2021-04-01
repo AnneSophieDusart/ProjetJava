@@ -88,6 +88,8 @@ public class Test2 {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		boolean modeClair = this.modeClair;
+		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
 		frmRecettesDeCuisine.setBackground(Color.WHITE);
@@ -179,8 +181,8 @@ public class Test2 {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"Au travail : \" vient d'être cliqué.");
-				Swing_Etape recette =  new Swing_Etape();
-				recette.setVisible();
+				Swing_Etape recette =  new Swing_Etape(modeClair);
+				recette.setVisible(modeClair);
 			}
 		});
 		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 11));
