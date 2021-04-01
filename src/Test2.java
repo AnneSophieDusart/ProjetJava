@@ -37,6 +37,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class Test2 {
+	
+	boolean modeClair = true;
 
 	private JFrame frmRecettesDeCuisine;
 
@@ -47,7 +49,7 @@ public class Test2 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Test2 window = new Test2();
+					Test2 window = new Test2(true);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -59,12 +61,23 @@ public class Test2 {
 	/**
 	 * Create the application.
 	 */
-	public Test2() {
-		try {
-		    UIManager.setLookAndFeel( new FlatLightLaf() );
-		} catch( Exception ex ) {
-		    System.err.println( "Failed to initialize LaF" );
+	public Test2(boolean modeClair) {
+		this.modeClair = modeClair;
+		
+		if (this.modeClair) {
+			try {
+			    UIManager.setLookAndFeel( new FlatLightLaf() );
+			} catch( Exception ex ) {
+			    System.err.println( "Failed to initialize LaF" );
+			}
+		} else {
+			try {
+			    UIManager.setLookAndFeel( new FlatDarkLaf() );
+			} catch( Exception ex ) {
+			    System.err.println( "Failed to initialize LaF" );
+			}
 		}
+		
 		
 		initialize();
 		
@@ -101,6 +114,12 @@ public class Test2 {
 		menuBar.add(mnNewMenu_1);
 		
 		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Supprimer une recette");
+		mntmNewMenuItem_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				System.out.println("Le bouton \"Supprimer une recette \" vient d'être cliqué.");
+			}
+		});
 		mnNewMenu_1.add(mntmNewMenuItem_4);
 		
 		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Ajouter une recette");
@@ -116,12 +135,19 @@ public class Test2 {
 		mnNewMenu_2.add(mnNewMenu_3);
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Mode clair");
+		mntmNewMenuItem_7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				System.out.println("Le bouton \"Mode clair \" vient d'être cliqué.");
+				setLightMode();
+			}
+		});
 		mnNewMenu_3.add(mntmNewMenuItem_7);
 		
 		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Mode sombre");
 		mntmNewMenuItem_8.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void mousePressed(MouseEvent e) {
 				System.out.println("Le bouton \"Mode sombre \" vient d'être cliqué.");
 				setDarkMode();
 				
@@ -204,25 +230,31 @@ public class Test2 {
 	}
 	
 	private void setDarkMode() {
-		System.exit(0);
-		
-		try {
-		    UIManager.setLookAndFeel( new FlatDarkLaf() );
-		} catch( Exception ex ) {
-		    System.err.println( "Failed to initialize LaF" );
-		}
-		
+		this.frmRecettesDeCuisine.setVisible(false);
+		this.frmRecettesDeCuisine.dispose();
+		this.modeClair=false;
+		Test2 win = new Test2(false);
+		win.setVisible2(false);
+	}
+	
+	private void setLightMode() {
+		this.frmRecettesDeCuisine.setVisible(false);
+		this.frmRecettesDeCuisine.dispose();
+		this.modeClair=true;
+		Test2 win = new Test2(true);
+		win.setVisible2(true);
+	}
+	
+	public void setVisible2(boolean bool) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				try {
-					Test2 window = new Test2();
+				try { 
+					Test2 window = new Test2(bool);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
-		
-		
 	}
 }
