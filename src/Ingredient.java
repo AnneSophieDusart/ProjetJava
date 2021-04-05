@@ -3,6 +3,11 @@ import java.util.ArrayList;
 
 public class Ingredient implements Serializable{
 	
+	int quantite;
+	String ingredient, mesure;
+	
+	public Ingredient() {}
+	
 	public int getQuantite() {
 		return quantite;
 	}
@@ -32,10 +37,6 @@ public class Ingredient implements Serializable{
 		this.mesure = mesure;
 	}
 
-
-	int quantite;
-	String ingredient, mesure;
-	
 	
 	public Ingredient (int Quantite, String Ingre, String Mesure ) {
 		

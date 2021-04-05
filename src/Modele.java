@@ -12,8 +12,11 @@ import java.util.Observable;
 public class Modele extends Observable{
 	
 	ArrayList <Recette> LRecette;
+	ArrayList<File> LFichier;
 	File fichier = new File("Recette.xml");
-	
+	File f = new File("Fichier.xml");
+	String dir = "ImageRecette/";
+	int indexRecette = 0;
 	
 	public Modele() {
 		
@@ -37,6 +40,16 @@ public class Modele extends Observable{
 		
 		this.LRecette.add(crepe);
 		
+		/* Test pour un fichie qui contient tout les fichiers recettes
+		this.LFichier= new ArrayList<>();
+		File repImages = new File(dir);
+		File[] recetteListe = repImages.listFiles();
+		for (File file : recetteListe) {
+			//String nomImage = file.getName().split("\\.")[0];
+			this.LFichier.add(new File(file.getName()));
+		}*/
+		
+		
 		XMLDecoder decoder = null;
 		try{
 			FileInputStream fis = new FileInputStream(fichier);
@@ -50,6 +63,8 @@ public class Modele extends Observable{
 		} finally {
 			if (decoder != null) decoder.close();
 		}
+		
+		
 
 	}
 	
@@ -68,7 +83,6 @@ public class Modele extends Observable{
 		}finally {
 			if (encoder != null) encoder.close();
 		}
-		
 	}
 
 }

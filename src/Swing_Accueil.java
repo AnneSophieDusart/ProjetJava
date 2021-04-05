@@ -15,8 +15,12 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
-public class Swing_Accueil {
+public class Swing_Accueil implements WindowListener {
+	
+	Modele m;
 
 	private JFrame frmRecettesDeCuisine;
 
@@ -53,10 +57,12 @@ public class Swing_Accueil {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		this.m = new Modele();
+		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
 		frmRecettesDeCuisine.setBounds(100, 100, 725, 504);
-		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frmRecettesDeCuisine.getContentPane().add(panel, BorderLayout.CENTER);
@@ -100,9 +106,11 @@ public class Swing_Accueil {
 		lblNewLabel_4_1.setBounds(21, 63, 137, 47);
 		panel.add(lblNewLabel_4_1);
 		
+		
+		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_1.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("ImageAppli\\img_acc_1.jpg"));
 		lblNewLabel.setBounds(0, 0, 350, 228);
 		panel.add(lblNewLabel);
 		
@@ -121,7 +129,7 @@ public class Swing_Accueil {
 		panel.add(lblNewLabel_4_1_1);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_2.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\img_acc_2.jpg"));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(360, 0, 350, 228);
 		panel.add(lblNewLabel_1);
@@ -141,7 +149,7 @@ public class Swing_Accueil {
 		panel.add(lblNewLabel_4_2_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_4.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\img_acc_4.jpg"));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setBounds(0, 238, 350, 228);
 		panel.add(lblNewLabel_2);
@@ -161,9 +169,52 @@ public class Swing_Accueil {
 		panel.add(lblNewLabel_4_2_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_1.jpg"));
+		lblNewLabel_3.setIcon(new ImageIcon("ImageAppli\\img_acc_1.jpg"));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(360, 238, 350, 228);
 		panel.add(lblNewLabel_3);
+	}
+
+	@Override
+	public void windowActivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosed(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		this.m.enregistrer();
+		System.exit(0);
+		}
+
+	@Override
+	public void windowDeactivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowOpened(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
 	}
 }
