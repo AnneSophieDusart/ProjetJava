@@ -40,31 +40,9 @@ public class Modele extends Observable{
 		
 		this.LRecette.add(crepe);
 		
-		/* Test pour un fichie qui contient tout les fichiers recettes
-		this.LFichier= new ArrayList<>();
-		File repImages = new File(dir);
-		File[] recetteListe = repImages.listFiles();
-		for (File file : recetteListe) {
-			//String nomImage = file.getName().split("\\.")[0];
-			this.LFichier.add(new File(file.getName()));
-		}*/
-		
-		
-		XMLDecoder decoder = null;
-		try{
-			FileInputStream fis = new FileInputStream(fichier);
-			BufferedInputStream bis = new BufferedInputStream(fis);
-			decoder = new XMLDecoder(bis);
-			
-			this.LRecette = (ArrayList<Recette>)decoder.readObject();			
-			
-		}catch (Exception e){
-			throw new RuntimeException("Chargement des données impossible");
-		} finally {
-			if (decoder != null) decoder.close();
-		}
-		
-		
+		/*this.enregistrer();*/
+		this.charger();
+		System.out.println(this.LRecette);
 
 	}
 	
@@ -83,6 +61,24 @@ public class Modele extends Observable{
 		}finally {
 			if (encoder != null) encoder.close();
 		}
+	}
+	
+	public void charger() {
+		XMLDecoder decoder = null;
+		try{
+			FileInputStream fis = new FileInputStream(fichier);
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			decoder = new XMLDecoder(bis);
+			
+			this.LRecette = (ArrayList<Recette>)decoder.readObject();			
+			
+		}catch (Exception e){
+			throw new RuntimeException("Chargement des données impossible");
+		} finally {
+			if (decoder != null) decoder.close();
+		}
+		
+		
 	}
 
 }

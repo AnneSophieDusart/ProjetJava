@@ -159,5 +159,158 @@
     </void>
    </object>
   </void>
+  
+  <!-- Nouvelle recette -->
+  
+    <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mettre la farine dans une terrine et former un puits.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Y déposer les oeufs entiers, le sucre, l&apos;huile et le beurre.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Parfumer de rhum.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faire chauffer une poêle antiadhésive et la huiler très légèrement. Y verser une louche de pâte, la répartir dans la poêle puis attendre qu&apos;elle soit cuite d&apos;un côté avant de la retourner. Cuire ainsi toutes les crêpes à feu doux.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/crepe.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Rhum</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Farine</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>300</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeufs</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Huile</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Beurre fondu</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>50</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Lait</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>60</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Pizza</string>
+    </void>
+    <void property="personnes">
+     <int>2</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>20</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>10</int>
+    </void>
+    <void property="type">
+     <string>Dessert</string>
+    </void>
+   </object>
+  </void>
+
  </object>
 </java>
