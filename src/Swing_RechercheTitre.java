@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
 
+import javax.imageio.ImageIO;
 import javax.swing.AbstractListModel;
 import java.awt.Font;
 import javax.swing.JScrollBar;
@@ -35,10 +36,18 @@ import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class Swing_RechercheTitre {
+public class Swing_RechercheTitre implements Observer{
 	
 	boolean modeClair = true;
+	Modele m;
+	Controleur ctrl;
+	String image = "ImageRecette\\saladeGrecque.jpg";
+	JLabel lblNewLabel;
 
 	private JFrame frmRecettesDeCuisine;
 
@@ -80,7 +89,7 @@ public class Swing_RechercheTitre {
 		
 		
 		initialize();
-		
+		m.addObserver(this);
 		
 	}
 
@@ -89,6 +98,9 @@ public class Swing_RechercheTitre {
 	 */
 	private void initialize() {
 		boolean modeClair = this.modeClair;
+		
+		this.m=new Modele();
+		this.ctrl = new Controleur(m);
 		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
@@ -134,7 +146,7 @@ public class Swing_RechercheTitre {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Image illustration");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageRecette\\crepe.jpg"));
+		lblNewLabel.setIcon(new ImageIcon(image));
 		lblNewLabel.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel.setBounds(10, 10, 224, 130);
 		panel.add(lblNewLabel);
@@ -166,8 +178,13 @@ public class Swing_RechercheTitre {
 		JList list = new JList();
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 13));
+		String[] values = new String[m.LRecette.size()];
+		for (int i=0; i<this.m.LRecette.size(); i++) {
+			values[i]=m.LRecette.get(i).Nom;
+			
+		}
 		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Quiche en ramequin", "Salade grecque", "Oeufs au mimosa", "Rouleau de saumon", "Mousse de courgettes", "Saut\u00E9 de boeuf", "Poulet coco tha\u00EF", "Maff\u00E9 de boeuf ", "Thon coco au riz", "Tortilla", "Risotto", "Soupe au potiron", "Hamburger classique", "Fajitas", "Oeufs cocottes", "Oeufs \u00E0 l'italienne", "Cr\u00E8pes", "Tiramisu traditionnel", "Panacotta", "Pancakes vegan \u00E0 la banane", "Mousse au chocolat"};
+			//String[] values = new String[] {"Quiche en ramequin", "Salade grecque", "Oeufs au mimosa", "Rouleau de saumon", "Mousse de courgettes", "Saut\u00E9 de boeuf", "Poulet coco tha\u00EF", "Maff\u00E9 de boeuf ", "Thon coco au riz", "Tortilla", "Risotto", "Soupe au potiron", "Hamburger classique", "Fajitas", "Oeufs cocottes", "Oeufs \u00E0 l'italienne", "Cr\u00E8pes", "Tiramisu traditionnel", "Panacotta", "Pancakes vegan \u00E0 la banane", "Mousse au chocolat"};
 			public int getSize() {
 				return values.length;
 			}
@@ -176,6 +193,7 @@ public class Swing_RechercheTitre {
 			}
 		});
 		list.setSelectedIndex(0);
+		list.addListSelectionListener(ctrl);
 		scrollPane.setViewportView(list);
 		
 		JFormattedTextField frmtdtxtfldRechercheRapide = new JFormattedTextField();
@@ -228,5 +246,10 @@ public class Swing_RechercheTitre {
 				}
 			}
 		});
+	}
+
+	@Override
+	public void update(Observable modl, Object arg) {
+
 	}
 }

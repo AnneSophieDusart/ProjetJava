@@ -12,8 +12,11 @@ import java.util.Observable;
 public class Modele extends Observable{
 	
 	ArrayList <Recette> LRecette;
+	ArrayList<File> LFichier;
 	File fichier = new File("Recette.xml");
-	
+	File f = new File("Fichier.xml");
+	String dir = "ImageRecette/";
+	int indexRecette = 0;
 	
 	public Modele() {
 		
@@ -37,19 +40,9 @@ public class Modele extends Observable{
 		
 		this.LRecette.add(crepe);
 		
-		XMLDecoder decoder = null;
-		try{
-			FileInputStream fis = new FileInputStream(fichier);
-			BufferedInputStream bis = new BufferedInputStream(fis);
-			decoder = new XMLDecoder(bis);
-			
-			this.LRecette = (ArrayList<Recette>)decoder.readObject();			
-			
-		}catch (Exception e){
-			throw new RuntimeException("Chargement des données impossible");
-		} finally {
-			if (decoder != null) decoder.close();
-		}
+		/*this.enregistrer();*/
+		this.charger();
+		System.out.println(this.LRecette);
 
 	}
 	
@@ -68,6 +61,23 @@ public class Modele extends Observable{
 		}finally {
 			if (encoder != null) encoder.close();
 		}
+	}
+	
+	public void charger() {
+		XMLDecoder decoder = null;
+		try{
+			FileInputStream fis = new FileInputStream(fichier);
+			BufferedInputStream bis = new BufferedInputStream(fis);
+			decoder = new XMLDecoder(bis);
+			
+			this.LRecette = (ArrayList<Recette>)decoder.readObject();			
+			
+		}catch (Exception e){
+			throw new RuntimeException("Chargement des données impossible");
+		} finally {
+			if (decoder != null) decoder.close();
+		}
+		
 		
 	}
 

@@ -3,6 +3,8 @@ import java.io.Serializable;
 public class Etape implements Serializable{
 	
 	int NumEtape;
+	String Instrution;	
+	
 	public int getNumEtape() {
 		return NumEtape;
 	}
@@ -23,8 +25,8 @@ public class Etape implements Serializable{
 	}
 
 
-	String Instrution;
-	
+
+	public Etape() {}
 	
 	public Etape (int N, String I) {
 		

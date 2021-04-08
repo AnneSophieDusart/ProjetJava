@@ -15,8 +15,12 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
-public class Swing_Accueil {
+public class Swing_Accueil implements WindowListener {
+	
+	Modele m;
 
 	private JFrame frmRecettesDeCuisine;
 
@@ -53,6 +57,8 @@ public class Swing_Accueil {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		this.m = new Modele();
+		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
 		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
@@ -145,6 +151,49 @@ public class Swing_Accueil {
 		panel.add(lblNewLabel_2_1);
 		
 		
+	
+	}
+
+	@Override
+	public void windowActivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosed(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		this.m.enregistrer();
+		System.exit(0);
+		}
+
+	@Override
+	public void windowDeactivated(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowOpened(WindowEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 }

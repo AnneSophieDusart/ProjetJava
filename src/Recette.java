@@ -11,6 +11,7 @@ public class Recette implements Serializable{
 	String Type;
 	int Personnes;
 	
+	public Recette() {}
 	
 	public Recette(String type, String nom,int TempsP, int TempsC,int perso, ArrayList<Ingredient> Ingre, ArrayList<Etape> Etape, String Image) {
 		
