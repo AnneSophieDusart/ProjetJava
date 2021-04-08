@@ -70,16 +70,16 @@ public class Swing_Accueil implements WindowListener {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\recettes_jour_c.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("ImageAppli\\recettes_jour_c.jpg"));
 		lblNewLabel.setBounds(0, 0, 370, 275);
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\recettes_jour_bw.jpg"));
+				lblNewLabel.setIcon(new ImageIcon("ImageAppli\\recettes_jour_bw.jpg"));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\recettes_jour_c.jpg"));
+				lblNewLabel.setIcon(new ImageIcon("ImageAppli\\recettes_jour_c.jpg"));
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -88,22 +88,22 @@ public class Swing_Accueil implements WindowListener {
 		});
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\delice_logo.png"));
+		lblNewLabel_3.setIcon(new ImageIcon("ImageAppli\\delice_logo.png"));
 		lblNewLabel_3.setBounds(323, 229, 100, 100);
 		panel.add(lblNewLabel_3);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_ing\u00E9drients_c.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\rechercher_ing\u00E9drients_c.jpg"));
 		lblNewLabel_1.setBounds(376, 0, 370, 275);
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_ing\u00E9drients_bw.jpg"));
+				lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\rechercher_ing\u00E9drients_bw.jpg"));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_ing\u00E9drients_c.jpg"));
+				lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\rechercher_ing\u00E9drients_c.jpg"));
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -113,16 +113,16 @@ public class Swing_Accueil implements WindowListener {
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\liste_recettes_c.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_c.jpg"));
 		lblNewLabel_2.setBounds(0, 281, 370, 275);
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\liste_recettes_bw.jpg"));
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_bw.jpg"));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\liste_recettes_c.jpg"));
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_c.jpg"));
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -131,16 +131,16 @@ public class Swing_Accueil implements WindowListener {
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("New label");
-		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_titre_c.jpg"));
+		lblNewLabel_2_1.setIcon(new ImageIcon("ImageAppli\\rechercher_titre_c.jpg"));
 		lblNewLabel_2_1.setBounds(376, 281, 370, 275);
 		lblNewLabel_2_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_titre_bw.jpg"));
+				lblNewLabel_2_1.setIcon(new ImageIcon("ImageAppli\\rechercher_titre_bw.jpg"));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_titre_c.jpg"));
+				lblNewLabel_2_1.setIcon(new ImageIcon("ImageAppli\\rechercher_titre_c.jpg"));
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
