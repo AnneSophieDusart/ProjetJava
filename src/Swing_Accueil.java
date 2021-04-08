@@ -54,116 +54,97 @@ public class Swing_Accueil {
 	 */
 	private void initialize() {
 		frmRecettesDeCuisine = new JFrame();
+		frmRecettesDeCuisine.setResizable(false);
 		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
-		frmRecettesDeCuisine.setBounds(100, 100, 725, 504);
+		frmRecettesDeCuisine.setBounds(100, 100, 750, 581);
 		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
 		frmRecettesDeCuisine.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Acc\u00E9der");
-		btnNewButton.setBounds(135, 192, 85, 21);
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Acc\u00E9der");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\recettes_jour_c.jpg"));
+		lblNewLabel.setBounds(0, 0, 370, 275);
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\recettes_jour_bw.jpg"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\recettes_jour_c.jpg"));
+			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Le bouton \"Accéder (recherche par titre) \" vient d'être cliqué.");
-				Swing_RechercheTitre recette =  new Swing_RechercheTitre(true);
+				System.out.println("Clic sur RECETTES DU JOUR");
+			}
+		});
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\delice_logo.png"));
+		lblNewLabel_3.setBounds(323, 229, 100, 100);
+		panel.add(lblNewLabel_3);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_ing\u00E9drients_c.jpg"));
+		lblNewLabel_1.setBounds(376, 0, 370, 275);
+		lblNewLabel_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_ing\u00E9drients_bw.jpg"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_ing\u00E9drients_c.jpg"));
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Clic sur RECHERCHER INGREDIENTS");
+			}
+		});
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\liste_recettes_c.jpg"));
+		lblNewLabel_2.setBounds(0, 281, 370, 275);
+		lblNewLabel_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\liste_recettes_bw.jpg"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\liste_recettes_c.jpg"));
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("New label");
+		lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_titre_c.jpg"));
+		lblNewLabel_2_1.setBounds(376, 281, 370, 275);
+		lblNewLabel_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_titre_bw.jpg"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel_2_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\rechercher_titre_c.jpg"));
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Swing_RechercheTitre recette = new Swing_RechercheTitre(true);
 				recette.setVisible2(true);
 			}
 		});
-		btnNewButton_1.setBounds(501, 192, 85, 21);
-		panel.add(btnNewButton_1);
+		panel.add(lblNewLabel_2_1);
 		
-		JButton btnNewButton_2 = new JButton("Acc\u00E9der");
-		btnNewButton_2.setBounds(501, 436, 85, 21);
-		panel.add(btnNewButton_2);
 		
-		JButton btnNewButton_3 = new JButton("Acc\u00E9der");
-		btnNewButton_3.setBounds(135, 436, 85, 21);
-		panel.add(btnNewButton_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Recettes");
-		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4.setBounds(21, 35, 137, 47);
-		panel.add(lblNewLabel_4);
-		
-		JLabel lblNewLabel_4_1 = new JLabel("du jour");
-		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1.setForeground(Color.WHITE);
-		lblNewLabel_4_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4_1.setBounds(21, 63, 137, 47);
-		panel.add(lblNewLabel_4_1);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_1.jpg"));
-		lblNewLabel.setBounds(0, 0, 350, 228);
-		panel.add(lblNewLabel);
-		
-		JLabel lblNewLabel_4_2 = new JLabel("Rechercher");
-		lblNewLabel_4_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2.setForeground(Color.WHITE);
-		lblNewLabel_4_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4_2.setBounds(550, 84, 137, 47);
-		panel.add(lblNewLabel_4_2);
-		
-		JLabel lblNewLabel_4_1_1 = new JLabel("par titre");
-		lblNewLabel_4_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1.setForeground(Color.WHITE);
-		lblNewLabel_4_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4_1_1.setBounds(550, 112, 137, 47);
-		panel.add(lblNewLabel_4_1_1);
-		
-		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_2.jpg"));
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(360, 0, 350, 228);
-		panel.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_4_1_1_1 = new JLabel("par ingr\u00E9dients");
-		lblNewLabel_4_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_1.setForeground(Color.WHITE);
-		lblNewLabel_4_1_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4_1_1_1.setBounds(80, 282, 193, 47);
-		panel.add(lblNewLabel_4_1_1_1);
-		
-		JLabel lblNewLabel_4_2_1 = new JLabel("Rechercher");
-		lblNewLabel_4_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2_1.setForeground(Color.WHITE);
-		lblNewLabel_4_2_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4_2_1.setBounds(107, 254, 137, 47);
-		panel.add(lblNewLabel_4_2_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_4.jpg"));
-		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(0, 238, 350, 228);
-		panel.add(lblNewLabel_2);
-		
-		JLabel lblNewLabel_4_1_1_2 = new JLabel("des recettes");
-		lblNewLabel_4_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_2.setForeground(Color.WHITE);
-		lblNewLabel_4_1_1_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4_1_1_2.setBounds(391, 301, 137, 47);
-		panel.add(lblNewLabel_4_1_1_2);
-		
-		JLabel lblNewLabel_4_2_2 = new JLabel("Liste");
-		lblNewLabel_4_2_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2_2.setForeground(Color.WHITE);
-		lblNewLabel_4_2_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
-		lblNewLabel_4_2_2.setBounds(391, 273, 137, 47);
-		panel.add(lblNewLabel_4_2_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\bilbo\\OneDrive\\Documents\\Eclipse\\ProjetJava\\ImageAppli\\img_acc_1.jpg"));
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(360, 238, 350, 228);
-		panel.add(lblNewLabel_3);
 	}
 }
