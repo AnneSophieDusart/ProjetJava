@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_281" class="java.beans.XMLDecoder">
  <object class="java.util.ArrayList">
+ 
+ 
+ <!-- Début Recette Crepe -->
   <void method="add">
    <object class="Recette">
+   
+   <!-- Début des Etapes -->
     <void property="etapes">
      <object class="java.util.ArrayList">
-      <void method="add">
+	 
+      <!-- Une étape -->
+	  <void method="add">
        <object class="Etape">
         <void property="instrution">
          <string>Mettre la farine dans une terrine et former un puits.</string>
@@ -15,17 +22,23 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
       <void method="add">
        <object class="Etape">
         <void property="instrution">
-         <string>Y déposer les oeufs entiers, le sucre, l&apos;huile et le beurre.</string>
+         <string>Y déposer les oeufs entiers, le sucre, l&apos;huile et le beurre fondu.</string>
         </void>
         <void property="numEtape">
          <int>2</int>
         </void>
        </object>
       </void>
-      <void method="add">
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
        <object class="Etape">
         <void property="instrution">
          <string>Mélanger délicatement avec un fouet en ajoutant au fur et à mesure le lait. La pâte ainsi obtenue doit avoir une consistance d&apos;un liquide légèrement épais.</string>
@@ -35,6 +48,9 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
       <void method="add">
        <object class="Etape">
         <void property="instrution">
@@ -45,6 +61,9 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
       <void method="add">
        <object class="Etape">
         <void property="instrution">
@@ -55,13 +74,21 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'étape -->
+	  
      </object>
     </void>
+	<!-- Fin des Etapes -->
+	
     <void property="image">
      <string>ImageRecette/crepe.jpg</string>
     </void>
+	
+	<!-- Début des Ingredients -->
     <void property="ingredients">
      <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
@@ -75,6 +102,9 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
@@ -88,6 +118,9 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
@@ -101,6 +134,9 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
@@ -114,10 +150,13 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
-         <string>Beurre fondu</string>
+         <string>Beurre</string>
         </void>
         <void property="mesure">
          <string>g</string>
@@ -127,6 +166,9 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
@@ -140,9 +182,13 @@
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
      </object>
     </void>
-    <void property="nom">
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
      <string>Crêpe</string>
     </void>
     <void property="personnes">
@@ -154,151 +200,435 @@
     <void property="tempsPreparation">
      <int>10</int>
     </void>
-    <void property="type">
+    <void property="type1">
      <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
     </void>
    </object>
   </void>
-  
-  <!-- Nouvelle recette -->
-  
-    <void method="add">
+ <!-- Fin Recette -->
+ 
+  <!-- Début Recette Salade Grecque -->
+  <void method="add">
    <object class="Recette">
+   
+   <!-- Début des Etapes -->
     <void property="etapes">
      <object class="java.util.ArrayList">
-      <void method="add">
+	 
+      <!-- Une étape -->
+	  <void method="add">
        <object class="Etape">
         <void property="instrution">
-         <string>Mettre la farine dans une terrine et former un puits.</string>
+         <string>Découper les tomates en petits dés et les mettre dans un saladier.</string>
         </void>
         <void property="numEtape">
          <int>1</int>
         </void>
        </object>
       </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
       <void method="add">
        <object class="Etape">
         <void property="instrution">
-         <string>Y déposer les oeufs entiers, le sucre, l&apos;huile et le beurre.</string>
+         <string>Ajouter le concombre découpé en dés, le poivron vert épépinés et coupés en fines tranches et les olives.</string>
         </void>
         <void property="numEtape">
          <int>2</int>
         </void>
        </object>
       </void>
-
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélanger avec la moitié de l&apos;oignon et la feta coupée en dés.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
       <void method="add">
        <object class="Etape">
         <void property="instrution">
-         <string>Parfumer de rhum.</string>
+         <string>Disposer sur le dessus de la salade les restes d&apos;oignon et de feta.</string>
         </void>
         <void property="numEtape">
          <int>4</int>
         </void>
        </object>
       </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
       <void method="add">
        <object class="Etape">
         <void property="instrution">
-         <string>Faire chauffer une poêle antiadhésive et la huiler très légèrement. Y verser une louche de pâte, la répartir dans la poêle puis attendre qu&apos;elle soit cuite d&apos;un côté avant de la retourner. Cuire ainsi toutes les crêpes à feu doux.</string>
+         <string>Ajouter le zeste et le jus de citron, assaisonner avec l&apos;huile et l'origan, sel poivre. Mélanger délicatement et servir.</string>
         </void>
         <void property="numEtape">
          <int>5</int>
         </void>
        </object>
       </void>
+	  <!-- Fin de l'étape -->
+	  
      </object>
     </void>
+	<!-- Fin des Etapes -->
+	
     <void property="image">
-     <string>ImageRecette/crepe.jpg</string>
+     <string>ImageRecette/saladeGrecque.jpg</string>
     </void>
+	
+	<!-- Début des Ingredients -->
     <void property="ingredients">
      <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
-         <string>Rhum</string>
-        </void>
-        <void property="mesure">
-         <string>cl</string>
-        </void>
-        <void property="quantite">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Farine</string>
+         <string>Sel</string>
         </void>
         <void property="mesure">
          <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>300</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Oeufs</string>
-        </void>
-        <void property="mesure">
-         <string> </string>
-        </void>
-        <void property="quantite">
-         <int>3</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Huile</string>
-        </void>
-        <void property="mesure">
-         <string>càs</string>
         </void>
         <void property="quantite">
          <int>2</int>
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
-         <string>Beurre fondu</string>
+         <string>Origan séché</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Tomates</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Comcombre</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Poivron vert</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignon</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Feta</string>
         </void>
         <void property="mesure">
          <string>g</string>
         </void>
         <void property="quantite">
-         <int>50</int>
+         <int>150</int>
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
       <void method="add">
        <object class="Ingredient">
         <void property="ingredient">
-         <string>Lait</string>
+         <string>Citron</string>
         </void>
         <void property="mesure">
-         <string>cl</string>
+         <string> </string>
         </void>
         <void property="quantite">
-         <int>60</int>
+         <int>1</int>
         </void>
        </object>
       </void>
+	  <!-- Fin de l'ingrédient -->
+	  
      </object>
     </void>
-    <void property="nom">
-     <string>Pizza</string>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Salade Grecque</string>
     </void>
     <void property="personnes">
-     <int>2</int>
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>0</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>20</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+ 
+  <!-- Début Recette  Pizza 4 fromages-->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffer le four à 170°C. Mettre la pâte à pizza sur une plaque à four recouverte de papier sulfurisé.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Etaler le coulis de tomates sur toute la pâte. Couper les fromages en morceaux et les répartir sur la pizza. </string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Saupoudrer d&apos;origan et enfourner pendant 20 minutes.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/pizza4fromages.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Pâte à pizza</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>260</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Coulis de tomates</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>200</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Mozzarella</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>125</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Fromage de chèvre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>120</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Gorgonzola</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Parmesan</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>80</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Origan en poudre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Pizza 4 fromages</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
     </void>
     <void property="tempsCuisson">
      <int>20</int>
@@ -306,11 +636,15 @@
     <void property="tempsPreparation">
      <int>10</int>
     </void>
-    <void property="type">
-     <string>Dessert</string>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
     </void>
    </object>
   </void>
+ <!-- Fin Recette -->
 
  </object>
 </java>

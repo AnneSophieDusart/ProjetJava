@@ -14,9 +14,6 @@ public class Modele extends Observable{
 	ArrayList <Recette> LRecette;
 	ArrayList<File> LFichier;
 	File fichier = new File("Recette.xml");
-	File f = new File("Fichier.xml");
-	String dir = "ImageRecette/";
-	int indexRecette = 0;
 	
 	public Modele() {
 		
@@ -36,7 +33,7 @@ public class Modele extends Observable{
 		LEtape.add(new Etape (4,"Parfumer de rhum."));
 		LEtape.add(new Etape (5,"Faire chauffer une poêle antiadhésive et la huiler très légèrement. Y verser une louche de pâte, la répartir dans la poêle puis attendre qu'elle soit cuite d'un côté avant de la retourner. Cuire ainsi toutes les crêpes à feu doux."));
 		
-		Recette crepe = new Recette("Dessert","Crêpe",10,20,2,LIngre, LEtape,"ImageRecette/crepe.jpg");
+		Recette crepe = new Recette("Dessert","Traditionnelle","Crêpe",10,20,2,LIngre, LEtape,"ImageRecette/crepe.jpg");
 		
 		this.LRecette.add(crepe);
 		
