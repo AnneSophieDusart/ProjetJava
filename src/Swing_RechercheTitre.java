@@ -46,7 +46,7 @@ public class Swing_RechercheTitre implements Observer{
 	boolean modeClair = true;
 	Modele m;
 	Controleur ctrl;
-	String image = "ImageRecette\\saladeGrecque.jpg";
+	String image = "ImageRecette\\crepe.jpg";
 	JLabel lblNewLabel;
 
 	private JFrame frmRecettesDeCuisine;

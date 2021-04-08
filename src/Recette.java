@@ -8,14 +8,15 @@ public class Recette implements Serializable{
 	ArrayList<Ingredient> Ingredients;
 	ArrayList<Etape> Etapes;
 	String Image;
-	String Type;
+	String Type1, Type2;
 	int Personnes;
 	
 	public Recette() {}
 	
-	public Recette(String type, String nom,int TempsP, int TempsC,int perso, ArrayList<Ingredient> Ingre, ArrayList<Etape> Etape, String Image) {
+	public Recette(String type1, String type2 , String nom,int TempsP, int TempsC,int perso, ArrayList<Ingredient> Ingre, ArrayList<Etape> Etape, String Image) {
 		
-		this.Type=type;
+		this.Type1=type1;
+		this.Type2=type2;
 		this.Nom= nom;
 		this.TempsPreparation = TempsP;
 		this.TempsCuisson=TempsC;
@@ -24,9 +25,24 @@ public class Recette implements Serializable{
 		this.Image=Image;
 		this.Personnes=perso;
 		
-		
 	}
 
+
+	public String getType1() {
+		return Type1;
+	}
+
+	public void setType1(String type1) {
+		Type1 = type1;
+	}
+
+	public String getType2() {
+		return Type2;
+	}
+
+	public void setType2(String type2) {
+		Type2 = type2;
+	}
 
 	public String getNom() {
 		return Nom;
@@ -88,16 +104,6 @@ public class Recette implements Serializable{
 	}
 
 
-	public String getType() {
-		return Type;
-	}
-
-
-	public void setType(String type) {
-		Type = type;
-	}
-
-
 	public int getPersonnes() {
 		return Personnes;
 	}
@@ -105,6 +111,13 @@ public class Recette implements Serializable{
 
 	public void setPersonnes(int personnes) {
 		Personnes = personnes;
+	}
+	
+	
+	public String toString() {
+		return this.Nom + " " + this.Etapes.size();
+		
+		
 	}
 
 }
