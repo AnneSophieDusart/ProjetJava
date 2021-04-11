@@ -14,6 +14,8 @@ public class Modele extends Observable{
 	ArrayList <Recette> LRecette;
 	ArrayList<File> LFichier;
 	File fichier = new File("Recette.xml");
+	int indexRecetteSelectionnee=0;
+	
 	
 	public Modele() {
 		
@@ -74,8 +76,13 @@ public class Modele extends Observable{
 		} finally {
 			if (decoder != null) decoder.close();
 		}
-		
-		
+
+	}
+	
+	public void selectionRecette(int item) {
+		this.indexRecetteSelectionnee = item;
+		this.setChanged();
+		this.notifyObservers(this.indexRecetteSelectionnee);
 	}
 
 }

@@ -646,5 +646,2142 @@
   </void>
  <!-- Fin Recette -->
 
+ <!-- Début Recette Mousse au chocolat -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faire fondre le chocolat au micro-ondes.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Séparer le blancs des jaunes.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Dans un saladier, mélanger les jaunes avec le chocolat fondu.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Monter les blancs en neige avec une petite pincée de sel.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Incorporer délicatement les blancs en neige dans le chocolat.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Laisser reposer au frigo pendant 2 heures.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Servir et déguster.</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->	  
+	  
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/mousseChocolat.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sel</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Chocolat pâtissier</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>200</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeufs</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Mousse au chocolat</string>
+    </void>
+    <void property="personnes">
+     <int>6</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>0</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>10</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+
+ <!-- Début Recette Pancakes vegan à la banane -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélanger tous les ingrédients secs (farine, maïzena, levure, sel).</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajouter la banane écrasée, puis le lait et l&apos;huile de coco.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faire cuire des petites louches de pâte à feu moyen sur chaque face.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Bonne dégustation !</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/pancakeVeganBanane.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sel</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Farine</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Maïzena</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>25</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Levure</string>
+        </void>
+        <void property="mesure">
+         <string>sachet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Banane</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Huile de coco</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Lait d&apos;avoine</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>20</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Pancake Vegan à la banane</string>
+    </void>
+    <void property="personnes">
+     <int>2</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>10</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>10</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Vegan</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+
+ <!-- Début Recette Tiramisu -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Séparer les blancs des jaunes d&apos;oeufs.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélanger les jaunes avec le sucre roux et le sucre vanillé.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajouter le mascarpone au fouet.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Monter les blancs en neige et les incorporer délicatement à la spatule au mélange précédent. Réserver.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mouiller les biscuits dans le café rapidement avant d&apos;en tapisser le fond du plat.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Recouvrir d&apos;une couche de crème au mascarpone puis répéter l&apos;opération en alternant couche de biscuits et couche de crème en terminant par cette dernière.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Saupoudrer de cacao.</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->	  
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mettre au réfrigérateur 4 heures minimum puis déguster frais.</string>
+        </void>
+        <void property="numEtape">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->		  
+	  
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/tiramisu.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Biscuit à la cuillère</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>24</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre roux</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeufs</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre vanillé</string>
+        </void>
+        <void property="mesure">
+         <string>sachet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Mascarpone</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>250</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Café noir</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>50</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Cacao amer</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>30</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Tiramisu</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>0</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>15</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+
+ <!-- Début Recette Fajitas au poulet -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Couper finement les blancs de poulet, presser le citron vert et écraser l'ail.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Dans un plat, mettre le poulet, arroser de jus de citron, puis verser 4 cuillères à soupe d'huile; saupoudrer de chili, cumin, sel et poivre.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélanger, couvrir et laisser reposer au frigo.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffer le four à 210°C (thermostat 7). Couper les poivrons en lanières, et émincer les oignons.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faire chauffer 2 cuillères à soupe d'huile dans une poêle, mettre les oignons et les poivrons à blondir; garder au chaud.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Envelopper les tortillas dans une feuille alu ,et les faire chauffer 10 min au four.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Egoutter les morceaux de poulet et les faire dorer. Dès qu'ils sont colorés, les arroser avec la marinade, couvrir et laisser mijoter 5 min.</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->	  
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Disposer la viande, les légumes et les tortillas dans un plat différent; et dans une coupelle, verser la crème. Ainsi, chacun garnira à sa convenance.</string>
+        </void>
+        <void property="numEtape">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->		  
+	  
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/fajitasPoulet.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sel</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Cumin en poudre</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Blancs de poulet</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Poivron rouge</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Poivron vert</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignon</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Ail</string>
+        </void>
+        <void property="mesure">
+         <string>gousses</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Crème fraîche épaisse</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>20</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Tortillas</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Huile</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		 
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Chili en poudre</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Citron vert</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Fajitas au poulet</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>30</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>20</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+
+ <!-- Début Recette Hamburger -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faites revenir les oignons à feux doux.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajouter les steaks.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Une fois saisi, poser une tranche de cheddar sur le steak et laisser fondre.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Une fois cuit, déposer le steak et le fromage sur une des tranches du pain que vous aurez auparavant tartinée d'un mélange de ketchup et de moutarde.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajouter la salade et de petites rondelles de tomates.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Vous pouvez maintenant recouvrir la préparation de l'autre tranche (avec ketchup et moutarde)</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->	  
+	  
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/hamburger.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Ketchup</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Pain pour hamburger</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Steaks hachés</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Cheddar</string>
+        </void>
+        <void property="mesure">
+         <string>tranches</string>
+        </void>
+        <void property="quantite">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignon</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Tomate</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Salade</string>
+        </void>
+        <void property="mesure">
+         <string>feuilles</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Moutarde</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Hamburger</string>
+    </void>
+    <void property="personnes">
+     <int>2</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>5</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>5</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+ 
+ <!-- Début Recette Panacotta aux fruits rouges -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faire ramollir les feuilles de gélatine dans l'eau froide.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Porter à ébulition la crème liquide, le mascarpone et le sucre.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Bien mélanger.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Retirer du feu et y ajouter la gélatine. Mixer le tout pour avoir un mélange parfaitement homogène.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Répartir la crème dans quatre coupelles et mettre au frais de 12 à 24h00.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mettre les fruits à décongeler au frais en même temps que les panacotta.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->	  
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Au moment de servir, répartir les fruits rouges dans les coupelles, en dosant à votre goût.</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->		  
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Bon dessert!</string>
+        </void>
+        <void property="numEtape">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/panacottaFruitsRouges.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Gélatine</string>
+        </void>
+        <void property="mesure">
+         <string>feuilles</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Mascarpone</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>250</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Crème liquide entière</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>250</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Fruits rouge surgelés</string>
+        </void>
+        <void property="mesure">
+         <string>paquet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Panacotta aux fruits rouges</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>10</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>20</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+ 
+ <!-- Début Recette Oeufs cocottes -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffer le four à 180°C (thermostat 6). Pendant ce temps beurrer un ramequin. Couper la tranche de jambon en 2 puis déposer les 2 morceaux dans le ramquin.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Y ajouter l'oeuf.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Recouvrir de crème fraîche.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Saler, poivrer.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Parsemer de gruyère pour terminer.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Enfourner et surveiller la cuisson.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->	  
+	  		    
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/oeufCocotte.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sel</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Jambon</string>
+        </void>
+        <void property="mesure">
+         <string>tranche</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Crème fraîche</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeuf</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Poivre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Gruyère râpé</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Oeufs cocottes</string>
+    </void>
+    <void property="personnes">
+     <int>1</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>10</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>5</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+ 
+ <!-- Début Recette Omelette jambon emmental -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Cassez les oeufs dans une jatte et battez-les avec la crème fraîche, le sel et le poivre.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faites fondre doucement le beurre dans une grande poêle antiadhésive.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Versez les oeufs battus, laissez cuire 1 min puis ajoutez les dés de jambon et d’emmental.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Continuez la cuisson 3 min, repliez l’omelette en portefeuille et laissez cuire encore 1 à 2 min selon votre goût.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Servez aussitôt avec une salade verte et quelques pommes de terre sautées.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  	    		    
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/omelette.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sel</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Poivre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Crème fraîche</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeuf</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>12</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Jambon</string>
+        </void>
+        <void property="mesure">
+         <string>tranches</string>
+        </void>
+        <void property="quantite">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Beurre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>25</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Omelette jambon emmental</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>6</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>5</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+
+ <!-- Début Recette Soupe au potiron -->
+  <void method="add">
+   <object class="Recette">
+   
+   <!-- Début des Etapes -->
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+	 
+      <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Tailler les légumes en gros dés. Les faire suer dans le beurre.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mouiller avec 1,5 l d'eau. Ajouter l'ail écrasé et le bouquet garni. Cuire 1 heure.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <!-- Fin de l'étape -->
+	  
+	  <!-- Une étape -->
+	  <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Passer au moulin à légume ou au mixer. Ajouter la crème fraîche, et servir chaud.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'étape -->
+	  	    		    
+     </object>
+    </void>
+	<!-- Fin des Etapes -->
+	
+    <void property="image">
+     <string>ImageRecette/soupePotiron.jpg</string>
+    </void>
+	
+	<!-- Début des Ingredients -->
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+	 
+	 <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sel</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Bouquet garni</string>
+        </void>
+        <void property="mesure">
+         <string> </string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Potiron</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1000</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Carotte</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>300</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	  
+	  
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignon</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>200</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Poireau</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>200</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Beurre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->	
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Ail</string>
+        </void>
+        <void property="mesure">
+         <string>gousses</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		
+
+	  <!-- Un ingrédient -->
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Crème fraîche</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>40</int>
+        </void>
+       </object>
+      </void>
+	  <!-- Fin de l'ingrédient -->		  
+	  
+     </object>
+    </void>
+    <!-- Fin des Ingredients -->
+	
+	<void property="nom">
+     <string>Soupe au potiron</string>
+    </void>
+    <void property="personnes">
+     <int>6</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>60</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>25</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+ <!-- Fin Recette -->
+
  </object>
 </java>

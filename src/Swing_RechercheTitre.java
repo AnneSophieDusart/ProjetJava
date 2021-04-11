@@ -46,8 +46,10 @@ public class Swing_RechercheTitre implements Observer{
 	boolean modeClair = true;
 	Modele m;
 	Controleur ctrl;
-	String image = "ImageRecette\\crepe.jpg";
+	int Recette = 0;
+	static JList<String> list;
 	JLabel lblNewLabel;
+	JLabel lblNewLabel_1;
 
 	private JFrame frmRecettesDeCuisine;
 
@@ -86,7 +88,6 @@ public class Swing_RechercheTitre implements Observer{
 			    System.err.println( "Failed to initialize LaF" );
 			}
 		}
-		
 		
 		initialize();
 		m.addObserver(this);
@@ -145,13 +146,13 @@ public class Swing_RechercheTitre implements Observer{
 		frmRecettesDeCuisine.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Image illustration");
-		lblNewLabel.setIcon(new ImageIcon(image));
+		this.lblNewLabel = new JLabel("Image illustration");
+		lblNewLabel.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));
 		lblNewLabel.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel.setBounds(10, 10, 224, 130);
 		panel.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("TITRE DE LA RECETTE");
+		this.lblNewLabel_1 = new JLabel(m.LRecette.get(Recette).Nom);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 12));
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -163,7 +164,7 @@ public class Swing_RechercheTitre implements Observer{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"Au travail : \" vient d'être cliqué.");
-				Swing_Etape recette =  new Swing_Etape(modeClair);
+				Swing_Etape recette =  new Swing_Etape(modeClair,m);
 				recette.setVisible(modeClair);
 			}
 		});
@@ -175,7 +176,7 @@ public class Swing_RechercheTitre implements Observer{
 		scrollPane.setBounds(10, 42, 272, 316);
 		frmRecettesDeCuisine.getContentPane().add(scrollPane);
 		
-		JList list = new JList();
+		this.list = new JList();
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 13));
 		String[] values = new String[m.LRecette.size()];
@@ -250,6 +251,8 @@ public class Swing_RechercheTitre implements Observer{
 
 	@Override
 	public void update(Observable modl, Object arg) {
-
+		this.Recette=(Integer) arg;
+		this.lblNewLabel.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));;
+		this.lblNewLabel_1.setText(m.LRecette.get(Recette).Nom);
 	}
 }

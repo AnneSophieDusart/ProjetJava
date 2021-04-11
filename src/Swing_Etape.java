@@ -19,15 +19,18 @@ import java.awt.event.MouseEvent;
 public class Swing_Etape {
 
 	private JFrame frame;
+	Modele m;	
+	int Recette = 0;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Modele m = new Modele();
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_Etape window = new Swing_Etape(true);
+					Swing_Etape window = new Swing_Etape(true,m);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +42,8 @@ public class Swing_Etape {
 	/**
 	 * Create the application.
 	 */
-	public Swing_Etape(boolean modeClair) {
+
+	public Swing_Etape(boolean modeClair, Modele modl) {
 		if (modeClair) {
 			try {
 			    UIManager.setLookAndFeel( new FlatLightLaf() );
@@ -53,8 +57,8 @@ public class Swing_Etape {
 			    System.err.println( "Failed to initialize LaF" );
 			}
 		}
-		
-		
+		this.m=modl;
+		this.Recette = m.indexRecetteSelectionnee;
 		initialize();
 	}
 	
@@ -62,7 +66,7 @@ public class Swing_Etape {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_Etape window = new Swing_Etape(modeClair);
+					Swing_Etape window = new Swing_Etape(modeClair,m);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -83,7 +87,7 @@ public class Swing_Etape {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("TITRE DE LA RECETTE");
+		JLabel lblNewLabel = new JLabel(m.LRecette.get(m.indexRecetteSelectionnee).Nom);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 15));
 		lblNewLabel.setBounds(10, 10, 416, 30);
@@ -91,7 +95,8 @@ public class Swing_Etape {
 		
 		
 		JProgressBar progressBar = new JProgressBar();
-		progressBar.setValue(40);
+		int valeurProgression = 100 / m.LRecette.get(m.indexRecetteSelectionnee).Etapes.size();
+		progressBar.setValue(0);
 		progressBar.setBounds(10, 464, 416, 5);
 		panel.add(progressBar);
 		
@@ -100,7 +105,7 @@ public class Swing_Etape {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"< Previous \" a été cliqué.");
-				progressBar.setValue(progressBar.getValue()-10);
+				progressBar.setValue(progressBar.getValue()-valeurProgression);
 			}
 			
 		});
@@ -112,7 +117,7 @@ public class Swing_Etape {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"Next >\" a été cliqué.");
-				progressBar.setValue(progressBar.getValue()+10);
+				progressBar.setValue(progressBar.getValue()+valeurProgression);
 			}
 		});
 		btnNewButton_1_1.setBounds(339, 482, 87, 21);
