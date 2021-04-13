@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JProgressBar;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.ImageIcon;
 
 public class Swing_Etape {
 
@@ -97,30 +98,47 @@ public class Swing_Etape {
 		JProgressBar progressBar = new JProgressBar();
 		int valeurProgression = 100 / m.LRecette.get(m.indexRecetteSelectionnee).Etapes.size();
 		progressBar.setValue(0);
-		progressBar.setBounds(10, 464, 416, 5);
+		progressBar.setBounds(10, 458, 416, 5);
 		panel.add(progressBar);
 		
-		JButton btnNewButton_1 = new JButton("< Previous");
-		btnNewButton_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				System.out.println("Le bouton \"< Previous \" a été cliqué.");
-				progressBar.setValue(progressBar.getValue()-valeurProgression);
-			}
-			
-		});
-		btnNewButton_1.setBounds(10, 482, 87, 21);
-		panel.add(btnNewButton_1);
-		
-		JButton btnNewButton_1_1 = new JButton("Next >");
-		btnNewButton_1_1.addMouseListener(new MouseAdapter() {
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
+		lblNewLabel_1.setBounds(396, 473, 30, 30);
+		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"Next >\" a été cliqué.");
 				progressBar.setValue(progressBar.getValue()+valeurProgression);
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_souris.png"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
+			}
 		});
-		btnNewButton_1_1.setBounds(339, 482, 87, 21);
-		panel.add(btnNewButton_1_1);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("New label");
+		lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
+		lblNewLabel_1_1.setBounds(10, 473, 30, 30);
+		lblNewLabel_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.out.println("Le bouton \"< Previous \" a été cliqué.");
+				progressBar.setValue(progressBar.getValue()-valeurProgression);
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_souris.png"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
+			}
+		});
+		panel.add(lblNewLabel_1_1);
 	}
 }

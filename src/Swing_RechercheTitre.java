@@ -20,6 +20,8 @@ import com.formdev.flatlaf.FlatLightLaf;
 import javax.imageio.ImageIO;
 import javax.swing.AbstractListModel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JScrollBar;
 import javax.swing.ListSelectionModel;
 import javax.swing.JTextPane;
@@ -106,7 +108,7 @@ public class Swing_RechercheTitre implements Observer{
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
 		frmRecettesDeCuisine.setBackground(Color.WHITE);
-		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
+		frmRecettesDeCuisine.setTitle("Délice !");
 		frmRecettesDeCuisine.setBounds(100, 100, 560, 427);
 		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
@@ -159,8 +161,18 @@ public class Swing_RechercheTitre implements Observer{
 		lblNewLabel_1.setBounds(10, 146, 224, 13);
 		panel.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("Au travail !");
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
+		lblNewLabel_2.setBounds(113, 308, 30, 30);
+		lblNewLabel_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_souris.png"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
+			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"Au travail : \" vient d'être cliqué.");
@@ -168,9 +180,7 @@ public class Swing_RechercheTitre implements Observer{
 				recette.setVisible(modeClair);
 			}
 		});
-		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 11));
-		btnNewButton.setBounds(83, 317, 85, 21);
-		panel.add(btnNewButton);
+		panel.add(lblNewLabel_2);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 42, 272, 316);

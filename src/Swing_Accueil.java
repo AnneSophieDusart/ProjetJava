@@ -126,6 +126,8 @@ public class Swing_Accueil implements WindowListener {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				Swing_ListeRecettes recette = new Swing_ListeRecettes(true);
+				recette.setVisible2(true);
 			}
 		});
 		panel.add(lblNewLabel_2);
