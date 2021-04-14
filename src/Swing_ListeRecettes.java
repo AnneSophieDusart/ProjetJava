@@ -27,6 +27,8 @@ import javax.swing.JMenuItem;
 public class Swing_ListeRecettes {
 	
 	boolean modeClair = true;
+	Modele m;
+	Controleur ctrl;
 
 	private JFrame frame;
 
@@ -34,10 +36,12 @@ public class Swing_ListeRecettes {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Modele m = new Modele();
+		Controleur ctrl = new Controleur(m);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_ListeRecettes window = new Swing_ListeRecettes(true);
+					Swing_ListeRecettes window = new Swing_ListeRecettes(true,m,ctrl);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,7 +53,7 @@ public class Swing_ListeRecettes {
 	/**
 	 * Create the application.
 	 */
-	public Swing_ListeRecettes(Boolean modeClair) {
+	public Swing_ListeRecettes(Boolean modeClair, Modele modl, Controleur cont) {
 		if (modeClair) {
 			try {
 			    UIManager.setLookAndFeel( new FlatLightLaf() );
@@ -63,7 +67,8 @@ public class Swing_ListeRecettes {
 			    System.err.println( "Failed to initialize LaF" );
 			}
 		}
-		
+		this.m= modl;
+		this.ctrl=cont;
 		initialize();
 	}
 
@@ -82,8 +87,12 @@ public class Swing_ListeRecettes {
 		
 		JList list = new JList();
 		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
+		String[] values = new String[m.LRecette.size()];
+		for (int i=0; i<this.m.LRecette.size(); i++) {
+			values[i]=m.LRecette.get(i).Nom;
+		}
 		list.setModel(new AbstractListModel() {
-			String[] values = new String[] {"Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3"};
+			//String[] values = new String[] {"Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3"};
 			public int getSize() {
 				return values.length;
 			}
@@ -184,7 +193,7 @@ public class Swing_ListeRecettes {
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		this.modeClair=false;
-		Swing_ListeRecettes win = new Swing_ListeRecettes(false);
+		Swing_ListeRecettes win = new Swing_ListeRecettes(false,m,ctrl);
 		win.setVisible2(false);
 	}
 	
@@ -192,7 +201,7 @@ public class Swing_ListeRecettes {
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		this.modeClair=true;
-		Swing_ListeRecettes win = new Swing_ListeRecettes(true);
+		Swing_ListeRecettes win = new Swing_ListeRecettes(true,m,ctrl);
 		win.setVisible2(true);
 	}
 	
@@ -200,7 +209,7 @@ public class Swing_ListeRecettes {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_ListeRecettes window = new Swing_ListeRecettes(bool);
+					Swing_ListeRecettes window = new Swing_ListeRecettes(bool,m,ctrl);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

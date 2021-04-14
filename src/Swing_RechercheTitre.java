@@ -59,10 +59,12 @@ public class Swing_RechercheTitre implements Observer{
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Modele m = new Modele();
+		Controleur ctrl = new Controleur(m);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_RechercheTitre window = new Swing_RechercheTitre(true);
+					Swing_RechercheTitre window = new Swing_RechercheTitre(true, m, ctrl);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -74,7 +76,7 @@ public class Swing_RechercheTitre implements Observer{
 	/**
 	 * Create the application.
 	 */
-	public Swing_RechercheTitre(boolean modeClair) {
+	public Swing_RechercheTitre(boolean modeClair, Modele modl, Controleur cont) {
 		this.modeClair = modeClair;
 		
 		if (this.modeClair) {
@@ -90,7 +92,8 @@ public class Swing_RechercheTitre implements Observer{
 			    System.err.println( "Failed to initialize LaF" );
 			}
 		}
-		
+		this.m= modl;
+		this.ctrl=cont;
 		initialize();
 		m.addObserver(this);
 		
@@ -101,9 +104,6 @@ public class Swing_RechercheTitre implements Observer{
 	 */
 	private void initialize() {
 		boolean modeClair = this.modeClair;
-		
-		this.m=new Modele();
-		this.ctrl = new Controleur(m);
 		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
@@ -192,7 +192,6 @@ public class Swing_RechercheTitre implements Observer{
 		String[] values = new String[m.LRecette.size()];
 		for (int i=0; i<this.m.LRecette.size(); i++) {
 			values[i]=m.LRecette.get(i).Nom;
-			
 		}
 		list.setModel(new AbstractListModel() {
 			//String[] values = new String[] {"Quiche en ramequin", "Salade grecque", "Oeufs au mimosa", "Rouleau de saumon", "Mousse de courgettes", "Saut\u00E9 de boeuf", "Poulet coco tha\u00EF", "Maff\u00E9 de boeuf ", "Thon coco au riz", "Tortilla", "Risotto", "Soupe au potiron", "Hamburger classique", "Fajitas", "Oeufs cocottes", "Oeufs \u00E0 l'italienne", "Cr\u00E8pes", "Tiramisu traditionnel", "Panacotta", "Pancakes vegan \u00E0 la banane", "Mousse au chocolat"};
@@ -234,7 +233,7 @@ public class Swing_RechercheTitre implements Observer{
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
 		this.modeClair=false;
-		Swing_RechercheTitre win = new Swing_RechercheTitre(false);
+		Swing_RechercheTitre win = new Swing_RechercheTitre(false,m,ctrl);
 		win.setVisible2(false);
 	}
 	
@@ -242,7 +241,7 @@ public class Swing_RechercheTitre implements Observer{
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
 		this.modeClair=true;
-		Swing_RechercheTitre win = new Swing_RechercheTitre(true);
+		Swing_RechercheTitre win = new Swing_RechercheTitre(true,m,ctrl);
 		win.setVisible2(true);
 	}
 	
@@ -250,7 +249,7 @@ public class Swing_RechercheTitre implements Observer{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_RechercheTitre window = new Swing_RechercheTitre(bool);
+					Swing_RechercheTitre window = new Swing_RechercheTitre(bool,m,ctrl);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
