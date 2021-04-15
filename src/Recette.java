@@ -15,15 +15,15 @@ public class Recette implements Serializable{
 	
 	public Recette(String type1, String type2 , String nom,int TempsP, int TempsC,int perso, ArrayList<Ingredient> Ingre, ArrayList<Etape> Etape, String Image) {
 		
-		this.Type1=type1;
-		this.Type2=type2;
-		this.Nom= nom;
-		this.TempsPreparation = TempsP;
-		this.TempsCuisson=TempsC;
+		this.Type1=type1; //
+		this.Type2=type2; //
+		this.Nom= nom; //
+		this.TempsPreparation = TempsP; //
+		this.TempsCuisson=TempsC; //
 		this.Ingredients=Ingre;
 		this.Etapes=Etape;
 		this.Image=Image;
-		this.Personnes=perso;
+		this.Personnes=perso; //
 		
 	}
 

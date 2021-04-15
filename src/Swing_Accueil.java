@@ -109,7 +109,8 @@ public class Swing_Accueil implements WindowListener {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Clic sur RECHERCHER INGREDIENTS");
+				Swing_RechercheIngredients recette = new Swing_RechercheIngredients(true,m,ctrl);
+				recette.setVisible2(true);
 			}
 		});
 		panel.add(lblNewLabel_1);
