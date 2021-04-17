@@ -278,9 +278,12 @@ public class Swing_ListeRecettes {
 				Recette recette = new Recette(type1,type2,titre,temps_preparation,temps_cuisson,personne,liste_ingredients, liste_etapes, img);
 				
 				m.LRecette.add(recette);
+				m.enregistrer();
 				
 				JOptionPane.showMessageDialog(frame, "Votre recette a été ajouté avec succés !", "Bien joué !", JOptionPane.INFORMATION_MESSAGE);
-				
+				Swing_ListeRecettes lr =  new Swing_ListeRecettes(modeClair,m,ctrl);
+				lr.setVisible2(modeClair);
+				frame.dispose();	
 			}
 		});
 		frame.getContentPane().add(lblNewLabel);
