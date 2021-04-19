@@ -45,7 +45,6 @@ import java.util.Observer;
 
 public class Swing_RechercheTitre implements Observer{
 	
-	boolean modeClair = true;
 	Modele m;
 	Controleur ctrl;
 	int Recette = 0;
@@ -64,7 +63,7 @@ public class Swing_RechercheTitre implements Observer{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_RechercheTitre window = new Swing_RechercheTitre(true, m, ctrl);
+					Swing_RechercheTitre window = new Swing_RechercheTitre(m, ctrl);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -76,10 +75,9 @@ public class Swing_RechercheTitre implements Observer{
 	/**
 	 * Create the application.
 	 */
-	public Swing_RechercheTitre(boolean modeClair, Modele modl, Controleur cont) {
-		this.modeClair = modeClair;
+	public Swing_RechercheTitre(Modele modl, Controleur cont) {
 		
-		if (this.modeClair) {
+		if (modl.modeClair) {
 			try {
 			    UIManager.setLookAndFeel( new FlatLightLaf() );
 			} catch( Exception ex ) {
@@ -103,11 +101,10 @@ public class Swing_RechercheTitre implements Observer{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		boolean modeClair = this.modeClair;
 		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
-		frmRecettesDeCuisine.setBackground(Color.WHITE);
+		//frmRecettesDeCuisine.setBackground(Color.WHITE);
 		frmRecettesDeCuisine.setTitle("Délice !");
 		frmRecettesDeCuisine.setBounds(100, 100, 560, 427);
 		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -176,8 +173,8 @@ public class Swing_RechercheTitre implements Observer{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"Au travail : \" vient d'être cliqué.");
-				Swing_Etape recette =  new Swing_Etape(modeClair,m);
-				recette.setVisible(modeClair);
+				Swing_Etape recette =  new Swing_Etape(m);
+				recette.setVisible();
 			}
 		});
 		panel.add(lblNewLabel_2);
@@ -232,24 +229,24 @@ public class Swing_RechercheTitre implements Observer{
 	private void setDarkMode() {
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
-		this.modeClair=false;
-		Swing_RechercheTitre win = new Swing_RechercheTitre(false,m,ctrl);
-		win.setVisible2(false);
+		m.modeClair=false;
+		Swing_RechercheTitre win = new Swing_RechercheTitre(m,ctrl);
+		win.setVisible2();
 	}
 	
 	private void setLightMode() {
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
-		this.modeClair=true;
-		Swing_RechercheTitre win = new Swing_RechercheTitre(true,m,ctrl);
-		win.setVisible2(true);
+		m.modeClair=true;
+		Swing_RechercheTitre win = new Swing_RechercheTitre(m,ctrl);
+		win.setVisible2();
 	}
 	
-	public void setVisible2(boolean bool) {
+	public void setVisible2() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_RechercheTitre window = new Swing_RechercheTitre(bool,m,ctrl);
+					Swing_RechercheTitre window = new Swing_RechercheTitre(m,ctrl);
 					window.frmRecettesDeCuisine.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

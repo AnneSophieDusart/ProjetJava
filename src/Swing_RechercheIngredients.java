@@ -24,7 +24,6 @@ import java.awt.event.MouseEvent;
 
 public class Swing_RechercheIngredients implements Observer {
 
-	boolean modeClair = true;
 	Modele m;
 	Controleur ctrl;
 	int Recette = 0;
@@ -45,7 +44,7 @@ public class Swing_RechercheIngredients implements Observer {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_RechercheIngredients window = new Swing_RechercheIngredients(true, m, ctrl);
+					Swing_RechercheIngredients window = new Swing_RechercheIngredients(m, ctrl);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -57,10 +56,9 @@ public class Swing_RechercheIngredients implements Observer {
 	/**
 	 * Create the application.
 	 */
-	public Swing_RechercheIngredients(boolean modeClair, Modele modl, Controleur cont) {
-		this.modeClair = modeClair;
+	public Swing_RechercheIngredients(Modele modl, Controleur cont) {
 		
-		if (this.modeClair) {
+		if (modl.modeClair) {
 			try {
 			    UIManager.setLookAndFeel( new FlatLightLaf() );
 			} catch( Exception ex ) {
@@ -178,24 +176,24 @@ public class Swing_RechercheIngredients implements Observer {
 	private void setDarkMode() {
 		this.frame.setVisible(false);
 		this.frame.dispose();
-		this.modeClair=false;
-		Swing_RechercheIngredients win = new Swing_RechercheIngredients(false,m,ctrl);
-		win.setVisible2(false);
+		m.modeClair=false;
+		Swing_RechercheIngredients win = new Swing_RechercheIngredients(m,ctrl);
+		win.setVisible2();
 	}
 	
 	private void setLightMode() {
 		this.frame.setVisible(false);
 		this.frame.dispose();
-		this.modeClair=true;
-		Swing_RechercheIngredients win = new Swing_RechercheIngredients(true,m,ctrl);
-		win.setVisible2(true);
+		m.modeClair=true;
+		Swing_RechercheIngredients win = new Swing_RechercheIngredients(m,ctrl);
+		win.setVisible2();
 	}
 	
-	public void setVisible2(boolean bool) {
+	public void setVisible2() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_RechercheIngredients window = new Swing_RechercheIngredients(bool,m,ctrl);
+					Swing_RechercheIngredients window = new Swing_RechercheIngredients(m,ctrl);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

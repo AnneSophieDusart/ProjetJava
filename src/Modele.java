@@ -15,6 +15,7 @@ public class Modele extends Observable{
 	ArrayList<File> LFichier;
 	File fichier = new File("Recette.xml");
 	int indexRecetteSelectionnee=0;
+	boolean modeClair = true;
 	
 	
 	public Modele() {

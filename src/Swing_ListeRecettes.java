@@ -31,7 +31,6 @@ import javax.swing.DefaultComboBoxModel;
 
 public class Swing_ListeRecettes {
 	
-	boolean modeClair = true;
 	Modele m;
 	Controleur ctrl;
 
@@ -46,7 +45,7 @@ public class Swing_ListeRecettes {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_ListeRecettes window = new Swing_ListeRecettes(true,m,ctrl);
+					Swing_ListeRecettes window = new Swing_ListeRecettes(m,ctrl);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -58,8 +57,10 @@ public class Swing_ListeRecettes {
 	/**
 	 * Create the application.
 	 */
-	public Swing_ListeRecettes(Boolean modeClair, Modele modl, Controleur cont) {
-		if (modeClair) {
+	public Swing_ListeRecettes(Modele modl, Controleur cont) {
+		this.m= modl;
+		this.ctrl=cont;
+		if (modl.modeClair) {
 			try {
 			    UIManager.setLookAndFeel( new FlatLightLaf() );
 			} catch( Exception ex ) {
@@ -72,8 +73,6 @@ public class Swing_ListeRecettes {
 			    System.err.println( "Failed to initialize LaF" );
 			}
 		}
-		this.m= modl;
-		this.ctrl=cont;
 		initialize();
 	}
 
@@ -281,8 +280,8 @@ public class Swing_ListeRecettes {
 				m.enregistrer();
 				
 				JOptionPane.showMessageDialog(frame, "Votre recette a été ajouté avec succés !", "Bien joué !", JOptionPane.INFORMATION_MESSAGE);
-				Swing_ListeRecettes lr =  new Swing_ListeRecettes(modeClair,m,ctrl);
-				lr.setVisible2(modeClair);
+				Swing_ListeRecettes lr =  new Swing_ListeRecettes(m,ctrl);
+				lr.setVisible2();
 				frame.dispose();	
 			}
 		});
@@ -534,8 +533,8 @@ public class Swing_ListeRecettes {
 				m.enregistrer();
 				
 				JOptionPane.showMessageDialog(frame, "Votre recette a été modifiée avec succés !", "Bien joué !", JOptionPane.INFORMATION_MESSAGE);
-				Swing_ListeRecettes lr =  new Swing_ListeRecettes(modeClair,m,ctrl);
-				lr.setVisible2(modeClair);
+				Swing_ListeRecettes lr =  new Swing_ListeRecettes(m,ctrl);
+				lr.setVisible2();
 				frame.dispose();
 				
 				
@@ -567,8 +566,8 @@ public class Swing_ListeRecettes {
 					if (popup==0) {
 						m.LRecette.remove(index);
 						m.enregistrer();
-						Swing_ListeRecettes lr =  new Swing_ListeRecettes(modeClair,m,ctrl);
-						lr.setVisible2(modeClair);
+						Swing_ListeRecettes lr =  new Swing_ListeRecettes(m,ctrl);
+						lr.setVisible2();
 						frame.dispose();	
 					} else {
 						System.out.println("Cancel");
@@ -622,24 +621,24 @@ public class Swing_ListeRecettes {
 	private void setDarkMode() {
 		this.frame.setVisible(false);
 		this.frame.dispose();
-		this.modeClair=false;
-		Swing_ListeRecettes win = new Swing_ListeRecettes(false,m,ctrl);
-		win.setVisible2(false);
+		m.modeClair=false;
+		Swing_ListeRecettes win = new Swing_ListeRecettes(m,ctrl);
+		win.setVisible2();
 	}
 	
 	private void setLightMode() {
 		this.frame.setVisible(false);
 		this.frame.dispose();
-		this.modeClair=true;
-		Swing_ListeRecettes win = new Swing_ListeRecettes(true,m,ctrl);
-		win.setVisible2(true);
+		m.modeClair=true;
+		Swing_ListeRecettes win = new Swing_ListeRecettes(m,ctrl);
+		win.setVisible2();
 	}
 	
-	public void setVisible2(boolean bool) {
+	public void setVisible2() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_ListeRecettes window = new Swing_ListeRecettes(bool,m,ctrl);
+					Swing_ListeRecettes window = new Swing_ListeRecettes(m,ctrl);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
