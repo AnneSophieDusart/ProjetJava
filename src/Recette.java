@@ -119,5 +119,10 @@ public class Recette implements Serializable{
 		
 		
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		return (this.Nom.equals(((Recette) o).getNom()));
+	}
 
 }
