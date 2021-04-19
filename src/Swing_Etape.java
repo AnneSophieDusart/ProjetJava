@@ -31,7 +31,7 @@ public class Swing_Etape {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Swing_Etape window = new Swing_Etape(true,m);
+					Swing_Etape window = new Swing_Etape(m);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,8 +44,8 @@ public class Swing_Etape {
 	 * Create the application.
 	 */
 
-	public Swing_Etape(boolean modeClair, Modele modl) {
-		if (modeClair) {
+	public Swing_Etape(Modele modl) {
+		if (modl.modeClair) {
 			try {
 			    UIManager.setLookAndFeel( new FlatLightLaf() );
 			} catch( Exception ex ) {
@@ -63,11 +63,11 @@ public class Swing_Etape {
 		initialize();
 	}
 	
-	public void setVisible(boolean modeClair) {
+	public void setVisible() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_Etape window = new Swing_Etape(modeClair,m);
+					Swing_Etape window = new Swing_Etape(m);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

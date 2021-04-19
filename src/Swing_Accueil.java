@@ -109,8 +109,8 @@ public class Swing_Accueil implements WindowListener {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Swing_RechercheIngredients recette = new Swing_RechercheIngredients(true,m,ctrl);
-				recette.setVisible2(true);
+				Swing_RechercheIngredients recette = new Swing_RechercheIngredients(m,ctrl);
+				recette.setVisible2();
 			}
 		});
 		panel.add(lblNewLabel_1);
@@ -129,8 +129,8 @@ public class Swing_Accueil implements WindowListener {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Swing_ListeRecettes recette = new Swing_ListeRecettes(true,m,ctrl);
-				recette.setVisible2(true);
+				Swing_ListeRecettes recette = new Swing_ListeRecettes(m,ctrl);
+				recette.setVisible2();
 			}
 		});
 		panel.add(lblNewLabel_2);
@@ -149,8 +149,8 @@ public class Swing_Accueil implements WindowListener {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Swing_RechercheTitre recette = new Swing_RechercheTitre(true,m,ctrl);
-				recette.setVisible2(true);
+				Swing_RechercheTitre recette = new Swing_RechercheTitre(m,ctrl);
+				recette.setVisible2();
 			}
 		});
 		panel.add(lblNewLabel_2_1);
