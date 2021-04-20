@@ -158,26 +158,7 @@ public class Swing_RechercheTitre implements Observer{
 		lblNewLabel_1.setBounds(10, 146, 224, 13);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
-		lblNewLabel_2.setBounds(113, 308, 30, 30);
-		lblNewLabel_2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_souris.png"));
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
-			}
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				System.out.println("Le bouton \"Au travail : \" vient d'être cliqué.");
-				Swing_Etape recette =  new Swing_Etape(m);
-				recette.setVisible();
-			}
-		});
-		panel.add(lblNewLabel_2);
+		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 42, 272, 316);
@@ -207,6 +188,30 @@ public class Swing_RechercheTitre implements Observer{
 		frmtdtxtfldRechercheRapide.setText("Recherche rapide");
 		frmtdtxtfldRechercheRapide.setBounds(10, 10, 272, 19);
 		frmRecettesDeCuisine.getContentPane().add(frmtdtxtfldRechercheRapide);
+		
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
+		lblNewLabel_2.setBounds(113, 308, 30, 30);
+		lblNewLabel_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_souris.png"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int index = list.getSelectedIndex();
+				Recette r = m.LRecette.get(index);
+				
+				Swing_Etape recette =  new Swing_Etape(m, r);
+				recette.setVisible(r);
+			}
+		});
+		panel.add(lblNewLabel_2);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
