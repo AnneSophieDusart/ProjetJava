@@ -9,6 +9,7 @@ import javax.swing.JToolBar;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JList;
 import javax.swing.JTextArea;
 import javax.swing.JTable;
@@ -288,6 +289,19 @@ public class Swing_RechercheTitre implements Observer{
 			}
 		});
 		panel.add(lblNewLabel_2);
+		
+		JButton btnNewButton = new JButton("Ingr\u00E9dients");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int index = list.getSelectedIndex();
+				Recette r = m.LRecette.get(index);
+				String liste = r.afficherIngredients((Integer) spinner.getValue());
+				JOptionPane.showMessageDialog(frmRecettesDeCuisine, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
+		btnNewButton.setBounds(60, 281, 85, 21);
+		panel.add(btnNewButton);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
@@ -379,20 +393,20 @@ public class Swing_RechercheTitre implements Observer{
 			}		
 			this.lblNewLabel_5.setText("Préparation : " + prepa);
 			
-			String listeIngre = "";
-			for ( int i=0; i<m.LRecette.get(Recette).Ingredients.size(); i++) {
-				listeIngre+=m.LRecette.get(Recette).Ingredients.get(i)+ "   ";
-			}
+			//String listeIngre = "";
+			//for ( int i=0; i<m.LRecette.get(Recette).Ingredients.size(); i++) {
+			//	listeIngre+=m.LRecette.get(Recette).Ingredients.get(i)+ "   ";
+			//}
 
 			this.spinner.setValue(m.LRecette.get(Recette).Personnes) ;
 		}
 		else {
-			ArrayList<Integer> nouvelleQuantite= (ArrayList<Integer>) arg;
-			String listeIngre = "";
-			ArrayList<Ingredient> ingre = m.LRecette.get(Recette).Ingredients;
-			for ( int i=0; i<ingre.size(); i++) {
-				listeIngre+=ingre.get(i).ingredient+ " : " + String.valueOf(nouvelleQuantite.get(i)) + " " + ingre.get(i).mesure+ "   ";
-			}
+			//ArrayList<Integer> nouvelleQuantite= (ArrayList<Integer>) arg;
+			//String listeIngre = "";
+			//ArrayList<Ingredient> ingre = m.LRecette.get(Recette).Ingredients;
+			//for ( int i=0; i<ingre.size(); i++) {
+			//	listeIngre+=ingre.get(i).ingredient+ " : " + String.valueOf(nouvelleQuantite.get(i)) + " " + ingre.get(i).mesure+ "   ";
+			//}
 		}
 	}
 }
