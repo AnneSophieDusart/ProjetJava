@@ -12,7 +12,6 @@ import java.util.Observable;
 public class Modele extends Observable{
 	
 	ArrayList <Recette> LRecette;
-	ArrayList<File> LFichier;
 	File fichier = new File("Recette.xml");
 	int indexRecetteSelectionnee=0;
 	boolean modeClair = true;
@@ -84,6 +83,19 @@ public class Modele extends Observable{
 		this.indexRecetteSelectionnee = item;
 		this.setChanged();
 		this.notifyObservers(this.indexRecetteSelectionnee);
+	}
+	
+	public void changeQuantite(Integer n) {
+		ArrayList<Integer> l = new ArrayList<>();
+		for (int i=0; i<LRecette.get(indexRecetteSelectionnee).Ingredients.size() ; i++){
+			int personne=LRecette.get(indexRecetteSelectionnee).Personnes;
+			float nouvelleDose=(float)(LRecette.get(indexRecetteSelectionnee).Ingredients.get(i).quantite)/personne*n;	
+			l.add((int)Math.ceil(nouvelleDose));
+		}
+		//System.out.println(l);
+		this.setChanged();
+		this.notifyObservers(l);
+		
 	}
 
 }

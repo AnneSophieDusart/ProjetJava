@@ -27,6 +27,7 @@ public class Swing_Etape {
 	Modele m;	
 	Recette recette;
 	int num_etp =0;
+	int nbr_pers;
 
 	/**
 	 * Launch the application.
@@ -49,7 +50,7 @@ public class Swing_Etape {
 	 * Create the application.
 	 */
 
-	public Swing_Etape(Modele modl, Recette r) {
+	public Swing_Etape(Modele modl, Recette r, int nbr_pers) {
 		if (modl.modeClair) {
 			try {
 			    UIManager.setLookAndFeel( new FlatLightLaf() );
@@ -65,14 +66,15 @@ public class Swing_Etape {
 		}
 		this.m=modl;
 		this.recette=r;
+		this.nbr_pers=nbr_pers;
 		initialize();
 	}
 	
-	public void setVisible(Recette r) {
+	public void setVisible(Recette r, int nbr_pers) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try { 
-					Swing_Etape window = new Swing_Etape(m, r);
+					Swing_Etape window = new Swing_Etape(m, r, nbr_pers);
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -213,7 +215,7 @@ public class Swing_Etape {
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				String liste = recette.afficherIngredients(recette.getPersonnes());
+				String liste = recette.afficherIngredients(nbr_pers);
 				JOptionPane.showMessageDialog(frame, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
