@@ -32,6 +32,7 @@ public class Swing_Etape implements Observer {
 	Recette recette;
 	int num_etp =0;
 	int nbr_pers;
+	JLabel lblNewLabel_3,lblNewLabel_4;
 
 	/**
 	 * Launch the application.
@@ -72,6 +73,7 @@ public class Swing_Etape implements Observer {
 		this.recette=r;
 		this.nbr_pers=nbr_pers;
 		initialize();
+		m.addObserver(this);
 	}
 	
 	public void setVisible(Recette r, int nbr_pers) {
@@ -108,7 +110,7 @@ public class Swing_Etape implements Observer {
 		
 		
 		JProgressBar progressBar = new JProgressBar();
-		int valeurProgression = 100 / recette.Etapes.size();
+		int valeurProgression = 100 / ((recette.Etapes.size())-1);
 		progressBar.setValue(0);
 		progressBar.setBounds(10, 463, 406, 5);
 		panel.add(progressBar);
@@ -128,12 +130,14 @@ public class Swing_Etape implements Observer {
 					progressBar.setValue(progressBar.getValue()-valeurProgression);
 					lblNewLabel_1_1.setIcon(null);
 					num_etp--;
+					m.changeEtape(recette,num_etp);
 				} else {
 					progressBar.setValue(progressBar.getValue()-valeurProgression);
-					if (num_etp==recette.getEtapes().size()) {
+					if (num_etp==(recette.getEtapes().size())-1) {
 						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
 					}
 					num_etp--;
+					m.changeEtape(recette,num_etp);
 				}
 			}
 			@Override
@@ -152,18 +156,17 @@ public class Swing_Etape implements Observer {
 		});
 		panel.add(lblNewLabel_1_1);
 		
-		
-		
 		lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
 		lblNewLabel_1.setBounds(386, 473, 30, 30);
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (num_etp<recette.getEtapes().size()) {
+				if (num_etp<(recette.getEtapes().size())-1) {
 					progressBar.setValue(progressBar.getValue()+valeurProgression);
 					System.out.println("On passe à l'étape suivante !");
 					num_etp++;
-					if (num_etp==recette.getEtapes().size()) {
+					m.changeEtape(recette,num_etp);
+					if (num_etp==(recette.getEtapes().size())-1) {
 						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
 					} else if (num_etp==1) {
 						lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
@@ -194,7 +197,7 @@ public class Swing_Etape implements Observer {
 		panel.add(lblNewLabel_1);
 		
 		
-		JLabel lblNewLabel_3 = new JLabel(String.valueOf(num_etp)+1);
+		this.lblNewLabel_3 = new JLabel(String.valueOf(num_etp)+1);
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 30));
 		lblNewLabel_3.setBounds(178, 57, 60, 61);
@@ -213,7 +216,7 @@ public class Swing_Etape implements Observer {
 		lblNewLabel_2.setBounds(0, 60, 436, 61);
 		panel.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_4 = new JLabel("<html><span>"+recette.getEtapes().get(num_etp).getInstrution()+"</html></span>");
+		this.lblNewLabel_4 = new JLabel("<html><span>"+recette.getEtapes().get(num_etp).getInstrution()+"</html></span>");
 		lblNewLabel_4.setFont(new Font("Segoe UI Light", Font.PLAIN, 20));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setBounds(10, 131, 406, 309);
@@ -232,8 +235,14 @@ public class Swing_Etape implements Observer {
 	}
 
 	@Override
-	public void update(Observable arg0, Object arg1) {
+	public void update(Observable m, Object arg) {
 		// TODO Auto-generated method stub
-		
+		if (arg instanceof Etape) {
+			Etape etape = (Etape)arg;
+			if (etape.NumEtape<10) {
+				this.lblNewLabel_3.setText("0"+String.valueOf((etape).NumEtape));
+			}else {this.lblNewLabel_3.setText(String.valueOf((etape).NumEtape));}
+			this.lblNewLabel_4.setText("<html><span>"+etape.getInstrution()+"</html></span>");
+		}
 	}
 }

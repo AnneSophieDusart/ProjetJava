@@ -97,5 +97,11 @@ public class Modele extends Observable{
 		this.notifyObservers(l);
 		
 	}
+	
+	public void changeEtape (Recette recette,int etape) {
+		//System.out.println(recette.Etapes.get(etape));
+		this.setChanged();
+		this.notifyObservers(recette.Etapes.get(etape));
+	}
 
 }
