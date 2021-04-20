@@ -192,160 +192,6 @@
       <void method="add">
        <object class="Etape">
         <void property="instrution">
-         <string>Préchauffer le four à 170°C. Mettre la pâte à pizza sur une plaque à four recouverte de papier sulfurisé.</string>
-        </void>
-        <void property="numEtape">
-         <int>1</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Etape">
-        <void property="instrution">
-         <string>Etaler le coulis de tomates sur toute la pâte. Couper les fromages en morceaux et les répartir sur la pizza. </string>
-        </void>
-        <void property="numEtape">
-         <int>2</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Etape">
-        <void property="instrution">
-         <string>Saupoudrer d&apos;origan et enfourner pendant 20 minutes.</string>
-        </void>
-        <void property="numEtape">
-         <int>3</int>
-        </void>
-       </object>
-      </void>
-     </object>
-    </void>
-    <void property="image">
-     <string>ImageRecette/pizza4fromages.jpg</string>
-    </void>
-    <void property="ingredients">
-     <object class="java.util.ArrayList">
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Pâte à pizza</string>
-        </void>
-        <void property="mesure">
-         <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>260</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Coulis de tomates</string>
-        </void>
-        <void property="mesure">
-         <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>200</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Mozzarella</string>
-        </void>
-        <void property="mesure">
-         <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>125</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Fromage de chèvre</string>
-        </void>
-        <void property="mesure">
-         <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>120</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Gorgonzola</string>
-        </void>
-        <void property="mesure">
-         <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>100</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Parmesan</string>
-        </void>
-        <void property="mesure">
-         <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>80</int>
-        </void>
-       </object>
-      </void>
-      <void method="add">
-       <object class="Ingredient">
-        <void property="ingredient">
-         <string>Origan en poudre</string>
-        </void>
-        <void property="mesure">
-         <string>g</string>
-        </void>
-        <void property="quantite">
-         <int>5</int>
-        </void>
-       </object>
-      </void>
-     </object>
-    </void>
-    <void property="nom">
-     <string>Pizza 4 fromages</string>
-    </void>
-    <void property="personnes">
-     <int>4</int>
-    </void>
-    <void property="tempsCuisson">
-     <int>20</int>
-    </void>
-    <void property="tempsPreparation">
-     <int>10</int>
-    </void>
-    <void property="type1">
-     <string>Plat</string>
-    </void>
-    <void property="type2">
-     <string>Italie</string>
-    </void>
-   </object>
-  </void>
-  <void method="add">
-   <object class="Recette">
-    <void property="etapes">
-     <object class="java.util.ArrayList">
-      <void method="add">
-       <object class="Etape">
-        <void property="instrution">
          <string>Faire fondre le chocolat au micro-ondes.</string>
         </void>
         <void property="numEtape">
@@ -3561,6 +3407,160 @@
     </void>
     <void property="type1">
      <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Traditionnelle</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffer le four à 170°C. Mettre la pâte à pizza sur une plaque à four recouverte de papier sulfurisé.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Etaler le coulis de tomates sur toute la pâte. Couper les fromages en morceaux et les répartir sur la pizza. </string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Saupoudrer d&apos;origan et enfourner pendant 20 minutes.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/pizza4fromages.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Pâte à pizza</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>260</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Coulis de tomates</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>200</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Mozzarella</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>125</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Fromage de chèvre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>120</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Gorgonzola</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Parmesan</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>80</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Origan en poudre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Pizza 4 fromages</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>20</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>10</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
     </void>
     <void property="type2">
      <string>Traditionnelle</string>

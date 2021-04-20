@@ -17,14 +17,18 @@ import javax.swing.JButton;
 import javax.swing.JProgressBar;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 import java.awt.Color;
 
-public class Swing_Etape {
+public class Swing_Etape implements Observer {
 
 	private JFrame frame;
 	Modele m;	
+	Controleur ctrl;
 	Recette recette;
 	int num_etp =0;
 	int nbr_pers;
@@ -209,7 +213,7 @@ public class Swing_Etape {
 		lblNewLabel_2.setBounds(0, 60, 436, 61);
 		panel.add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_4 = new JLabel(recette.getEtapes().get(num_etp).getInstrution());
+		JLabel lblNewLabel_4 = new JLabel("<html><span>"+recette.getEtapes().get(num_etp).getInstrution()+"</html></span>");
 		lblNewLabel_4.setFont(new Font("Segoe UI Light", Font.PLAIN, 20));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setBounds(10, 131, 406, 309);
@@ -225,5 +229,11 @@ public class Swing_Etape {
 		});
 		btnNewButton.setBounds(159, 478, 103, 21);
 		panel.add(btnNewButton);
+	}
+
+	@Override
+	public void update(Observable arg0, Object arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -301,241 +301,246 @@ public class Swing_ListeRecettes {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Le bouton \"Edit \" vient d'être cliqué.");
 				
 				int index = list.getSelectedIndex();
-				Recette recette = m.LRecette.get(index);
 				
-				String titre = JOptionPane.showInputDialog(frame, "Quel est le titre de la recette ?", recette.getNom());
-				if (titre==null) {
-					return;
-				}
-				
-				String[] types_recettes = {"Entrée", "Plat", "Dessert"};
-				String type1 = (String) JOptionPane.showInputDialog(frame, "De quel type de plat s'agit-il ?", "Ajouter une nouvelle recette", JOptionPane.INFORMATION_MESSAGE, null, types_recettes, recette.getType1());
-				if (type1==null) {
-					return;
-				}
-				
-
-				String[] origines_recettes = {"Traditionnelle", "A compléter"};
-				String type2 = (String) JOptionPane.showInputDialog(frame, "Quelle est l'origine du plat ?", "Ajouter une nouvelle recette", JOptionPane.INFORMATION_MESSAGE, null, origines_recettes, recette.getType2());
-				if (type2==null) {
-					return;
-				}
-				
-				boolean incorrect=true;
-				int personne=-1;
-				while (incorrect) {
-					try {
-						String str = JOptionPane.showInputDialog(frame, "Pour combien de personnes ?", recette.getPersonnes());
-						if (str==null) {
-							return;
-						}
-						personne = Integer.parseInt(str);
-						incorrect=false;
-					} catch (NumberFormatException ne) {
-						JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
-					}
-				}
-				
-				incorrect=true;
-				int temps_preparation=-1;
-				while (incorrect) {
-					try {
-						String str = JOptionPane.showInputDialog(frame, "Quel est le temps de préparation ?", recette.getTempsPreparation());
-						if (str==null) {
-							return;
-						}
-						temps_preparation = Integer.parseInt(str);
-						incorrect=false;
-					} catch (NumberFormatException ne) {
-						JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
-					}
-				}
-				
-				
-				incorrect=true;
-				int temps_cuisson=-1;
-				while (incorrect) {
-					try {
-						String str = JOptionPane.showInputDialog(frame, "Quel est le temps de cuisson ?", recette.getTempsCuisson());
-						if (str==null) {
-							return;
-						}
-						temps_cuisson = Integer.parseInt(str);
-						incorrect=false;
-					} catch (NumberFormatException ne) {
-						JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
-					}
-				}
-				
-				boolean new_ingre = false;
-				incorrect=true;
-				int nbr_ingredients=-1;
-				while (incorrect) {
-					try {
-						String str = JOptionPane.showInputDialog(frame, "Combien y-a-t-il d'ingrédients ?", recette.getIngredients().size());
-						if (str==null) {
-							return;
-						}
-						nbr_ingredients = Integer.parseInt(str);
-						incorrect=false;
-						if (nbr_ingredients!=recette.getIngredients().size()) {
-							int popup1 = JOptionPane.showConfirmDialog(frame, "Le nombre d'ingrédients est différent de celui de la recette originale ! Si vous souhaitez continuer, il vous faudra saisir à nouveau tout les ingrédients !", "Attention !", JOptionPane.ERROR_MESSAGE);
-							if (popup1==0) {
-								new_ingre=true;
-							} else {
-								incorrect=true;
-							}
-						}
-						
-					} catch (NumberFormatException ne) {
-						JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
-					}
-				}
-				
-				ArrayList<Ingredient> liste_ingredients = new ArrayList<Ingredient>();
-				// SI LE NOMBRE D'INGREDIENTS N'EST LE MEME :
-				if (new_ingre) {
-					for (int i=1; i<nbr_ingredients+1; i++) {
-						String nom_ingre = JOptionPane.showInputDialog(frame, "Quel est le nom de l'ingrédient n°"+i, "Modifier une recette",  JOptionPane.QUESTION_MESSAGE);
-						if (nom_ingre==null) {
-							return;
-						}
-						
-						incorrect=true;
-						int qte_ingre=-1;
-						while (incorrect) {
-							try {
-								String str = JOptionPane.showInputDialog(frame, "Quantité ?", "Modifier une recette",  JOptionPane.QUESTION_MESSAGE);
-								if (str==null) {
-									return;
-								}
-								qte_ingre = Integer.parseInt(str);
-								incorrect=false;
-							} catch (NumberFormatException ne) {
-								JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
-							}
-						}
-						
-						String unite = JOptionPane.showInputDialog(frame, "Unité de mesure ?", "Modifier une recette",  JOptionPane.QUESTION_MESSAGE);
-						if (unite==null) {
-							return;
-						}
-						
-						Ingredient ing = new Ingredient(qte_ingre, nom_ingre, unite);
-						liste_ingredients.add(ing);
-					}
-					
-				} else { //SI C'EST LE MEME
-					for (int i=1; i<nbr_ingredients+1; i++) {
-						String nom_ingre = JOptionPane.showInputDialog(frame, "Quel est le nom de l'ingrédient n°"+i, recette.getIngredients().get(i-1).getIngredient());
-						if (nom_ingre==null) {
-							return;
-						}
-						
-						incorrect=true;
-						int qte_ingre=-1;
-						while (incorrect) {
-							try {
-								String str = JOptionPane.showInputDialog(frame, "Quantité ?", recette.getIngredients().get(i-1).getQuantite());
-								if (str==null) {
-									return;
-								}
-								qte_ingre = Integer.parseInt(str);
-								incorrect=false;
-							} catch (NumberFormatException ne) {
-								JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
-							}
-						}
-						
-						String unite = JOptionPane.showInputDialog(frame, "Unité de mesure ?", recette.getIngredients().get(i-1).getMesure());
-						if (unite==null) {
-							return;
-						}
-						
-						Ingredient ing = new Ingredient(qte_ingre, nom_ingre, unite);
-						liste_ingredients.add(ing);
-					}
-					
-				}
-				
-				boolean new_etapes=false;
-				incorrect=true;
-				int nbr_etapes=-1;
-				while (incorrect) {
-					try {
-						String str = JOptionPane.showInputDialog(frame, "Combien y-a-t-il d'étapes ?", recette.getEtapes().size());
-						if (str==null) {
-							return;
-						}
-						nbr_etapes = Integer.parseInt(str);
-						incorrect=false;
-						if (nbr_ingredients!=recette.getIngredients().size()) {
-							int popup1 = JOptionPane.showConfirmDialog(frame, "Le nombre d'étape est différent de celui de la recette originale ! Si vous souhaitez continuer, il vous faudra saisir à nouveau toutes les étapes !", "Attention !", JOptionPane.ERROR_MESSAGE);
-							if (popup1==0) {
-								new_etapes=true;
-							} else {
-								incorrect=true;
-							}
-						}
-					} catch (NumberFormatException ne) {
-						JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
-					}
-				}
-				
-				ArrayList<Etape> liste_etapes = new ArrayList<Etape>();
-				
-				// SI LE NOMBRE D'ETAPES N'EST PAS LE MEME :
-				if (new_etapes)  {
-					for (int i=1; i<nbr_etapes+1; i++) {
-						String etp = JOptionPane.showInputDialog(frame, "Décrire l'étape n°"+i, "Ajouter une recette",  JOptionPane.QUESTION_MESSAGE);
-						if (etp==null) {
-							return;
-						}
-						Etape etape = new Etape(i,etp);
-						liste_etapes.add(etape);
-					}
+				if (index==-1) {
+					JOptionPane.showMessageDialog(frame, "Aucune recette n'est séléctionnée !", "Erreur",JOptionPane.ERROR_MESSAGE);
 				} else {
-					for (int i=1; i<nbr_etapes+1; i++) {
-						String etp = JOptionPane.showInputDialog(frame, "Décrire l'étape n°"+i, recette.getEtapes().get(i-1).getInstrution());
-						if (etp==null) {
-							return;
-						}
-						Etape etape = new Etape(i,etp);
-						liste_etapes.add(etape);
-					}
-				}
-				
-				
-				String[] oui_non = {"Oui", "Non"};
-				String oui_ou_non = (String) JOptionPane.showInputDialog(frame, "Souhaitez-vous ajouter/modifier une illustration ?", "Modifier une recette", JOptionPane.QUESTION_MESSAGE, null, oui_non, oui_non[0]);
-				if (oui_ou_non==null) {
-					return;
-				}
-				
-				String img;
-				
-				if (oui_ou_non.equals("Oui")) {
-					img = JOptionPane.showInputDialog(frame, "Quel est le chemin de l'image ?", recette.getImage());
-					if (img==null) {
+					Recette recette = m.LRecette.get(index);
+					String titre = JOptionPane.showInputDialog(frame, "Quel est le titre de la recette ?", recette.getNom());
+					if (titre==null) {
 						return;
 					}
-				} else {
-					img = "ImageAppli/noimage.jpg";
+					
+					String[] types_recettes = {"Entrée", "Plat", "Dessert"};
+					String type1 = (String) JOptionPane.showInputDialog(frame, "De quel type de plat s'agit-il ?", "Ajouter une nouvelle recette", JOptionPane.INFORMATION_MESSAGE, null, types_recettes, recette.getType1());
+					if (type1==null) {
+						return;
+					}
+					
+
+					String[] origines_recettes = {"Traditionnelle", "A compléter"};
+					String type2 = (String) JOptionPane.showInputDialog(frame, "Quelle est l'origine du plat ?", "Ajouter une nouvelle recette", JOptionPane.INFORMATION_MESSAGE, null, origines_recettes, recette.getType2());
+					if (type2==null) {
+						return;
+					}
+					
+					boolean incorrect=true;
+					int personne=-1;
+					while (incorrect) {
+						try {
+							String str = JOptionPane.showInputDialog(frame, "Pour combien de personnes ?", recette.getPersonnes());
+							if (str==null) {
+								return;
+							}
+							personne = Integer.parseInt(str);
+							incorrect=false;
+						} catch (NumberFormatException ne) {
+							JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					
+					incorrect=true;
+					int temps_preparation=-1;
+					while (incorrect) {
+						try {
+							String str = JOptionPane.showInputDialog(frame, "Quel est le temps de préparation ?", recette.getTempsPreparation());
+							if (str==null) {
+								return;
+							}
+							temps_preparation = Integer.parseInt(str);
+							incorrect=false;
+						} catch (NumberFormatException ne) {
+							JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					
+					
+					incorrect=true;
+					int temps_cuisson=-1;
+					while (incorrect) {
+						try {
+							String str = JOptionPane.showInputDialog(frame, "Quel est le temps de cuisson ?", recette.getTempsCuisson());
+							if (str==null) {
+								return;
+							}
+							temps_cuisson = Integer.parseInt(str);
+							incorrect=false;
+						} catch (NumberFormatException ne) {
+							JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					
+					boolean new_ingre = false;
+					incorrect=true;
+					int nbr_ingredients=-1;
+					while (incorrect) {
+						try {
+							String str = JOptionPane.showInputDialog(frame, "Combien y-a-t-il d'ingrédients ?", recette.getIngredients().size());
+							if (str==null) {
+								return;
+							}
+							nbr_ingredients = Integer.parseInt(str);
+							incorrect=false;
+							if (nbr_ingredients!=recette.getIngredients().size()) {
+								int popup1 = JOptionPane.showConfirmDialog(frame, "Le nombre d'ingrédients est différent de celui de la recette originale ! Si vous souhaitez continuer, il vous faudra saisir à nouveau tout les ingrédients !", "Attention !", JOptionPane.ERROR_MESSAGE);
+								if (popup1==0) {
+									new_ingre=true;
+								} else {
+									incorrect=true;
+								}
+							}
+							
+						} catch (NumberFormatException ne) {
+							JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					
+					ArrayList<Ingredient> liste_ingredients = new ArrayList<Ingredient>();
+					// SI LE NOMBRE D'INGREDIENTS N'EST LE MEME :
+					if (new_ingre) {
+						for (int i=1; i<nbr_ingredients+1; i++) {
+							String nom_ingre = JOptionPane.showInputDialog(frame, "Quel est le nom de l'ingrédient n°"+i, "Modifier une recette",  JOptionPane.QUESTION_MESSAGE);
+							if (nom_ingre==null) {
+								return;
+							}
+							
+							incorrect=true;
+							int qte_ingre=-1;
+							while (incorrect) {
+								try {
+									String str = JOptionPane.showInputDialog(frame, "Quantité ?", "Modifier une recette",  JOptionPane.QUESTION_MESSAGE);
+									if (str==null) {
+										return;
+									}
+									qte_ingre = Integer.parseInt(str);
+									incorrect=false;
+								} catch (NumberFormatException ne) {
+									JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
+								}
+							}
+							
+							String unite = JOptionPane.showInputDialog(frame, "Unité de mesure ?", "Modifier une recette",  JOptionPane.QUESTION_MESSAGE);
+							if (unite==null) {
+								return;
+							}
+							
+							Ingredient ing = new Ingredient(qte_ingre, nom_ingre, unite);
+							liste_ingredients.add(ing);
+						}
+						
+					} else { //SI C'EST LE MEME
+						for (int i=1; i<nbr_ingredients+1; i++) {
+							String nom_ingre = JOptionPane.showInputDialog(frame, "Quel est le nom de l'ingrédient n°"+i, recette.getIngredients().get(i-1).getIngredient());
+							if (nom_ingre==null) {
+								return;
+							}
+							
+							incorrect=true;
+							int qte_ingre=-1;
+							while (incorrect) {
+								try {
+									String str = JOptionPane.showInputDialog(frame, "Quantité ?", recette.getIngredients().get(i-1).getQuantite());
+									if (str==null) {
+										return;
+									}
+									qte_ingre = Integer.parseInt(str);
+									incorrect=false;
+								} catch (NumberFormatException ne) {
+									JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
+								}
+							}
+							
+							String unite = JOptionPane.showInputDialog(frame, "Unité de mesure ?", recette.getIngredients().get(i-1).getMesure());
+							if (unite==null) {
+								return;
+							}
+							
+							Ingredient ing = new Ingredient(qte_ingre, nom_ingre, unite);
+							liste_ingredients.add(ing);
+						}
+						
+					}
+					
+					boolean new_etapes=false;
+					incorrect=true;
+					int nbr_etapes=-1;
+					while (incorrect) {
+						try {
+							String str = JOptionPane.showInputDialog(frame, "Combien y-a-t-il d'étapes ?", recette.getEtapes().size());
+							if (str==null) {
+								return;
+							}
+							nbr_etapes = Integer.parseInt(str);
+							incorrect=false;
+							if (nbr_ingredients!=recette.getIngredients().size()) {
+								int popup1 = JOptionPane.showConfirmDialog(frame, "Le nombre d'étape est différent de celui de la recette originale ! Si vous souhaitez continuer, il vous faudra saisir à nouveau toutes les étapes !", "Attention !", JOptionPane.ERROR_MESSAGE);
+								if (popup1==0) {
+									new_etapes=true;
+								} else {
+									incorrect=true;
+								}
+							}
+						} catch (NumberFormatException ne) {
+							JOptionPane.showMessageDialog(frame, "ERREUR : Merci de bien vouloir entrer un nombre valide.", "Erreur", JOptionPane.ERROR_MESSAGE);
+						}
+					}
+					
+					ArrayList<Etape> liste_etapes = new ArrayList<Etape>();
+					
+					// SI LE NOMBRE D'ETAPES N'EST PAS LE MEME :
+					if (new_etapes)  {
+						for (int i=1; i<nbr_etapes+1; i++) {
+							String etp = JOptionPane.showInputDialog(frame, "Décrire l'étape n°"+i, "Ajouter une recette",  JOptionPane.QUESTION_MESSAGE);
+							if (etp==null) {
+								return;
+							}
+							Etape etape = new Etape(i,etp);
+							liste_etapes.add(etape);
+						}
+					} else {
+						for (int i=1; i<nbr_etapes+1; i++) {
+							String etp = JOptionPane.showInputDialog(frame, "Décrire l'étape n°"+i, recette.getEtapes().get(i-1).getInstrution());
+							if (etp==null) {
+								return;
+							}
+							Etape etape = new Etape(i,etp);
+							liste_etapes.add(etape);
+						}
+					}
+					
+					
+					String[] oui_non = {"Oui", "Non"};
+					String oui_ou_non = (String) JOptionPane.showInputDialog(frame, "Souhaitez-vous ajouter/modifier une illustration ?", "Modifier une recette", JOptionPane.QUESTION_MESSAGE, null, oui_non, oui_non[0]);
+					if (oui_ou_non==null) {
+						return;
+					}
+					
+					String img;
+					
+					if (oui_ou_non.equals("Oui")) {
+						img = JOptionPane.showInputDialog(frame, "Quel est le chemin de l'image ?", recette.getImage());
+						if (img==null) {
+							return;
+						}
+					} else {
+						img = "ImageAppli/noimage.jpg";
+					}
+					
+					Recette n_recette = new Recette(type1,type2,titre,temps_preparation,temps_cuisson,personne,liste_ingredients, liste_etapes, img);
+					
+					m.LRecette.remove(index);
+					m.LRecette.add(n_recette);
+					m.enregistrer();
+					
+					JOptionPane.showMessageDialog(frame, "Votre recette a été modifiée avec succés !", "Bien joué !", JOptionPane.INFORMATION_MESSAGE);
+					Swing_ListeRecettes lr =  new Swing_ListeRecettes(m,ctrl);
+					lr.setVisible2();
+					frame.dispose();
 				}
 				
-				Recette n_recette = new Recette(type1,type2,titre,temps_preparation,temps_cuisson,personne,liste_ingredients, liste_etapes, img);
 				
-				m.LRecette.remove(index);
-				m.LRecette.add(n_recette);
-				m.enregistrer();
-				
-				JOptionPane.showMessageDialog(frame, "Votre recette a été modifiée avec succés !", "Bien joué !", JOptionPane.INFORMATION_MESSAGE);
-				Swing_ListeRecettes lr =  new Swing_ListeRecettes(m,ctrl);
-				lr.setVisible2();
-				frame.dispose();
 				
 				
 				

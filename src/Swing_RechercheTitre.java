@@ -53,7 +53,7 @@ public class Swing_RechercheTitre implements Observer{
 	Controleur ctrl;
 	int Recette = 0;
 	static JList<String> list;
-	JLabel lblNewLabel,lblNewLabel_1,lblNewLabel_3,lblNewLabel_4,lblNewLabel_5;
+	JLabel lblNewLabel,lblNewLabel_1,lblNewLabel_4,lblNewLabel_5;
 	JSpinner spinner;
 
 	private JFrame frmRecettesDeCuisine;
@@ -157,9 +157,9 @@ public class Swing_RechercheTitre implements Observer{
 		
 		this.lblNewLabel_1 = new JLabel(m.LRecette.get(Recette).Nom);
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 15));
+		lblNewLabel_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 16));
 		lblNewLabel_1.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel_1.setBounds(10, 152, 234, 28);
+		lblNewLabel_1.setBounds(10, 152, 234, 30);
 		panel.add(lblNewLabel_1);
 
 		
@@ -174,12 +174,6 @@ public class Swing_RechercheTitre implements Observer{
 		else {
 			temps+= duree + " min";
 		}
-		this.lblNewLabel_3 = new JLabel("Durée de la recette : " + temps);
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.BOLD, 10));
-		lblNewLabel_3.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblNewLabel_3.setBounds(10, 175, 224, 13);
-		panel.add(lblNewLabel_3);
 		
 		String cuisson ="";
 		if (m.LRecette.get(Recette).TempsCuisson > 60 ) {
@@ -191,11 +185,12 @@ public class Swing_RechercheTitre implements Observer{
 		else {
 			cuisson+= m.LRecette.get(Recette).TempsCuisson + " min";
 		}
-		this.lblNewLabel_4 = new JLabel("Cuisson : " + cuisson);
+		this.lblNewLabel_4 = new JLabel(cuisson);
+		lblNewLabel_4.setForeground(new Color(255, 127, 80));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setFont(new Font("Segoe UI Semibold", Font.BOLD, 10));
+		lblNewLabel_4.setFont(new Font("Segoe UI Semibold", Font.BOLD, 14));
 		lblNewLabel_4.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblNewLabel_4.setBounds(10, 190, 100, 13);
+		lblNewLabel_4.setBounds(144, 214, 100, 20);
 		panel.add(lblNewLabel_4);
 		
 
@@ -210,24 +205,19 @@ public class Swing_RechercheTitre implements Observer{
 			prepa+= m.LRecette.get(Recette).TempsPreparation + " min";
 		}		
 		
-		this.lblNewLabel_5 = new JLabel("Préparation : " + prepa);
+		this.lblNewLabel_5 = new JLabel(prepa);
+		lblNewLabel_5.setForeground(new Color(255, 127, 80));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_5.setFont(new Font("Segoe UI Semibold", Font.BOLD, 10));
-		lblNewLabel_5.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblNewLabel_5.setBounds(10, 190, 350, 13);
+		lblNewLabel_5.setFont(new Font("Segoe UI Semibold", Font.BOLD, 14));
+		lblNewLabel_5.setVerticalAlignment(SwingConstants.TOP);
+		lblNewLabel_5.setBounds(10, 214, 100, 20);
 		panel.add(lblNewLabel_5);
 		
 		
-		JLabel lblNewLabel_6 = new JLabel("Nombre de personne : ");
-		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_6.setFont(new Font("Segoe UI Semibold", Font.BOLD, 10));
-		lblNewLabel_6.setVerticalAlignment(SwingConstants.BOTTOM);
-		lblNewLabel_6.setBounds(10, 223, 150, 13);
-		panel.add(lblNewLabel_6);
-		
-		
 		this.spinner = new JSpinner(new SpinnerNumberModel(m.LRecette.get(Recette).Personnes,0,100,1));   
-		spinner.setBounds(150,220, 50, 20);
+		spinner.setForeground(new Color(255, 127, 80));
+		spinner.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
+		spinner.setBounds(37,265, 50, 20);
 		spinner.addChangeListener(ctrl);
 		panel.add(spinner);
 		
@@ -269,7 +259,7 @@ public class Swing_RechercheTitre implements Observer{
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
-		lblNewLabel_2.setBounds(117, 340, 30, 30);
+		lblNewLabel_2.setBounds(113, 328, 30, 30);
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -290,7 +280,9 @@ public class Swing_RechercheTitre implements Observer{
 		});
 		panel.add(lblNewLabel_2);
 		
-		JButton btnNewButton = new JButton("Ingr\u00E9dients");
+		JButton btnNewButton = new JButton("Voir liste");
+		btnNewButton.setForeground(new Color(255, 127, 80));
+		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -300,8 +292,32 @@ public class Swing_RechercheTitre implements Observer{
 				JOptionPane.showMessageDialog(frmRecettesDeCuisine, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
-		btnNewButton.setBounds(60, 281, 85, 21);
+		btnNewButton.setBounds(153, 266, 79, 21);
 		panel.add(btnNewButton);
+		
+		JLabel lblNewLabel_7_1 = new JLabel("Pr\u00E9paration");
+		lblNewLabel_7_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		lblNewLabel_7_1.setBounds(10, 198, 100, 13);
+		panel.add(lblNewLabel_7_1);
+		
+		JLabel lblNewLabel_7_1_1 = new JLabel("Cuisson");
+		lblNewLabel_7_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7_1_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		lblNewLabel_7_1_1.setBounds(144, 199, 100, 13);
+		panel.add(lblNewLabel_7_1_1);
+		
+		JLabel lblNewLabel_7_1_2 = new JLabel("Nombre de personne");
+		lblNewLabel_7_1_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7_1_2.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		lblNewLabel_7_1_2.setBounds(0, 247, 121, 13);
+		panel.add(lblNewLabel_7_1_2);
+		
+		JLabel lblNewLabel_7_1_2_1 = new JLabel("Ingr\u00E9dients");
+		lblNewLabel_7_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7_1_2_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		lblNewLabel_7_1_2_1.setBounds(130, 247, 124, 13);
+		panel.add(lblNewLabel_7_1_2_1);
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
@@ -367,7 +383,7 @@ public class Swing_RechercheTitre implements Observer{
 			else {
 				temps+= duree + " min";
 			}
-			this.lblNewLabel_3.setText("Durée de la recette : " + temps);
+			//this.lblNewLabel_3.setText(temps);
 
 			String cuisson ="";
 			if (m.LRecette.get(Recette).TempsCuisson > 60 ) {
@@ -379,7 +395,7 @@ public class Swing_RechercheTitre implements Observer{
 			else {
 				cuisson+= m.LRecette.get(Recette).TempsCuisson + " min";
 			}
-			this.lblNewLabel_4.setText("Cuisson : " + cuisson);
+			this.lblNewLabel_4.setText(cuisson);
 		
 			String prepa ="";
 			if (m.LRecette.get(Recette).TempsPreparation > 60 ) {
@@ -391,7 +407,7 @@ public class Swing_RechercheTitre implements Observer{
 			else {
 				prepa+= m.LRecette.get(Recette).TempsPreparation + " min";
 			}		
-			this.lblNewLabel_5.setText("Préparation : " + prepa);
+			this.lblNewLabel_5.setText(prepa);
 			
 			//String listeIngre = "";
 			//for ( int i=0; i<m.LRecette.get(Recette).Ingredients.size(); i++) {

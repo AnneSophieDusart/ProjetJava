@@ -128,11 +128,13 @@ public class Recette implements Serializable{
 	public String afficherIngredients(int nbr) {
 		String s = "Liste des ingrédients pour "+nbr+" personnes : \n";
 		Ingredient ing;
-		double qte;
+		float qte;
+		int arr;
 		for (int i=0; i<this.Ingredients.size(); i++) {
 			ing = this.Ingredients.get(i);
-			qte=ing.getQuantite()*nbr/this.getPersonnes();
-			s=s+"- "+qte+ing.getMesure()+" "+ing.getIngredient()+"\n";
+			qte=(float) ing.getQuantite()*nbr/this.getPersonnes();
+			arr = (int) Math.ceil(qte);
+			s=s+"- "+arr+ing.getMesure()+" "+ing.getIngredient()+"\n";
 		}
 		return s;
 	}
