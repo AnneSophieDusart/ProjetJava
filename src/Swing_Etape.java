@@ -109,6 +109,8 @@ public class Swing_Etape {
 		progressBar.setBounds(10, 463, 406, 5);
 		panel.add(progressBar);
 		
+		JLabel lblNewLabel_1 = new JLabel("Next");
+		
 		JLabel lblNewLabel_1_1 = new JLabel(" ");
 		//lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
 		lblNewLabel_1_1.setBounds(10, 473, 30, 30);
@@ -123,8 +125,10 @@ public class Swing_Etape {
 					lblNewLabel_1_1.setIcon(null);
 					num_etp--;
 				} else {
-					System.out.println("Etape précédente");
 					progressBar.setValue(progressBar.getValue()-valeurProgression);
+					if (num_etp==recette.getEtapes().size()) {
+						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
+					}
 					num_etp--;
 				}
 			}
@@ -145,7 +149,7 @@ public class Swing_Etape {
 		panel.add(lblNewLabel_1_1);
 		
 		
-		JLabel lblNewLabel_1 = new JLabel("Next");
+		
 		lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
 		lblNewLabel_1.setBounds(386, 473, 30, 30);
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
@@ -156,7 +160,7 @@ public class Swing_Etape {
 					System.out.println("On passe à l'étape suivante !");
 					num_etp++;
 					if (num_etp==recette.getEtapes().size()) {
-						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_normal.png"));
+						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
 					} else if (num_etp==1) {
 						lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
 					}
