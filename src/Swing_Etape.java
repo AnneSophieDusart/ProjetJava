@@ -123,10 +123,7 @@ public class Swing_Etape implements Observer {
 		lblNewLabel_1_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (num_etp==0) {
-					System.out.println("Vous êtes déjà à la premiere étape");
-				} else if (num_etp==1) {
-					System.out.println("Retour à la Première étape");
+				if (num_etp==1) {
 					progressBar.setValue(progressBar.getValue()-valeurProgression);
 					lblNewLabel_1_1.setIcon(null);
 					num_etp--;
@@ -163,7 +160,6 @@ public class Swing_Etape implements Observer {
 			public void mouseClicked(MouseEvent e) {
 				if (num_etp<(recette.getEtapes().size())-1) {
 					progressBar.setValue(progressBar.getValue()+valeurProgression);
-					System.out.println("On passe à l'étape suivante !");
 					num_etp++;
 					m.changeEtape(recette,num_etp);
 					if (num_etp==(recette.getEtapes().size())-1) {
@@ -178,7 +174,7 @@ public class Swing_Etape implements Observer {
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				if (num_etp!=recette.getEtapes().size()) {
+				if (num_etp!=recette.getEtapes().size()-1) {
 					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_souris.png"));
 				} else {
 					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
@@ -187,7 +183,7 @@ public class Swing_Etape implements Observer {
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				if (num_etp!=recette.getEtapes().size()) {
+				if (num_etp!=recette.getEtapes().size()-1) {
 					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
 				} else {
 					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_normal.png"));
