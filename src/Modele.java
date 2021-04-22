@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Observable;
 
 import javax.swing.JList;
@@ -106,7 +108,7 @@ public class Modele extends Observable{
 		this.notifyObservers(recette.Etapes.get(etape));
 	}
 
-	public void listeRechercheNom(String text, JList<String> list, String[] tableau) {
+	public void listeRechercheNom(String text, String[] tableau) {
 		// TODO Auto-generated method stub
         String textToSearch = text;
         ArrayList<String> newList = new ArrayList<String>();
@@ -116,9 +118,54 @@ public class Modele extends Observable{
             	newList.add (current);
         }
         String[] newTableau = newList.toArray(new String[newList.size()]);
-        //list.setListData (newTableau);
         this.setChanged();
 		this.notifyObservers(newTableau);
 	}
+
+	public void filtrerType(String filtre) {
+		//String [] origine = new String[] {"France", "Grèce","Italie","Vietnam","Japon","Etats-Unis","Mexique","Allemagne","Espagne","Autre"} ;
+		//List<String> origineListe = Arrays.asList(origine);
+		if (filtre=="Type"){
+			String [] type = new String[] {" ","Entrée", "Plat", "Dessert"} ;
+	    	this.setChanged();
+	    	this.notifyObservers(type);
+	        	}
+		else {
+			String [] origine = new String[] {" ","France", "Grèce","Italie","Vietnam","Japon","Etats-Unis","Mexique","Allemagne","Espagne","Autre"} ;
+	    	this.setChanged();
+	    	this.notifyObservers(origine);			
+		}
+	        }
+
+	public void filtrerListe(String filtre) {
+		String [] type = new String[] {"Entrée", "Plat", "Dessert"} ;
+		List<String> typeListe = Arrays.asList(type);
+		//String [] origine = new String[] {"France", "Grèce","Italie","Vietnam","Japon","Etats-Unis","Mexique","Allemagne","Espagne","Autre"} ;
+		//List<String> origineListe = Arrays.asList(origine);
+		ArrayList<String> newList = new ArrayList<String>();
+		if (typeListe.contains(filtre)) {
+			for (int i=0;i<LRecette.size();i++) {
+				if ((LRecette.get(i).Type1).equals(filtre)) {
+					newList.add(LRecette.get(i).Nom);
+				}}
+		}
+		else if (filtre==" ") {
+			for (int i=0;i<LRecette.size();i++) {
+				newList.add(LRecette.get(i).Nom);
+				}
+			
+		}
+		else {
+			for (int i=0;i<LRecette.size();i++) {
+				if ((LRecette.get(i).Type2).equals(filtre)) {
+					newList.add(LRecette.get(i).Nom);
+				}}
+		}
+		//System.out.println(newList);
+    	this.setChanged();
+    	this.notifyObservers(newList);
+	}
+			
+		
 
 }

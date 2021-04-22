@@ -6,6 +6,8 @@ import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JList;
 import javax.swing.AbstractListModel;
+import javax.swing.ComboBoxModel;
+
 import java.awt.Font;
 import java.awt.Image;
 
@@ -21,6 +23,8 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -29,10 +33,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class Swing_ListeRecettes {
+public class Swing_ListeRecettes implements Observer{
 	
 	Modele m;
 	Controleur ctrl;
+	JList list;
+	JComboBox comboBox2;
+	String[] values;
+	String[] monTab;
 
 	private JFrame frame;
 
@@ -74,6 +82,7 @@ public class Swing_ListeRecettes {
 			}
 		}
 		initialize();
+		m.addObserver(this);
 	}
 
 	/**
@@ -89,12 +98,13 @@ public class Swing_ListeRecettes {
 		scrollPane.setBounds(10, 50, 526, 330);
 		frame.getContentPane().add(scrollPane);
 		
-		JList list = new JList();
+		this.list = new JList();
 		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
-		String[] values = new String[m.LRecette.size()];
+		this.values = new String[m.LRecette.size()];
 		for (int i=0; i<this.m.LRecette.size(); i++) {
 			values[i]=m.LRecette.get(i).Nom;
 		}
+		this.monTab = values;
 		list.setModel(new AbstractListModel() {
 			//String[] values = new String[] {"Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3"};
 			public int getSize() {
@@ -131,7 +141,7 @@ public class Swing_ListeRecettes {
 					return;
 				}
 				
-				String[] origines_recettes = {"Traditionnelle", "A compléter"};
+				String[] origines_recettes = {"France", "Grèce","Italie","Vietnam","Japon","Etats-Unis","Mexique","Allemagne","Espagne","Autre"};
 				String type2 = (String) JOptionPane.showInputDialog(frame, "Quelle est l'origine du plat ?", "Ajouter une nouvelle recette", JOptionPane.INFORMATION_MESSAGE, null, origines_recettes, origines_recettes[0]);
 				if (type2==null) {
 					return;
@@ -307,7 +317,13 @@ public class Swing_ListeRecettes {
 				if (index==-1) {
 					JOptionPane.showMessageDialog(frame, "Aucune recette n'est séléctionnée !", "Erreur",JOptionPane.ERROR_MESSAGE);
 				} else {
-					Recette recette = m.LRecette.get(index);
+					int numRecette = 0;
+					for (int i=0; i<m.LRecette.size();i++) {
+						if (m.LRecette.get(i).Nom==monTab[index]) {
+							
+							numRecette=i;
+						}}
+					Recette recette = m.LRecette.get(numRecette);
 					String titre = JOptionPane.showInputDialog(frame, "Quel est le titre de la recette ?", recette.getNom());
 					if (titre==null) {
 						return;
@@ -320,7 +336,7 @@ public class Swing_ListeRecettes {
 					}
 					
 
-					String[] origines_recettes = {"Traditionnelle", "A compléter"};
+					String[] origines_recettes = {"France", "Grèce","Italie","Vietnam","Japon","Etats-Unis","Mexique","Allemagne","Espagne","Autre"};
 					String type2 = (String) JOptionPane.showInputDialog(frame, "Quelle est l'origine du plat ?", "Ajouter une nouvelle recette", JOptionPane.INFORMATION_MESSAGE, null, origines_recettes, recette.getType2());
 					if (type2==null) {
 						return;
@@ -566,10 +582,15 @@ public class Swing_ListeRecettes {
 				if (index==-1) {
 					JOptionPane.showMessageDialog(frame, "Aucune recette n'est séléctionnée !", "Erreur",JOptionPane.ERROR_MESSAGE);
 				} else {
-					int popup = JOptionPane.showConfirmDialog(frame, "Etes-vous sur de vouloir supprimer cette recette ?", "Confirmation", JOptionPane.WARNING_MESSAGE);
+					int numRecette = 0;
+					for (int i=0; i<m.LRecette.size();i++) {
+						if (m.LRecette.get(i).Nom==monTab[index]) {
+							numRecette=i;
+						}}
+					int popup = JOptionPane.showConfirmDialog(frame, "Etes-vous sur de vouloir supprimer la recette : "+m.LRecette.get(numRecette).Nom+ "  ?", "Confirmation", JOptionPane.WARNING_MESSAGE);
 					//System.out.println(popup);
 					if (popup==0) {
-						m.LRecette.remove(index);
+						m.LRecette.remove(numRecette);
 						m.enregistrer();
 						Swing_ListeRecettes lr =  new Swing_ListeRecettes(m,ctrl);
 						lr.setVisible2();
@@ -589,9 +610,17 @@ public class Swing_ListeRecettes {
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Titre", "Type", "Origine"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Type", "Origine"}));
+		//comboBox.setModel(new DefaultComboBoxModel(new String[] {" ","Entrée", "Plat", "Dessert"}));
 		comboBox.setBounds(63, 15, 76, 21);
 		frame.getContentPane().add(comboBox);
+		comboBox.addItemListener(ctrl);
+		
+		this.comboBox2 = new JComboBox();
+		comboBox2.setModel(new DefaultComboBoxModel(new String[] {" ","Entrée", "Plat", "Dessert"}));
+		comboBox2.setBounds(163, 15, 76, 21);
+		frame.getContentPane().add(comboBox2);
+		comboBox2.addItemListener(ctrl);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
@@ -650,5 +679,21 @@ public class Swing_ListeRecettes {
 				}
 			}
 		});
+	}
+
+	@Override
+	public void update(Observable m, Object arg) {
+		if (arg instanceof String[]) {
+			String[] newTableau = (String[]) arg;
+			this.comboBox2.removeAllItems();
+			this.comboBox2.setModel(new DefaultComboBoxModel(newTableau));
+			this.list.setListData (this.values);
+		}
+		else {
+			//System.out.println(arg);
+			ArrayList<String> liste = (ArrayList<String>) arg;
+		    this.monTab = liste.toArray(new String[liste.size()]);
+			this.list.setListData (monTab);
+		}
 	}
 }

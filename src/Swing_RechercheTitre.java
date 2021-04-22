@@ -287,7 +287,7 @@ public class Swing_RechercheTitre implements Observer{
  
            @Override
             public void keyReleased(KeyEvent e) {
-                m.listeRechercheNom(texteField.getText(),list,values);
+                m.listeRechercheNom(texteField.getText(),values);
             }
         });
 		
