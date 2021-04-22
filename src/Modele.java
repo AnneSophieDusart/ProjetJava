@@ -8,6 +8,8 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Observable;
 
+import javax.swing.JList;
+
 
 public class Modele extends Observable{
 	
@@ -102,6 +104,21 @@ public class Modele extends Observable{
 		//System.out.println(recette.Etapes.get(etape));
 		this.setChanged();
 		this.notifyObservers(recette.Etapes.get(etape));
+	}
+
+	public void listeRechercheNom(String text, JList<String> list, String[] tableau) {
+		// TODO Auto-generated method stub
+        String textToSearch = text;
+        ArrayList<String> newList = new ArrayList<String>();
+        for (String current : tableau) {
+            if (current.toLowerCase().
+                contains(textToSearch))
+            	newList.add (current);
+        }
+        String[] newTableau = newList.toArray(new String[newList.size()]);
+        //list.setListData (newTableau);
+        this.setChanged();
+		this.notifyObservers(newTableau);
 	}
 
 }

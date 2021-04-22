@@ -12,6 +12,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JList;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -39,6 +40,8 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JToggleButton;
 import javax.swing.JPopupMenu;
 import java.awt.Component;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -55,6 +58,8 @@ public class Swing_RechercheTitre implements Observer{
 	static JList<String> list;
 	JLabel lblNewLabel,lblNewLabel_1,lblNewLabel_4,lblNewLabel_5;
 	JSpinner spinner;
+	JTextField texteField;
+	String[] values,monTableau;
 
 	private JFrame frmRecettesDeCuisine;
 
@@ -163,7 +168,7 @@ public class Swing_RechercheTitre implements Observer{
 		panel.add(lblNewLabel_1);
 
 		
-		int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
+		/*int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
 		String temps ="";
 		if (duree > 60 ) {
 			temps+= duree/60 + " h " + duree%60 + " min";
@@ -173,7 +178,7 @@ public class Swing_RechercheTitre implements Observer{
 		}
 		else {
 			temps+= duree + " min";
-		}
+		}*/
 		
 		String cuisson ="";
 		if (m.LRecette.get(Recette).TempsCuisson > 60 ) {
@@ -221,10 +226,10 @@ public class Swing_RechercheTitre implements Observer{
 		spinner.addChangeListener(ctrl);
 		panel.add(spinner);
 		
-		String listeIngre = "";
+		/*String listeIngre = "";
 		for ( int i=0; i<m.LRecette.get(Recette).Ingredients.size(); i++) {
 			listeIngre+=m.LRecette.get(Recette).Ingredients.get(i)+ "   ";
-		}
+		}*/
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -234,10 +239,11 @@ public class Swing_RechercheTitre implements Observer{
 		this.list = new JList();
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 13));
-		String[] values = new String[m.LRecette.size()];
+		this.values = new String[m.LRecette.size()];
 		for (int i=0; i<this.m.LRecette.size(); i++) {
 			values[i]=m.LRecette.get(i).Nom;
 		}
+		this.monTableau = values;
 		list.setModel(new AbstractListModel() {
 			//String[] values = new String[] {"Quiche en ramequin", "Salade grecque", "Oeufs au mimosa", "Rouleau de saumon", "Mousse de courgettes", "Saut\u00E9 de boeuf", "Poulet coco tha\u00EF", "Maff\u00E9 de boeuf ", "Thon coco au riz", "Tortilla", "Risotto", "Soupe au potiron", "Hamburger classique", "Fajitas", "Oeufs cocottes", "Oeufs \u00E0 l'italienne", "Cr\u00E8pes", "Tiramisu traditionnel", "Panacotta", "Pancakes vegan \u00E0 la banane", "Mousse au chocolat"};
 			public int getSize() {
@@ -251,10 +257,41 @@ public class Swing_RechercheTitre implements Observer{
 		list.addListSelectionListener(ctrl);
 		scrollPane.setViewportView(list);
 		
-		JFormattedTextField frmtdtxtfldRechercheRapide = new JFormattedTextField();
-		frmtdtxtfldRechercheRapide.setText("Recherche rapide");
-		frmtdtxtfldRechercheRapide.setBounds(10, 10, 272, 19);
-		frmRecettesDeCuisine.getContentPane().add(frmtdtxtfldRechercheRapide);
+		this.texteField = new JTextField();
+		texteField.setText("Recherche rapide");
+		texteField.setBounds(10, 10, 272, 19);
+		texteField.setForeground(Color.gray);
+		texteField.addMouseListener(new MouseAdapter() {           
+		    @Override
+		    public void mouseReleased(MouseEvent e) {}         
+		    @Override
+		    public void mousePressed(MouseEvent e) {}          
+		    @Override
+		    public void mouseExited(MouseEvent e) {}           
+		    @Override
+		    public void mouseEntered(MouseEvent e) {}          
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		        JTextField texteField = ((JTextField)e.getSource());
+		        texteField.setText("");
+		        texteField.setForeground(Color.black);
+		        texteField.removeMouseListener(this);
+		    }
+		});
+		texteField.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {}
+ 
+            @Override
+            public void keyPressed(KeyEvent e) {}
+ 
+           @Override
+            public void keyReleased(KeyEvent e) {
+                m.listeRechercheNom(texteField.getText(),list,values);
+            }
+        });
+		
+		frmRecettesDeCuisine.getContentPane().add(texteField);
 		
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
@@ -271,8 +308,8 @@ public class Swing_RechercheTitre implements Observer{
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int index = list.getSelectedIndex();
-				Recette r = m.LRecette.get(index);
+				//int index = list.getSelectedIndex();
+				Recette r = m.LRecette.get(Recette);
 				
 				Swing_Etape recette =  new Swing_Etape(m, r, (Integer) spinner.getValue());
 				recette.setVisible(r, (Integer) spinner.getValue());
@@ -286,8 +323,8 @@ public class Swing_RechercheTitre implements Observer{
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int index = list.getSelectedIndex();
-				Recette r = m.LRecette.get(index);
+				//int index = list.getSelectedIndex();
+				Recette r = m.LRecette.get(Recette);
 				String liste = r.afficherIngredients((Integer) spinner.getValue());
 				JOptionPane.showMessageDialog(frmRecettesDeCuisine, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
 			}
@@ -369,10 +406,21 @@ public class Swing_RechercheTitre implements Observer{
 	@Override
 	public void update(Observable modl, Object arg) {
 		if (arg instanceof Integer) {
-			this.Recette=(Integer) arg;
+			int Recettes=(Integer) arg;
+			if (Recettes == -1 ) {
+				
+			}
+			else {
+			for (int i=0; i<m.LRecette.size();i++) {
+				if (m.LRecette.get(i).Nom==this.monTableau[Recettes]) {
+					//System.out.println(this.monTableau[Recettes]);
+					this.Recette=i;
+				}
+			}
+			
 			this.lblNewLabel.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));;
 			this.lblNewLabel_1.setText(m.LRecette.get(Recette).Nom);
-			int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
+			/*int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
 			String temps ="";
 			if (duree > 60 ) {
 				temps+= duree/60 + " h " + duree%60 + " min";
@@ -383,7 +431,7 @@ public class Swing_RechercheTitre implements Observer{
 			else {
 				temps+= duree + " min";
 			}
-			//this.lblNewLabel_3.setText(temps);
+			this.lblNewLabel_3.setText(temps);*/
 
 			String cuisson ="";
 			if (m.LRecette.get(Recette).TempsCuisson > 60 ) {
@@ -414,9 +462,13 @@ public class Swing_RechercheTitre implements Observer{
 			//	listeIngre+=m.LRecette.get(Recette).Ingredients.get(i)+ "   ";
 			//}
 
-			this.spinner.setValue(m.LRecette.get(Recette).Personnes) ;
+			this.spinner.setValue(m.LRecette.get(Recette).Personnes) ;}
 		}
-		else {
+		else if (arg instanceof String[]){
+			//System.out.println(values[0]);
+			this.monTableau = (String[])arg;
+			//System.out.println(values[0]);
+			Swing_RechercheTitre.list.setListData (monTableau);
 			//ArrayList<Integer> nouvelleQuantite= (ArrayList<Integer>) arg;
 			//String listeIngre = "";
 			//ArrayList<Ingredient> ingre = m.LRecette.get(Recette).Ingredients;

@@ -3409,7 +3409,7 @@
      <string>Dessert</string>
     </void>
     <void property="type2">
-     <string>Traditionnelle</string>
+     <string>France</string>
     </void>
    </object>
   </void>
@@ -3563,7 +3563,7 @@
      <string>Plat</string>
     </void>
     <void property="type2">
-     <string>Traditionnelle</string>
+     <string>Italie</string>
     </void>
    </object>
   </void>
