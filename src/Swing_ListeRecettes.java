@@ -689,7 +689,7 @@ public class Swing_ListeRecettes implements Observer{
 			this.comboBox2.setModel(new DefaultComboBoxModel(newTableau));
 			this.list.setListData (this.values);
 		}
-		else {
+		else if (arg instanceof ArrayList<?>){
 			//System.out.println(arg);
 			ArrayList<String> liste = (ArrayList<String>) arg;
 		    this.monTab = liste.toArray(new String[liste.size()]);
