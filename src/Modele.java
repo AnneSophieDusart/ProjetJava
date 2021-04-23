@@ -89,7 +89,7 @@ public class Modele extends Observable{
 		this.notifyObservers(this.indexRecetteSelectionnee);
 	}
 	
-	public void changeQuantite(Integer n) {
+	/*public void changeQuantite(Integer n) {
 		ArrayList<Integer> l = new ArrayList<>();
 		for (int i=0; i<LRecette.get(indexRecetteSelectionnee).Ingredients.size() ; i++){
 			int personne=LRecette.get(indexRecetteSelectionnee).Personnes;
@@ -100,7 +100,7 @@ public class Modele extends Observable{
 		this.setChanged();
 		this.notifyObservers(l);
 		
-	}
+	}*/
 	
 	public void changeEtape (Recette recette,int etape) {
 		//System.out.println(recette.Etapes.get(etape));

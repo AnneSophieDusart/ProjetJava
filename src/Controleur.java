@@ -35,7 +35,7 @@ public class Controleur implements ListSelectionListener, ChangeListener, ItemLi
 		String n = s.getValue().toString();
         //System.out.println(n);	
 		Integer i = Integer.parseInt(n);
-		this.modl.changeQuantite(i);
+		//this.modl.changeQuantite(i);
 	}
 
 

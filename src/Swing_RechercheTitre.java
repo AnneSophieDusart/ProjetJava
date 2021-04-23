@@ -223,7 +223,7 @@ public class Swing_RechercheTitre implements Observer{
 		spinner.setForeground(new Color(255, 127, 80));
 		spinner.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
 		spinner.setBounds(37,265, 50, 20);
-		spinner.addChangeListener(ctrl);
+		//spinner.addChangeListener(ctrl);
 		panel.add(spinner);
 		
 		/*String listeIngre = "";
