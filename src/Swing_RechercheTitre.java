@@ -115,7 +115,7 @@ public class Swing_RechercheTitre implements Observer{
 		frmRecettesDeCuisine.setResizable(false);
 		//frmRecettesDeCuisine.setBackground(Color.WHITE);
 		frmRecettesDeCuisine.setTitle("Délice !");
-		frmRecettesDeCuisine.setBounds(100, 100, 560, 450);
+		frmRecettesDeCuisine.setBounds(100, 100, 570, 450);
 		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -150,7 +150,12 @@ public class Swing_RechercheTitre implements Observer{
 		frmRecettesDeCuisine.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(292, 10, 254, 380);
+		if (m.modeClair) {
+			panel.setBackground(Color.WHITE);
+		} else {
+			panel.setBackground(Color.BLACK);
+		}
+		panel.setBounds(292, 10, 254, 390);
 		frmRecettesDeCuisine.getContentPane().add(panel);
 		panel.setLayout(null);
 		
@@ -233,12 +238,15 @@ public class Swing_RechercheTitre implements Observer{
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 42, 272, 340);
+		scrollPane.setBounds(10, 42, 272, 358);
 		frmRecettesDeCuisine.getContentPane().add(scrollPane);
 		
 		this.list = new JList();
+		if (m.modeClair==false) {
+			list.setBackground(Color.BLACK);
+		}
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 13));
+		list.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 15));
 		this.values = new String[m.LRecette.size()];
 		for (int i=0; i<this.m.LRecette.size(); i++) {
 			values[i]=m.LRecette.get(i).Nom;
@@ -258,8 +266,12 @@ public class Swing_RechercheTitre implements Observer{
 		scrollPane.setViewportView(list);
 		
 		this.texteField = new JTextField();
+		if (m.modeClair==false) {
+			texteField.setBackground(Color.BLACK);
+		}
+		texteField.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
 		texteField.setText("Recherche rapide");
-		texteField.setBounds(10, 10, 272, 19);
+		texteField.setBounds(10, 10, 272, 22);
 		texteField.setForeground(Color.gray);
 		texteField.addMouseListener(new MouseAdapter() {           
 		    @Override
@@ -274,7 +286,11 @@ public class Swing_RechercheTitre implements Observer{
 		    public void mouseClicked(MouseEvent e) {
 		        JTextField texteField = ((JTextField)e.getSource());
 		        texteField.setText("");
-		        texteField.setForeground(Color.black);
+		        if (m.modeClair) {
+		        	texteField.setForeground(Color.black);
+		        } else {
+		        	texteField.setForeground(Color.white);
+		        }
 		        texteField.removeMouseListener(this);
 		    }
 		});
@@ -354,7 +370,7 @@ public class Swing_RechercheTitre implements Observer{
 		JLabel lblNewLabel_7_1_2 = new JLabel("Nombre de personne");
 		lblNewLabel_7_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7_1_2.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblNewLabel_7_1_2.setBounds(0, 247, 121, 13);
+		lblNewLabel_7_1_2.setBounds(3, 247, 121, 13);
 		panel.add(lblNewLabel_7_1_2);
 		
 		JLabel lblNewLabel_7_1_2_1 = new JLabel("Ingr\u00E9dients");

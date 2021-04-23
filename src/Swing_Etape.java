@@ -131,7 +131,11 @@ public class Swing_Etape implements Observer {
 				} else {
 					progressBar.setValue(progressBar.getValue()-valeurProgression);
 					if (num_etp==(recette.getEtapes().size())-1) {
-						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
+						if (m.modeClair) {
+							lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_black.png"));
+						} else {
+							lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_white.png"));
+						}
 					}
 					num_etp--;
 					m.changeEtape(recette,num_etp);
@@ -146,14 +150,21 @@ public class Swing_Etape implements Observer {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				if (num_etp!=0) {
-					lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
+					if (m.modeClair) {
+						lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
+					} else {
+						lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
+					}
 				}
 				
 			}
 		});
 		panel.add(lblNewLabel_1_1);
-		
-		lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
+		if (m.modeClair) {
+			lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_black.png"));
+		} else {
+			lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_white.png"));
+		}
 		lblNewLabel_1.setBounds(386, 473, 30, 30);
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -165,7 +176,11 @@ public class Swing_Etape implements Observer {
 					if (num_etp==(recette.getEtapes().size())-1) {
 						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
 					} else if (num_etp==1) {
-						lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
+						if (m.modeClair) {
+							lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
+						} else {
+							lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
+						}
 					}
 				} else {
 					frame.dispose();
@@ -184,9 +199,18 @@ public class Swing_Etape implements Observer {
 			@Override
 			public void mouseExited(MouseEvent e) {
 				if (num_etp!=recette.getEtapes().size()-1) {
-					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_normal.png"));
+					if (m.modeClair) {
+						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_black.png"));
+					} else {
+						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_white.png"));
+					}
 				} else {
-					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_normal.png"));
+					if (m.modeClair) {
+						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_black.png"));
+					} else {
+						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_white.png"));
+					}
+					
 				}
 			}
 		});
