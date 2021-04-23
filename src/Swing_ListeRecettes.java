@@ -91,6 +91,7 @@ public class Swing_ListeRecettes implements Observer{
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 560, 427);
+		frame.setTitle("Délice !");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -117,7 +118,11 @@ public class Swing_ListeRecettes implements Observer{
 		scrollPane.setViewportView(list);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("ImageAppli\\add_normal.png"));
+		if (m.modeClair) {
+			lblNewLabel.setIcon(new ImageIcon("ImageAppli\\add_black.png"));
+		} else {
+			lblNewLabel.setIcon(new ImageIcon("ImageAppli\\add_white.png"));
+		}
 		lblNewLabel.setBounds(466, 10, 30, 30);
 		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -126,7 +131,11 @@ public class Swing_ListeRecettes implements Observer{
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel.setIcon(new ImageIcon("ImageAppli\\add_normal.png"));
+				if (m.modeClair) {
+					lblNewLabel.setIcon(new ImageIcon("ImageAppli\\add_black.png"));
+				} else {
+					lblNewLabel.setIcon(new ImageIcon("ImageAppli\\add_white.png"));
+				}
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -298,7 +307,11 @@ public class Swing_ListeRecettes implements Observer{
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\edit_normal.png"));
+		if (m.modeClair) {
+			lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\edit_black.png"));
+		} else {
+			lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\edit_white.png"));
+		}
 		lblNewLabel_1.setBounds(426, 10, 30, 30);
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -307,7 +320,11 @@ public class Swing_ListeRecettes implements Observer{
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\edit_normal.png"));
+				if (m.modeClair) {
+					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\edit_black.png"));
+				} else {
+					lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\edit_white.png"));
+				}
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -564,8 +581,12 @@ public class Swing_ListeRecettes implements Observer{
 		});
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\trash_normal.png"));
+		JLabel lblNewLabel_2 = new JLabel("New label"); 
+		if (m.modeClair) {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\trash_black.png"));
+		} else {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\trash_white.png"));
+		}
 		lblNewLabel_2.setBounds(506, 10, 30, 30);
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
@@ -574,7 +595,11 @@ public class Swing_ListeRecettes implements Observer{
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\trash_normal.png"));
+				if (m.modeClair) {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\trash_black.png"));
+				} else {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\trash_white.png"));
+				}
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -618,8 +643,13 @@ public class Swing_ListeRecettes implements Observer{
 		
 		this.comboBox2 = new JComboBox();
 		comboBox2.setModel(new DefaultComboBoxModel(new String[] {" ","Entrée", "Plat", "Dessert"}));
-		comboBox2.setBounds(163, 15, 76, 21);
+		comboBox2.setBounds(164, 15, 76, 21);
 		frame.getContentPane().add(comboBox2);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("-->");
+		lblNewLabel_3_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		lblNewLabel_3_1.setBounds(143, 14, 61, 20);
+		frame.getContentPane().add(lblNewLabel_3_1);
 		comboBox2.addItemListener(ctrl);
 		
 		JMenuBar menuBar = new JMenuBar();

@@ -295,8 +295,12 @@ public class Swing_RechercheTitre implements Observer{
 		
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
 		lblNewLabel_2.setBounds(113, 328, 30, 30);
+		if (m.modeClair) {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_black.png"));
+		} else {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_white.png"));
+		}
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -304,11 +308,14 @@ public class Swing_RechercheTitre implements Observer{
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_normal.png"));
+				if (m.modeClair) {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_black.png"));
+				} else {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_white.png"));
+				}
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//int index = list.getSelectedIndex();
 				Recette r = m.LRecette.get(Recette);
 				
 				Swing_Etape recette =  new Swing_Etape(m, r, (Integer) spinner.getValue());

@@ -125,15 +125,24 @@ public class Swing_RechercheIngredients implements Observer {
 		scrollPane.setViewportView(list_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\search_normal.png"));
 		lblNewLabel_2.setBounds(491, 10, 33, 45);
+		if (m.modeClair) {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\search_black.png"));
+		} else {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\search_white.png"));
+		}
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
+			@Override
 			public void mouseEntered(MouseEvent e) {
 				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\search_souris.png"));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\search_normal.png"));
+				if (m.modeClair) {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\search_black.png"));
+				} else {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\search_white.png"));
+				}
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {

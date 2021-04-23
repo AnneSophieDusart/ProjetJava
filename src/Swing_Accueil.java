@@ -63,7 +63,7 @@ public class Swing_Accueil implements WindowListener {
 		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
-		frmRecettesDeCuisine.setTitle("Recettes de cuisine");
+		frmRecettesDeCuisine.setTitle("Délice !");
 		frmRecettesDeCuisine.setBounds(100, 100, 750, 581);
 		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -85,7 +85,8 @@ public class Swing_Accueil implements WindowListener {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Clic sur RECETTES DU JOUR");
+				Swing_MenuJour recette = new Swing_MenuJour(m,ctrl);
+				recette.setVisible2();
 			}
 		});
 		
