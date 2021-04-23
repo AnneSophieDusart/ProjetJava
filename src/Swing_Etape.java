@@ -233,13 +233,14 @@ public class Swing_Etape implements Observer {
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
 		lblNewLabel_2.setBackground(new Color(32, 178, 170));
-		lblNewLabel_2.setBounds(0, 60, 436, 61);
+		lblNewLabel_2.setBounds(10, 60, 416, 61);
 		panel.add(lblNewLabel_2);
 		
 		this.lblNewLabel_4 = new JLabel("<html><span>"+recette.getEtapes().get(num_etp).getInstrution()+"</html></span>");
+		lblNewLabel_4.setBackground(Color.WHITE);
 		lblNewLabel_4.setFont(new Font("Segoe UI Light", Font.PLAIN, 20));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4.setBounds(10, 131, 406, 309);
+		lblNewLabel_4.setBounds(20, 131, 385, 183);
 		panel.add(lblNewLabel_4);
 		
 		JButton btnNewButton = new JButton("Ingr\u00E9dients");
@@ -252,6 +253,16 @@ public class Swing_Etape implements Observer {
 		});
 		btnNewButton.setBounds(159, 478, 103, 21);
 		panel.add(btnNewButton);
+		
+		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.setOpaque(true);
+		if (m.modeClair) {
+			lblNewLabel_5.setBackground(Color.WHITE);
+		} else {
+			lblNewLabel_5.setBackground(Color.BLACK);
+		}
+		lblNewLabel_5.setBounds(10, 60, 406, 260);
+		panel.add(lblNewLabel_5);
 	}
 
 	@Override
