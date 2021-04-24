@@ -7,7 +7,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Observable;
 
 import javax.swing.JList;
@@ -19,6 +21,7 @@ public class Modele extends Observable{
 	File fichier = new File("Recette.xml");
 	int indexRecetteSelectionnee=0;
 	boolean modeClair = true;
+	Map<String, ArrayList<String>> dicoType;
 	
 	
 	public Modele() {
@@ -46,7 +49,25 @@ public class Modele extends Observable{
 		/*this.enregistrer();*/
 		this.charger();
 		System.out.println(this.LRecette);
-
+		this.dicoType = new HashMap<>();
+		
+		ArrayList<String> listeEntree = new ArrayList<String>();
+		ArrayList<String> listePlat = new ArrayList<String>();
+		ArrayList<String> listeDessert = new ArrayList<String>();	
+		for (int i=0;i<LRecette.size();i++) {
+			if ((LRecette.get(i).Type1).equals("Entrée")) {
+				listeEntree.add(LRecette.get(i).Nom);
+			}
+			else if ((LRecette.get(i).Type1).equals("Plat")) {
+				listePlat.add(LRecette.get(i).Nom);
+			}
+			else{
+				listeDessert.add(LRecette.get(i).Nom);
+			}
+			}
+		this.dicoType.put("Entrée",listeEntree);
+		this.dicoType.put("Plat",listePlat);
+		this.dicoType.put("Dessert",listeDessert);
 	}
 	
 	public void enregistrer (){
@@ -144,10 +165,11 @@ public class Modele extends Observable{
 		//List<String> origineListe = Arrays.asList(origine);
 		ArrayList<String> newList = new ArrayList<String>();
 		if (typeListe.contains(filtre)) {
-			for (int i=0;i<LRecette.size();i++) {
+			/*for (int i=0;i<LRecette.size();i++) {
 				if ((LRecette.get(i).Type1).equals(filtre)) {
 					newList.add(LRecette.get(i).Nom);
-				}}
+				}}*/
+			newList= this.dicoType.get(filtre);
 		}
 		else if (filtre==" ") {
 			for (int i=0;i<LRecette.size();i++) {
