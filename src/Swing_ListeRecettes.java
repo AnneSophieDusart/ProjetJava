@@ -23,6 +23,7 @@ import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -294,7 +295,8 @@ public class Swing_ListeRecettes implements Observer{
 				}
 				
 				Recette recette = new Recette(type1,type2,titre,temps_preparation,temps_cuisson,personne,liste_ingredients, liste_etapes, img);
-				
+
+				m.dicoType.get(recette.Type1).add(recette.Nom);
 				m.LRecette.add(recette);
 				m.enregistrer();
 				
@@ -563,7 +565,9 @@ public class Swing_ListeRecettes implements Observer{
 					
 					Recette n_recette = new Recette(type1,type2,titre,temps_preparation,temps_cuisson,personne,liste_ingredients, liste_etapes, img);
 					
+					m.dicoType.get(m.LRecette.get(index).Type1).remove(m.LRecette.get(index).Nom);
 					m.LRecette.remove(index);
+					m.dicoType.get(n_recette.Type1).add(n_recette.Nom);
 					m.LRecette.add(n_recette);
 					m.enregistrer();
 					
@@ -615,6 +619,7 @@ public class Swing_ListeRecettes implements Observer{
 					int popup = JOptionPane.showConfirmDialog(frame, "Etes-vous sur de vouloir supprimer la recette : "+m.LRecette.get(numRecette).Nom+ "  ?", "Confirmation", JOptionPane.WARNING_MESSAGE);
 					//System.out.println(popup);
 					if (popup==0) {
+						m.dicoType.get(m.LRecette.get(numRecette).Type1).remove(m.LRecette.get(numRecette).Nom);
 						m.LRecette.remove(numRecette);
 						m.enregistrer();
 						Swing_ListeRecettes lr =  new Swing_ListeRecettes(m,ctrl);

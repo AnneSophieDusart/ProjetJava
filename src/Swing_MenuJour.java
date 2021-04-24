@@ -1,6 +1,7 @@
 import java.awt.EventQueue;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -26,7 +27,11 @@ public class Swing_MenuJour {
 	private JFrame frame;
 	Modele m;
 	Controleur ctrl;
-
+	int Entree,Plat,Dessert;
+	JLabel lblNewLabel_4,lblNewLabel_5,lblNewLabel_5_1;
+	JLabel lblNewLabel_4_1,lblNewLabel_5_2,lblNewLabel_5_1_1;
+	JLabel lblNewLabel_4_1_1,lblNewLabel_5_2_1,lblNewLabel_5_1_1_1;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -109,12 +114,16 @@ public class Swing_MenuJour {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel_4 = new JLabel("Image");
-		lblNewLabel_4.setIcon(new ImageIcon("ImageRecette\\saladeGrecque.jpg"));
+		int Recette1 = randomRecette("Entrée");
+		String temps1 = tempsRecette (Recette1);
+		
+		
+		this.lblNewLabel_4 = new JLabel("Image");
+		lblNewLabel_4.setIcon(new ImageIcon(m.LRecette.get(Recette1).Image));
 		lblNewLabel_4.setBounds(15, 61, 160, 100);
 		panel.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("Titre de l'entr\u00E9e");
+		this.lblNewLabel_5 = new JLabel(m.LRecette.get(Recette1).Nom);
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_5.setBounds(15, 168, 160, 24);
@@ -126,7 +135,7 @@ public class Swing_MenuJour {
 		lblNewLabel_7_1.setBounds(34, 220, 129, 13);
 		panel.add(lblNewLabel_7_1);
 		
-		JLabel lblNewLabel_5_1 = new JLabel("00h 00min");
+		this.lblNewLabel_5_1 = new JLabel(temps1);
 		lblNewLabel_5_1.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel_5_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_1.setForeground(new Color(255, 127, 80));
@@ -174,15 +183,15 @@ public class Swing_MenuJour {
 		lblNewLabel_8.setBounds(79, 338, 30, 30);
 		panel.add(lblNewLabel_8);
 		
+		int Recette2 = randomRecette("Plat");	
+		String temps2 = tempsRecette (Recette2);		
 		
-		
-		
-		JLabel lblNewLabel_4_1 = new JLabel("Image");
-		lblNewLabel_4_1.setIcon(new ImageIcon("ImageAppli\\img_acc_1.jpg"));
+		this.lblNewLabel_4_1 = new JLabel("Image");
+		lblNewLabel_4_1.setIcon(new ImageIcon(m.LRecette.get(Recette2).Image));
 		lblNewLabel_4_1.setBounds(194, 61, 160, 100);
 		panel.add(lblNewLabel_4_1);
 		
-		JLabel lblNewLabel_5_2 = new JLabel("Titre de l'entr\u00E9e");
+		this.lblNewLabel_5_2 = new JLabel(m.LRecette.get(Recette2).Nom);
 		lblNewLabel_5_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_5_2.setBounds(192, 168, 160, 24);
@@ -194,7 +203,7 @@ public class Swing_MenuJour {
 		lblNewLabel_7_1_2.setBounds(213, 220, 129, 13);
 		panel.add(lblNewLabel_7_1_2);
 		
-		JLabel lblNewLabel_5_1_1 = new JLabel("00h 00min");
+		this.lblNewLabel_5_1_1 = new JLabel(temps2);
 		lblNewLabel_5_1_1.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel_5_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_1_1.setForeground(new Color(255, 127, 80));
@@ -241,14 +250,15 @@ public class Swing_MenuJour {
 		lblNewLabel_8_1.setBounds(258, 338, 30, 30);
 		panel.add(lblNewLabel_8_1);
 		
+		int Recette3 = randomRecette("Dessert");
+		String temps3 = tempsRecette (Recette3);		
 		
-		
-		JLabel lblNewLabel_4_1_1 = new JLabel("Image");
-		lblNewLabel_4_1_1.setIcon(new ImageIcon("ImageAppli\\img_acc_4.jpg"));
+		this.lblNewLabel_4_1_1 = new JLabel("Image");
+		lblNewLabel_4_1_1.setIcon(new ImageIcon(m.LRecette.get(Recette3).Image));
 		lblNewLabel_4_1_1.setBounds(371, 61, 160, 100);
 		panel.add(lblNewLabel_4_1_1);
 		
-		JLabel lblNewLabel_5_2_1 = new JLabel("Titre de l'entr\u00E9e");
+		this.lblNewLabel_5_2_1 = new JLabel(m.LRecette.get(Recette3).Nom);
 		lblNewLabel_5_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_2_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_5_2_1.setBounds(369, 168, 160, 24);
@@ -260,7 +270,7 @@ public class Swing_MenuJour {
 		lblNewLabel_7_1_2_1.setBounds(390, 220, 129, 13);
 		panel.add(lblNewLabel_7_1_2_1);
 		
-		JLabel lblNewLabel_5_1_1_1 = new JLabel("00h 00min");
+		this.lblNewLabel_5_1_1_1 = new JLabel(temps3);
 		lblNewLabel_5_1_1_1.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel_5_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_1_1_1.setForeground(new Color(255, 127, 80));
@@ -381,7 +391,23 @@ public class Swing_MenuJour {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Mettre à jour liste menu");
+				int Recette1 = randomRecette("Entrée");
+				String temps1 = tempsRecette(Recette1);
+				lblNewLabel_4.setIcon(new ImageIcon(m.LRecette.get(Recette1).Image));;
+				lblNewLabel_5.setText(m.LRecette.get(Recette1).Nom);
+				lblNewLabel_5_1.setText(temps1);
+				
+				int Recette2 = randomRecette("Plat");
+				String temps2 = tempsRecette(Recette2);
+				lblNewLabel_4_1.setIcon(new ImageIcon(m.LRecette.get(Recette2).Image));;
+				lblNewLabel_5_2.setText(m.LRecette.get(Recette2).Nom);
+				lblNewLabel_5_1_1.setText(temps2);
+				
+				int Recette3 = randomRecette("Dessert");
+				String temps3 = tempsRecette(Recette3);
+				lblNewLabel_4_1_1.setIcon(new ImageIcon(m.LRecette.get(Recette3).Image));;
+				lblNewLabel_5_2_1.setText(m.LRecette.get(Recette3).Nom);
+				lblNewLabel_5_1_1_1.setText(temps3);
 			}
 		});
 		lblNewLabel_7.setBounds(10, 10, 30, 30);
@@ -417,5 +443,33 @@ public class Swing_MenuJour {
 				}
 			}
 		});
+	}
+	
+	public int randomRecette( String type) {
+		Random r = new Random();
+		int numero = r.nextInt(m.dicoType.get(type).size());
+		String nomRecette= m.dicoType.get(type).get(numero);
+		int Recette = 0;
+		for (int i=0; i<m.LRecette.size();i++) {
+			if ( (m.LRecette.get(i).Nom).equals(nomRecette)) {
+				Recette = i;
+			}
+		}
+		return Recette;
+	}
+	
+	public String tempsRecette (int Recette) {
+		int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
+		String temps ="";
+		if (duree > 60 ) {
+			temps+= duree/60 + " h " + duree%60 + " min";
+		}
+		else if (duree == 60) {
+			temps+= "1 h";
+		}
+		else {
+			temps+= duree + " min";
+		}
+		return temps;
 	}
 }
