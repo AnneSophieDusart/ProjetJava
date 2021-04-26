@@ -117,16 +117,16 @@ public class Swing_Accueil implements WindowListener {
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_c.jpg"));
+		lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_c.png"));
 		lblNewLabel_2.setBounds(0, 281, 370, 275);
 		lblNewLabel_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_bw.jpg"));
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_bw.png"));
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_c.jpg"));
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\liste_recettes_c.png"));
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {

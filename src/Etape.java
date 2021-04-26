@@ -4,6 +4,7 @@ public class Etape implements Serializable{
 	
 	int NumEtape;
 	String Instrution;	
+	String Commentaire;
 	
 	public int getNumEtape() {
 		return NumEtape;
@@ -22,6 +23,10 @@ public class Etape implements Serializable{
 
 	public void setInstrution(String instrution) {
 		Instrution = instrution;
+	}
+	
+	public String getCommentaire() {
+		return Commentaire;
 	}
 
 

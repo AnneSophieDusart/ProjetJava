@@ -153,5 +153,11 @@ public class Recette implements Serializable{
 		s=s+"</span></html>";
 		return s;
 	}
+	
+	public void changeEtape(int nbr_etp, String txt) {
+		Etape etp = new Etape(nbr_etp+1, txt);
+		this.Etapes.set(nbr_etp, etp);
+		
+	}
 
 }

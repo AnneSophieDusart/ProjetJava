@@ -25,6 +25,7 @@ import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import javax.swing.JTextPane;
 
 public class Swing_Etape implements Observer {
 
@@ -34,7 +35,8 @@ public class Swing_Etape implements Observer {
 	Recette recette;
 	int num_etp =0;
 	int nbr_pers;
-	JLabel lblNewLabel_3,lblNewLabel_4;
+	JLabel lblNewLabel_3;
+	JTextPane lblNewLabel_4;
 
 	/**
 	 * Launch the application.
@@ -97,7 +99,7 @@ public class Swing_Etape implements Observer {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 440, 550);
+		frame.setBounds(100, 100, 440, 422);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
@@ -110,18 +112,28 @@ public class Swing_Etape implements Observer {
 		lblNewLabel.setBounds(10, 10, 406, 40);
 		panel.add(lblNewLabel);
 		
+		JLabel lblNewLabel_1_2 = new JLabel("New label");
+		lblNewLabel_1_2.setBounds(375, 75, 30, 30);
+		if (m.modeClair) {
+			lblNewLabel_1_2.setIcon(new ImageIcon("ImageAppli\\edit_white.png"));
+		} else {
+			lblNewLabel_1_2.setIcon(new ImageIcon("ImageAppli\\edit_black.png"));
+		}
+		
+		panel.add(lblNewLabel_1_2);
+		
 		
 		JProgressBar progressBar = new JProgressBar();
 		int valeurProgression = 100 / ((recette.Etapes.size())-1);
 		progressBar.setValue(0);
-		progressBar.setBounds(10, 463, 406, 5);
+		progressBar.setBounds(10, 329, 406, 5);
 		panel.add(progressBar);
 		
 		JLabel lblNewLabel_1 = new JLabel("Next");
 		
 		JLabel lblNewLabel_1_1 = new JLabel(" ");
 		//lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_normal.png"));
-		lblNewLabel_1_1.setBounds(10, 473, 30, 30);
+		lblNewLabel_1_1.setBounds(10, 346, 30, 30);
 		lblNewLabel_1_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -167,7 +179,7 @@ public class Swing_Etape implements Observer {
 		} else {
 			lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_white.png"));
 		}
-		lblNewLabel_1.setBounds(386, 473, 30, 30);
+		lblNewLabel_1.setBounds(386, 346, 30, 30);
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -222,28 +234,53 @@ public class Swing_Etape implements Observer {
 		this.lblNewLabel_3 = new JLabel(String.valueOf(num_etp)+1);
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 30));
-		lblNewLabel_3.setBounds(178, 57, 60, 61);
+		lblNewLabel_3.setBounds(182, 60, 60, 61);
 		panel.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_2 = new JLabel("1");
+		JLabel lblNewLabel_2 = new JLabel("");
 		if (m.modeClair) {
-			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\bandeau_clair.jpg"));
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\bandeau_clair.png"));
 		} else {
-			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\bandeau_sombre.jpg"));
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\bandeau_sombre.png"));
 		}
 		
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 25));
 		lblNewLabel_2.setBackground(new Color(32, 178, 170));
-		lblNewLabel_2.setBounds(10, 60, 416, 61);
+		lblNewLabel_2.setBounds(10, 60, 406, 61);
 		panel.add(lblNewLabel_2);
 		
-		this.lblNewLabel_4 = new JLabel("<html><span>"+recette.getEtapes().get(num_etp).getInstrution()+"</html></span>");
+		this.lblNewLabel_4 = new JTextPane();
+		lblNewLabel_4.setEnabled(false);
+		lblNewLabel_4.setText(recette.getEtapes().get(num_etp).getInstrution());
 		lblNewLabel_4.setBackground(Color.WHITE);
 		lblNewLabel_4.setFont(new Font("Segoe UI Light", Font.PLAIN, 20));
-		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setBounds(20, 131, 385, 183);
 		panel.add(lblNewLabel_4);
+		
+		
+		lblNewLabel_1_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_1_2.setIcon(new ImageIcon("ImageAppli\\edit_souris.png"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				if (m.modeClair) {
+					lblNewLabel_1_2.setIcon(new ImageIcon("ImageAppli\\edit_white.png"));
+				} else {
+					lblNewLabel_1_2.setIcon(new ImageIcon("ImageAppli\\edit_black.png"));
+				}
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				String etp = JOptionPane.showInputDialog(frame, "Modifier l'étape", recette.getEtapes().get(num_etp).getInstrution());
+				recette.changeEtape(num_etp, etp);
+				lblNewLabel_4.setText(recette.getEtapes().get(num_etp).getInstrution());
+				m.enregistrer();
+			}
+		});
+		
 		
 		JButton btnNewButton = new JButton("Ingr\u00E9dients");
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -253,7 +290,7 @@ public class Swing_Etape implements Observer {
 				JOptionPane.showMessageDialog(frame, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
-		btnNewButton.setBounds(159, 478, 103, 21);
+		btnNewButton.setBounds(157, 351, 103, 21);
 		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel_5 = new JLabel("");
@@ -265,6 +302,10 @@ public class Swing_Etape implements Observer {
 		}
 		lblNewLabel_5.setBounds(10, 60, 406, 260);
 		panel.add(lblNewLabel_5);
+		
+		
+		
+		
 	}
 
 	@Override
@@ -275,7 +316,7 @@ public class Swing_Etape implements Observer {
 			if (etape.NumEtape<10) {
 				this.lblNewLabel_3.setText("0"+String.valueOf((etape).NumEtape));
 			}else {this.lblNewLabel_3.setText(String.valueOf((etape).NumEtape));}
-			this.lblNewLabel_4.setText("<html><span>"+etape.getInstrution()+"</html></span>");
+			this.lblNewLabel_4.setText(etape.getInstrution());
 		}
 	}
 }

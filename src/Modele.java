@@ -131,7 +131,7 @@ public class Modele extends Observable{
 
 	public void listeRechercheNom(String text, String[] tableau) {
 		// TODO Auto-generated method stub
-        String textToSearch = text;
+        String textToSearch = text.toLowerCase();
         ArrayList<String> newList = new ArrayList<String>();
         for (String current : tableau) {
             if (current.toLowerCase().
