@@ -138,5 +138,20 @@ public class Recette implements Serializable{
 		}
 		return s;
 	}
+	
+	public String afficherIngredientsHTML(int nbr) {
+		String s = "<html><span>";
+		Ingredient ing;
+		float qte;
+		int arr;
+		for (int i=0; i<this.Ingredients.size(); i++) {
+			ing = this.Ingredients.get(i);
+			qte=(float) ing.getQuantite()*nbr/this.getPersonnes();
+			arr = (int) Math.ceil(qte);
+			s=s+"- "+arr+ing.getMesure()+" "+ing.getIngredient()+"</br>";
+		}
+		s=s+"</span></html>";
+		return s;
+	}
 
 }

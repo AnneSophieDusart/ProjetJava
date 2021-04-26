@@ -6,8 +6,13 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import com.formdev.flatlaf.FlatDarkLaf;
 import com.formdev.flatlaf.FlatLightLaf;
@@ -17,6 +22,7 @@ import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import javax.swing.JTextPane;
 
 public class Swing_Details {
 
@@ -69,15 +75,19 @@ public class Swing_Details {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();frame.setBounds(100, 100, 289, 450);
+		frame = new JFrame();frame.setBounds(100, 100, 553, 408);
 		frame.setTitle("Délice !");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(Color.WHITE);
+		if (m.modeClair) {
+			panel.setBackground(Color.WHITE);
+		} else {
+			panel.setBackground(Color.BLACK);
+		}
 		panel.setLayout(null);
-		panel.setBounds(10, 10, 254, 390);
+		panel.setBounds(10, 10, 254, 312);
 		frame.getContentPane().add(panel);
 		
 		JLabel lblNewLabel = new JLabel("Image illustration");
@@ -93,7 +103,18 @@ public class Swing_Details {
 		lblNewLabel_1.setBounds(10, 152, 234, 30);
 		panel.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_4 = new JLabel("");
+		
+		String cuisson ="";
+		if (Recette.TempsCuisson > 60 ) {
+			cuisson+= Recette.TempsCuisson/60 + " h " + Recette.TempsCuisson%60 + " min";
+		}
+		else if (Recette.TempsCuisson == 60) {
+			cuisson+= "1 h";
+		}
+		else {
+			cuisson+= Recette.TempsCuisson + " min";
+		}
+		JLabel lblNewLabel_4 = new JLabel(cuisson);
 		lblNewLabel_4.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setForeground(new Color(255, 127, 80));
@@ -101,7 +122,18 @@ public class Swing_Details {
 		lblNewLabel_4.setBounds(144, 214, 100, 20);
 		panel.add(lblNewLabel_4);
 		
-		JLabel lblNewLabel_5 = new JLabel("");
+		
+		String prepa ="";
+		if (Recette.TempsPreparation > 60 ) {
+			prepa+= Recette.TempsPreparation/60 + " h " + Recette.TempsPreparation%60 + " min";
+		}
+		else if (Recette.TempsPreparation == 60) {
+			prepa+= "1 h";
+		}
+		else {
+			prepa+= Recette.TempsPreparation + " min";
+		}		
+		JLabel lblNewLabel_5 = new JLabel(prepa);
 		lblNewLabel_5.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setForeground(new Color(255, 127, 80));
@@ -109,21 +141,19 @@ public class Swing_Details {
 		lblNewLabel_5.setBounds(10, 214, 100, 20);
 		panel.add(lblNewLabel_5);
 		
+		JTextPane txtpnHello = new JTextPane();
+		
 		JSpinner spinner = new JSpinner(new SpinnerNumberModel(Recette.Personnes,0,100,1));
+		spinner.addChangeListener(new ChangeListener() {
+
+	        public void stateChanged(ChangeEvent e) {
+				txtpnHello.setText(Recette.afficherIngredients((Integer) spinner.getValue()));
+	        }
+	    });
 		spinner.setForeground(new Color(255, 127, 80));
 		spinner.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
-		spinner.setBounds(37, 265, 50, 20);
+		spinner.setBounds(104, 273, 50, 20);
 		panel.add(spinner);
-		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(113, 328, 30, 30);
-		panel.add(lblNewLabel_2);
-		
-		JButton btnNewButton = new JButton("Voir liste");
-		btnNewButton.setForeground(new Color(255, 127, 80));
-		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
-		btnNewButton.setBounds(153, 266, 79, 21);
-		panel.add(btnNewButton);
 		
 		JLabel lblNewLabel_7_1 = new JLabel("Pr\u00E9paration");
 		lblNewLabel_7_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -140,14 +170,66 @@ public class Swing_Details {
 		JLabel lblNewLabel_7_1_2 = new JLabel("Nombre de personne");
 		lblNewLabel_7_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7_1_2.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblNewLabel_7_1_2.setBounds(3, 247, 121, 13);
+		lblNewLabel_7_1_2.setBounds(66, 254, 121, 13);
 		panel.add(lblNewLabel_7_1_2);
 		
-		JLabel lblNewLabel_7_1_2_1 = new JLabel("Ingr\u00E9dients");
-		lblNewLabel_7_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_7_1_2_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblNewLabel_7_1_2_1.setBounds(130, 247, 124, 13);
-		panel.add(lblNewLabel_7_1_2_1);
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		if (m.modeClair) {
+			panel_1.setBackground(Color.WHITE);
+		} else {
+			panel_1.setBackground(Color.BLACK);
+		}
+		panel_1.setBounds(274, 10, 254, 312);
+		frame.getContentPane().add(panel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel((String) null);
+		lblNewLabel_1_1.setVerticalAlignment(SwingConstants.TOP);
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 16));
+		lblNewLabel_1_1.setBounds(10, 152, 234, 30);
+		panel_1.add(lblNewLabel_1_1);
+		
+		
+		//TextPane ci dessous
+		if (m.modeClair) {
+			txtpnHello.setBackground(Color.WHITE);
+		} else {
+			txtpnHello.setBackground(Color.BLACK);
+		}
+		txtpnHello.setEditable(false);
+		txtpnHello.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
+		txtpnHello.setText(Recette.afficherIngredients((Integer) spinner.getValue()));
+		txtpnHello.setBounds(10, 24, 234, 260);
+		panel_1.add(txtpnHello);
+		
+		JLabel lblNewLabel_2 = new JLabel("New label");
+		lblNewLabel_2.setBounds(255, 332, 30, 30);
+		frame.getContentPane().add(lblNewLabel_2);
+		if (m.modeClair) {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_black.png"));
+		} else {
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_white.png"));
+		}
+		lblNewLabel_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_souris.png"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				if (m.modeClair) {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_black.png"));
+				} else {
+					lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_white.png"));
+				}
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Swing_Etape recette =  new Swing_Etape(m, Recette, (Integer) spinner.getValue());
+				recette.setVisible(Recette, (Integer) spinner.getValue());
+			}
+		});
 	}
 	
 	public void setVisible(Recette r) {

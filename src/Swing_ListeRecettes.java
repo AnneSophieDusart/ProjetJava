@@ -33,6 +33,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.Color;
 
 public class Swing_ListeRecettes implements Observer{
 	
@@ -101,6 +102,11 @@ public class Swing_ListeRecettes implements Observer{
 		frame.getContentPane().add(scrollPane);
 		
 		this.list = new JList();
+		if (m.modeClair) {
+			list.setBackground(Color.WHITE);
+		} else {
+			list.setBackground(Color.BLACK);
+		}
 		list.setFont(new Font("Segoe UI Light", Font.PLAIN, 18));
 		this.values = new String[m.LRecette.size()];
 		for (int i=0; i<this.m.LRecette.size(); i++) {
@@ -114,6 +120,23 @@ public class Swing_ListeRecettes implements Observer{
 			}
 			public Object getElementAt(int index) {
 				return values[index];
+			}
+		});
+		list.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount() == 2 && e.getButton() == MouseEvent.BUTTON1) {
+					int index = list.getSelectedIndex();
+					int numRecette = 0;
+					for (int i=0; i<m.LRecette.size();i++) {
+						if (m.LRecette.get(i).Nom==monTab[index]) {
+							numRecette=i;
+						}}
+					Recette r = m.LRecette.get(numRecette);
+					
+					Swing_Details win = new Swing_Details(r, m, ctrl);
+					win.setVisible(r);
+				}
 			}
 		});
 		scrollPane.setViewportView(list);
