@@ -23,6 +23,8 @@ import java.util.Observer;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
 import java.awt.Color;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Swing_Etape implements Observer {
 

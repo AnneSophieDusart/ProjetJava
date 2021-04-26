@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 import com.formdev.flatlaf.FlatDarkLaf;
@@ -31,6 +32,8 @@ public class Swing_MenuJour {
 	JLabel lblNewLabel_4,lblNewLabel_5,lblNewLabel_5_1;
 	JLabel lblNewLabel_4_1,lblNewLabel_5_2,lblNewLabel_5_1_1;
 	JLabel lblNewLabel_4_1_1,lblNewLabel_5_2_1,lblNewLabel_5_1_1_1;
+	
+	Recette Recette1, Recette2, Recette3;
 	
 	/**
 	 * Launch the application.
@@ -114,16 +117,21 @@ public class Swing_MenuJour {
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
-		int Recette1 = randomRecette("Entrée");
-		String temps1 = tempsRecette (Recette1);
+		JSpinner spinner = new JSpinner();
+		spinner.setModel(new SpinnerNumberModel(1, 1, 99, 1));
+		spinner.setBounds(491, 18, 45, 20);
+		panel.add(spinner);
+		
+		Recette1 = m.LRecette.get(randomRecette("Entrée"));
+		String temps1 = tempsRecette(Recette1);
 		
 		
 		this.lblNewLabel_4 = new JLabel("Image");
-		lblNewLabel_4.setIcon(new ImageIcon(m.LRecette.get(Recette1).Image));
+		lblNewLabel_4.setIcon(new ImageIcon(Recette1.Image));
 		lblNewLabel_4.setBounds(15, 61, 160, 100);
 		panel.add(lblNewLabel_4);
 		
-		this.lblNewLabel_5 = new JLabel(m.LRecette.get(Recette1).Nom);
+		this.lblNewLabel_5 = new JLabel(Recette1.Nom);
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_5.setBounds(15, 168, 160, 24);
@@ -150,6 +158,14 @@ public class Swing_MenuJour {
 		panel.add(lblNewLabel_7_1_1);
 		
 		JButton btnNewButton = new JButton("Voir liste");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Recette r = Recette1;
+				String liste = r.afficherIngredients((Integer) spinner.getValue());
+				JOptionPane.showMessageDialog(frame, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
 		btnNewButton.setForeground(new Color(255, 127, 80));
 		btnNewButton.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
 		btnNewButton.setBounds(53, 281, 79, 21);
@@ -177,21 +193,22 @@ public class Swing_MenuJour {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Cuisne ENTREE");
+				Swing_Etape recette =  new Swing_Etape(m, Recette1, (Integer) spinner.getValue());
+				recette.setVisible(Recette1, (Integer) spinner.getValue());
 			}
 		});
 		lblNewLabel_8.setBounds(79, 338, 30, 30);
 		panel.add(lblNewLabel_8);
 		
-		int Recette2 = randomRecette("Plat");	
-		String temps2 = tempsRecette (Recette2);		
+		Recette2 = m.LRecette.get(randomRecette("Plat"));	
+		String temps2 = tempsRecette(Recette2);		
 		
 		this.lblNewLabel_4_1 = new JLabel("Image");
-		lblNewLabel_4_1.setIcon(new ImageIcon(m.LRecette.get(Recette2).Image));
+		lblNewLabel_4_1.setIcon(new ImageIcon(Recette2.Image));
 		lblNewLabel_4_1.setBounds(194, 61, 160, 100);
 		panel.add(lblNewLabel_4_1);
 		
-		this.lblNewLabel_5_2 = new JLabel(m.LRecette.get(Recette2).Nom);
+		this.lblNewLabel_5_2 = new JLabel(Recette2.Nom);
 		lblNewLabel_5_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_2.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_5_2.setBounds(192, 168, 160, 24);
@@ -218,6 +235,15 @@ public class Swing_MenuJour {
 		panel.add(lblNewLabel_7_1_1_1);
 		
 		JButton btnNewButton_1 = new JButton("Voir liste");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Recette r = Recette2;
+				System.out.println(r);
+				String liste = r.afficherIngredients((Integer) spinner.getValue());
+				JOptionPane.showMessageDialog(frame, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
 		btnNewButton_1.setForeground(new Color(255, 127, 80));
 		btnNewButton_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
 		btnNewButton_1.setBounds(232, 281, 79, 21);
@@ -244,21 +270,22 @@ public class Swing_MenuJour {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Cuisine PLAT");
+				Swing_Etape recette =  new Swing_Etape(m, Recette2, (Integer) spinner.getValue());
+				recette.setVisible(Recette2, (Integer) spinner.getValue());
 			}
 		});
 		lblNewLabel_8_1.setBounds(258, 338, 30, 30);
 		panel.add(lblNewLabel_8_1);
 		
-		int Recette3 = randomRecette("Dessert");
+		Recette3 = m.LRecette.get(randomRecette("Dessert"));
 		String temps3 = tempsRecette (Recette3);		
 		
 		this.lblNewLabel_4_1_1 = new JLabel("Image");
-		lblNewLabel_4_1_1.setIcon(new ImageIcon(m.LRecette.get(Recette3).Image));
+		lblNewLabel_4_1_1.setIcon(new ImageIcon(Recette3.Image));
 		lblNewLabel_4_1_1.setBounds(371, 61, 160, 100);
 		panel.add(lblNewLabel_4_1_1);
 		
-		this.lblNewLabel_5_2_1 = new JLabel(m.LRecette.get(Recette3).Nom);
+		this.lblNewLabel_5_2_1 = new JLabel(Recette3.Nom);
 		lblNewLabel_5_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5_2_1.setFont(new Font("Segoe UI", Font.PLAIN, 14));
 		lblNewLabel_5_2_1.setBounds(369, 168, 160, 24);
@@ -285,6 +312,15 @@ public class Swing_MenuJour {
 		panel.add(lblNewLabel_7_1_1_1_1);
 		
 		JButton btnNewButton_1_1 = new JButton("Voir liste");
+		btnNewButton_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Recette r = Recette3;
+				System.out.println(r);
+				String liste = r.afficherIngredients((Integer) spinner.getValue());
+				JOptionPane.showMessageDialog(frame, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
+			}
+		});
 		btnNewButton_1_1.setForeground(new Color(255, 127, 80));
 		btnNewButton_1_1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 12));
 		btnNewButton_1_1.setBounds(409, 281, 79, 21);
@@ -311,7 +347,8 @@ public class Swing_MenuJour {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.out.println("Cuisine PLAT");
+				Swing_Etape recette =  new Swing_Etape(m, Recette3, (Integer) spinner.getValue());
+				recette.setVisible(Recette3, (Integer) spinner.getValue());
 			}
 		});
 		lblNewLabel_8_1_1.setBounds(435, 338, 30, 30);
@@ -355,10 +392,6 @@ public class Swing_MenuJour {
 		lblNewLabel_3.setBounds(156, 10, 241, 36);
 		panel.add(lblNewLabel_3);
 		
-		JSpinner spinner = new JSpinner();
-		spinner.setModel(new SpinnerNumberModel(1, 1, 99, 1));
-		spinner.setBounds(491, 18, 45, 20);
-		panel.add(spinner);
 		
 		JLabel lblNewLabel_6 = new JLabel("New label");
 		if (m.modeClair) {
@@ -391,22 +424,22 @@ public class Swing_MenuJour {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				int Recette1 = randomRecette("Entrée");
+				Recette1 = m.LRecette.get(randomRecette("Entrée"));
 				String temps1 = tempsRecette(Recette1);
-				lblNewLabel_4.setIcon(new ImageIcon(m.LRecette.get(Recette1).Image));;
-				lblNewLabel_5.setText(m.LRecette.get(Recette1).Nom);
+				lblNewLabel_4.setIcon(new ImageIcon(Recette1.Image));;
+				lblNewLabel_5.setText(Recette1.Nom);
 				lblNewLabel_5_1.setText(temps1);
 				
-				int Recette2 = randomRecette("Plat");
+				Recette2 = m.LRecette.get(randomRecette("Plat"));
 				String temps2 = tempsRecette(Recette2);
-				lblNewLabel_4_1.setIcon(new ImageIcon(m.LRecette.get(Recette2).Image));;
-				lblNewLabel_5_2.setText(m.LRecette.get(Recette2).Nom);
+				lblNewLabel_4_1.setIcon(new ImageIcon(Recette2.Image));;
+				lblNewLabel_5_2.setText(Recette2.Nom);
 				lblNewLabel_5_1_1.setText(temps2);
 				
-				int Recette3 = randomRecette("Dessert");
+				Recette3 = m.LRecette.get(randomRecette("Dessert"));
 				String temps3 = tempsRecette(Recette3);
-				lblNewLabel_4_1_1.setIcon(new ImageIcon(m.LRecette.get(Recette3).Image));;
-				lblNewLabel_5_2_1.setText(m.LRecette.get(Recette3).Nom);
+				lblNewLabel_4_1_1.setIcon(new ImageIcon(Recette3.Image));;
+				lblNewLabel_5_2_1.setText(Recette3.Nom);
 				lblNewLabel_5_1_1_1.setText(temps3);
 			}
 		});
@@ -458,8 +491,9 @@ public class Swing_MenuJour {
 		return Recette;
 	}
 	
-	public String tempsRecette (int Recette) {
-		int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
+	public String tempsRecette(Recette Recette) {
+		//int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
+		int duree = Recette.TempsCuisson + Recette.TempsPreparation;
 		String temps ="";
 		if (duree > 60 ) {
 			temps+= duree/60 + " h " + duree%60 + " min";

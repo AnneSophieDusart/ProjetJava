@@ -655,6 +655,50 @@ public class Swing_ListeRecettes implements Observer{
 		lblNewLabel_3_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
 		lblNewLabel_3_1.setBounds(143, 14, 61, 20);
 		frame.getContentPane().add(lblNewLabel_3_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("New label");
+		lblNewLabel_1_1.setBounds(386, 10, 30, 30);
+		frame.getContentPane().add(lblNewLabel_1_1);
+		if (m.modeClair) {
+			lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\eye_black.png"));
+		} else {
+			lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\eye_white.png"));
+		}
+		lblNewLabel_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\eye_souris.png"));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				if (m.modeClair) {
+					lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\eye_black.png"));
+				} else {
+					lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\eye_white.png"));
+				}
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int index = list.getSelectedIndex();
+				
+				if (index==-1) {
+					JOptionPane.showMessageDialog(frame, "Aucune recette n'est séléctionnée !", "Erreur",JOptionPane.ERROR_MESSAGE);
+				} else {
+					int numRecette = 0;
+					for (int i=0; i<m.LRecette.size();i++) {
+						if (m.LRecette.get(i).Nom==monTab[index]) {
+							numRecette=i;
+						}}
+					Recette r = m.LRecette.get(numRecette);
+					
+					Swing_Details win = new Swing_Details(r, m, ctrl);
+					win.setVisible(r);
+				}
+				
+			}
+		});
+		
+		
 		comboBox2.addItemListener(ctrl);
 		
 		JMenuBar menuBar = new JMenuBar();
