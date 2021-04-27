@@ -344,6 +344,7 @@ public class Swing_RechercheIngredients implements Observer {
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		m.modeClair=false;
+		m.enregistrer();
 		Swing_RechercheIngredients win = new Swing_RechercheIngredients(m,ctrl);
 		win.setVisible2();
 	}
@@ -352,6 +353,7 @@ public class Swing_RechercheIngredients implements Observer {
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		m.modeClair=true;
+		m.enregistrer();
 		Swing_RechercheIngredients win = new Swing_RechercheIngredients(m,ctrl);
 		win.setVisible2();
 	}

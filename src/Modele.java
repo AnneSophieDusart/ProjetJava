@@ -77,6 +77,7 @@ public class Modele extends Observable{
 			BufferedOutputStream bos = new BufferedOutputStream(fos);
 			encoder = new XMLEncoder(bos);
 			
+			encoder.writeObject(modeClair);
 			encoder.writeObject(this.LRecette);
 			encoder.flush();
 			
@@ -94,6 +95,7 @@ public class Modele extends Observable{
 			BufferedInputStream bis = new BufferedInputStream(fis);
 			decoder = new XMLDecoder(bis);
 			
+			this.modeClair = (boolean)decoder.readObject();
 			this.LRecette = (ArrayList<Recette>)decoder.readObject();			
 			
 		}catch (Exception e){

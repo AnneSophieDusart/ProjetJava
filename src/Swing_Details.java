@@ -200,7 +200,7 @@ public class Swing_Details {
 		txtpnHello.setEditable(false);
 		txtpnHello.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
 		txtpnHello.setText(Recette.afficherIngredients((Integer) spinner.getValue()));
-		txtpnHello.setBounds(10, 24, 234, 260);
+		txtpnHello.setBounds(10, 24, 244, 260);
 		panel_1.add(txtpnHello);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");

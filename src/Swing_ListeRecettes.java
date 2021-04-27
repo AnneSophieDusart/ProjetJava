@@ -758,6 +758,7 @@ public class Swing_ListeRecettes implements Observer{
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		m.modeClair=false;
+		m.enregistrer();
 		Swing_ListeRecettes win = new Swing_ListeRecettes(m,ctrl);
 		win.setVisible2();
 	}
@@ -766,6 +767,7 @@ public class Swing_ListeRecettes implements Observer{
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		m.modeClair=true;
+		m.enregistrer();
 		Swing_ListeRecettes win = new Swing_ListeRecettes(m,ctrl);
 		win.setVisible2();
 	}

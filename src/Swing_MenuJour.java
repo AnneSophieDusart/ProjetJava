@@ -453,6 +453,7 @@ public class Swing_MenuJour {
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		m.modeClair=false;
+		m.enregistrer();
 		Swing_MenuJour win = new Swing_MenuJour(m,ctrl);
 		win.setVisible2();
 	}
@@ -461,6 +462,7 @@ public class Swing_MenuJour {
 		this.frame.setVisible(false);
 		this.frame.dispose();
 		m.modeClair=true;
+		m.enregistrer();
 		Swing_MenuJour win = new Swing_MenuJour(m,ctrl);
 		win.setVisible2();
 	}

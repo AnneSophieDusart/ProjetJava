@@ -401,6 +401,7 @@ public class Swing_RechercheTitre implements Observer{
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
 		m.modeClair=false;
+		m.enregistrer();
 		Swing_RechercheTitre win = new Swing_RechercheTitre(m,ctrl);
 		win.setVisible2();
 	}
@@ -409,6 +410,7 @@ public class Swing_RechercheTitre implements Observer{
 		this.frmRecettesDeCuisine.setVisible(false);
 		this.frmRecettesDeCuisine.dispose();
 		m.modeClair=true;
+		m.enregistrer();
 		Swing_RechercheTitre win = new Swing_RechercheTitre(m,ctrl);
 		win.setVisible2();
 	}
