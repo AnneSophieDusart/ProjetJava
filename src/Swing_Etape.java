@@ -7,6 +7,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
@@ -25,6 +28,8 @@ import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JTextPane;
 
 public class Swing_Etape implements Observer {
@@ -99,8 +104,22 @@ public class Swing_Etape implements Observer {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				System.out.println("Test");
+			}
+			@Override
+			public void keyTyped(KeyEvent e) {
+				System.out.println("Test2");
+			}
+		});
 		frame.setBounds(100, 100, 440, 422);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
+		
+		
+		
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -142,6 +161,8 @@ public class Swing_Etape implements Observer {
 					lblNewLabel_1_1.setIcon(null);
 					num_etp--;
 					m.changeEtape(recette,num_etp);
+				} else if (num_etp==0) {
+					//Do nothing
 				} else {
 					progressBar.setValue(progressBar.getValue()-valeurProgression);
 					if (num_etp==(recette.getEtapes().size())-1) {
@@ -174,6 +195,7 @@ public class Swing_Etape implements Observer {
 			}
 		});
 		panel.add(lblNewLabel_1_1);
+		
 		if (m.modeClair) {
 			lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_black.png"));
 		} else {
@@ -241,7 +263,7 @@ public class Swing_Etape implements Observer {
 		if (m.modeClair) {
 			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\bandeau_clair.png"));
 		} else {
-			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\bandeau_sombre.png"));
+			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\bandeau_sombre.jpg"));
 		}
 		
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -251,9 +273,15 @@ public class Swing_Etape implements Observer {
 		panel.add(lblNewLabel_2);
 		
 		this.lblNewLabel_4 = new JTextPane();
-		lblNewLabel_4.setEnabled(false);
+		lblNewLabel_4.setEditable(false);
+		if (m.modeClair) {
+			lblNewLabel_4.setForeground(Color.BLACK);
+			lblNewLabel_4.setBackground(Color.WHITE);
+		} else {
+			lblNewLabel_4.setForeground(Color.WHITE);
+			lblNewLabel_4.setBackground(Color.BLACK);
+		}
 		lblNewLabel_4.setText(recette.getEtapes().get(num_etp).getInstrution());
-		lblNewLabel_4.setBackground(Color.WHITE);
 		lblNewLabel_4.setFont(new Font("Segoe UI Light", Font.PLAIN, 20));
 		lblNewLabel_4.setBounds(20, 131, 385, 183);
 		panel.add(lblNewLabel_4);
@@ -304,6 +332,79 @@ public class Swing_Etape implements Observer {
 		panel.add(lblNewLabel_5);
 		
 		
+		KeyboardFocusManager keyManager;
+
+		keyManager=KeyboardFocusManager.getCurrentKeyboardFocusManager();
+		keyManager.addKeyEventDispatcher(new KeyEventDispatcher() {
+
+		  @Override
+		  public boolean dispatchKeyEvent(KeyEvent e) {
+		    if(e.getID()==KeyEvent.KEY_PRESSED && (e.getKeyCode()==KeyEvent.VK_RIGHT || e.getKeyCode()==KeyEvent.VK_KP_RIGHT)){
+		      
+		      if (num_etp<(recette.getEtapes().size())-1) {
+		    	  System.out.println("Droite");
+		    	  progressBar.setValue(progressBar.getValue()+valeurProgression);
+		    	  num_etp++;
+		    	  if (num_etp==(recette.getEtapes().size())-1) { 
+		    		  lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
+		    	  } else if (num_etp==1) {
+		    		  if (m.modeClair) {
+		    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
+		    		  } else {
+		    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
+					  }
+				  }
+				  m.changeEtape(recette,num_etp);
+			  } else {
+				  frame.dispose();
+			  }
+		      return true;
+		    } else if(e.getID()==KeyEvent.KEY_PRESSED && (e.getKeyCode()==KeyEvent.VK_LEFT || e.getKeyCode()==KeyEvent.VK_KP_LEFT)) {
+		    	System.out.println("Gauche");
+		    	if (num_etp==1) {
+					progressBar.setValue(progressBar.getValue()-valeurProgression);
+					lblNewLabel_1_1.setIcon(null);
+					num_etp--;
+					m.changeEtape(recette,num_etp);
+				} else if (num_etp==0) {
+					//Do nothing
+				} else {
+					progressBar.setValue(progressBar.getValue()-valeurProgression);
+					if (num_etp==(recette.getEtapes().size())-1) {
+						if (m.modeClair) {
+							lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_black.png"));
+						} else {
+							lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_white.png"));
+						}
+					}
+					num_etp--;
+					m.changeEtape(recette,num_etp);
+				}
+			    return true;
+		    } else if(e.getID()==KeyEvent.KEY_PRESSED && e.getKeyCode()==KeyEvent.VK_SPACE) {
+		    	System.out.println("Espace");
+		    	if (num_etp<(recette.getEtapes().size())-1) {
+					progressBar.setValue(progressBar.getValue()+valeurProgression);
+					num_etp++;
+					m.changeEtape(recette,num_etp);
+					if (num_etp==(recette.getEtapes().size())-1) {
+						lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
+					} else if (num_etp==1) {
+						if (m.modeClair) {
+							lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
+						} else {
+							lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
+						}
+					}
+				} else {
+					frame.dispose();
+				}
+			    return true;
+		    }
+		    return false;
+		  }
+
+		});
 		
 		
 	}
@@ -319,4 +420,6 @@ public class Swing_Etape implements Observer {
 			this.lblNewLabel_4.setText(etape.getInstrution());
 		}
 	}
+
+	
 }

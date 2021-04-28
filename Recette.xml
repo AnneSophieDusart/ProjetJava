@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.8.0_281" class="java.beans.XMLDecoder">
- <boolean>true</boolean>
+<java version="13.0.1" class="java.beans.XMLDecoder">
+ <boolean>false</boolean>
  <object class="java.util.ArrayList">
   <void method="add">
    <object class="Recette">
@@ -1412,9 +1412,6 @@
       </void>
       <void method="add">
        <object class="Etape">
-        <void property="instrution">
-         <string>Servez aussitôt avec une salade verte et quelques pommes de terre sautées.</string>
-        </void>
         <void property="numEtape">
          <int>5</int>
         </void>

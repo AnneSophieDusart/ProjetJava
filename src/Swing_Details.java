@@ -90,7 +90,7 @@ public class Swing_Details {
 		panel.setBounds(10, 10, 254, 312);
 		frame.getContentPane().add(panel);
 		
-		JLabel lblNewLabel = new JLabel("Image illustration");
+		JLabel lblNewLabel = new JLabel();
 		lblNewLabel.setIcon(new ImageIcon(Recette.Image));
 		lblNewLabel.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel.setBounds(10, 10, 234, 137);

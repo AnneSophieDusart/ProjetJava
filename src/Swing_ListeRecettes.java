@@ -663,6 +663,11 @@ public class Swing_ListeRecettes implements Observer{
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JComboBox comboBox = new JComboBox();
+		if (m.modeClair) {
+			comboBox.setBackground(Color.WHITE);
+		} else {
+			comboBox.setBackground(Color.BLACK);
+		}
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Type", "Origine"}));
 		//comboBox.setModel(new DefaultComboBoxModel(new String[] {" ","Entrée", "Plat", "Dessert"}));
 		comboBox.setBounds(63, 15, 76, 21);
@@ -670,6 +675,11 @@ public class Swing_ListeRecettes implements Observer{
 		comboBox.addItemListener(ctrl);
 		
 		this.comboBox2 = new JComboBox();
+		if (m.modeClair) {
+			comboBox2.setBackground(Color.WHITE);
+		} else {
+			comboBox2.setBackground(Color.BLACK);
+		}
 		comboBox2.setModel(new DefaultComboBoxModel(new String[] {" ","Entrée", "Plat", "Dessert"}));
 		comboBox2.setBounds(164, 15, 76, 21);
 		frame.getContentPane().add(comboBox2);
