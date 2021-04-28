@@ -24,7 +24,7 @@ public class Controleur implements ListSelectionListener, ChangeListener, ItemLi
 	public void valueChanged(ListSelectionEvent e) {
 		if(!e.getValueIsAdjusting()) {
 			//System.out.println(Swing_RechercheTitre.list.getSelectedIndex());
-			modl.selectionRecette(Swing_RechercheTitre.list.getSelectedIndex() );
+			modl.selectionRecette(Swing_RechercheTitre.list.getSelectedIndex());
 		}
 	}
 
