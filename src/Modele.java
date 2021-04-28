@@ -189,7 +189,63 @@ public class Modele extends Observable{
     	this.setChanged();
     	this.notifyObservers(newList);
 	}
+	
+	public void listeRechercheIngredients(String ingredient1, String ingredient2, String[] tableau) {
+		
+		//System.out.println(ingredient1);
+		//System.out.println(ingredient2);
+		String[] newTableau;
+
+		ArrayList<String> listIngredients1 = new ArrayList<String>();
+		String[] Tableau1;
+		if (ingredient1.equals("") || ingredient1.equals("Premier ingrédient")) {
+			Tableau1 = tableau;
+		}
+		else {
+		//System.out.println(ingredient1.equals("") || ingredient1.equals("Premier ingrédient"));
+        	for (int i=0; i<LRecette.size();i++) {
+        		for (int j=0; j<LRecette.get(i).Ingredients.size();j++) {
+        			if (ingredient1.contains(LRecette.get(i).Ingredients.get(j).ingredient)==true || LRecette.get(i).Ingredients.get(j).ingredient.contains(ingredient1) || ingredient1.equals(LRecette.get(i).Ingredients.get(j).ingredient)  ) {
+        				if (listIngredients1.contains(LRecette.get(i).Nom)==false) {
+        					listIngredients1.add(LRecette.get(i).Nom);}
+        			}
+        		}
+        	}
+        	Tableau1 = listIngredients1.toArray(new String[listIngredients1.size()]);
+		}
+        
+        	ArrayList<String> listIngredients2 = new ArrayList<String>();
+			String[] Tableau2;
+		if (ingredient2.equals("") || ingredient2.equals("Second ingrédient")) {
+				Tableau2 = tableau;
+			}
+		else {
+			for (int i=0; i<LRecette.size();i++) {
+        		for (int j=0; j<LRecette.get(i).Ingredients.size();j++) {
+        			if (ingredient2.contains(LRecette.get(i).Ingredients.get(j).ingredient)==true || LRecette.get(i).Ingredients.get(j).ingredient.contains(ingredient2) || ingredient2.equals(LRecette.get(i).Ingredients.get(j).ingredient)  ) {
+        				if (listIngredients2.contains(LRecette.get(i).Nom)==false) {
+        					listIngredients2.add(LRecette.get(i).Nom);}
+        			}
+        		}
+        	}
+        	Tableau2 = listIngredients2.toArray(new String[listIngredients2.size()]);
+		}
+        	ArrayList<String> liste1 = new ArrayList<>(Arrays.asList(Tableau1));
+        	ArrayList<String> liste2 = new ArrayList<>(Arrays.asList(Tableau2));
+        	//System.out.println(liste1);
+        	//System.out.println(liste2);
+        	ArrayList<String> listeTriees = new ArrayList<String>();
+             for (String t : liste1) {
+                 if(liste2.contains(t)) {
+                	 listeTriees.add(t);
+                 }
+             }
+
+        	newTableau = listeTriees.toArray(new String[listeTriees.size()]);
+        	this.setChanged();
+		this.notifyObservers(newTableau);
+	}
 			
 		
-
+	
 }

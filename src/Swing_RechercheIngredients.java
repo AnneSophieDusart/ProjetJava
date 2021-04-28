@@ -20,6 +20,9 @@ import java.awt.Font;
 import javax.swing.JScrollPane;
 import javax.swing.AbstractListModel;
 import javax.swing.ImageIcon;
+
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
@@ -32,22 +35,23 @@ import javax.swing.JButton;
 public class Swing_RechercheIngredients implements Observer {
 
 	Modele m;
-	Controleur ctrl;
+	ControleurRechercheIngredients ctrl;
 	int Recette = 0;
-	static JList<String> list;
-	JLabel lblNewLabel;
-	JLabel lblNewLabel_1;
+	static JList<String> list_1;
+	String[] values,monTableau;
+	JLabel lblNewLabel_3,lblNewLabel_1_1,lblNewLabel_4,lblNewLabel_5;
 	
 	private JFrame frame;
-	private JTextField txtPremierIngrdient;
-	private JTextField txtSecondIngrdient;
+	JTextField txtPremierIngrdient;
+	JTextField txtSecondIngrdient;
+	JSpinner spinner;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		Modele m = new Modele();
-		Controleur ctrl = new Controleur(m);
+		ControleurRechercheIngredients ctrl = new ControleurRechercheIngredients(m);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -63,7 +67,7 @@ public class Swing_RechercheIngredients implements Observer {
 	/**
 	 * Create the application.
 	 */
-	public Swing_RechercheIngredients(Modele modl, Controleur cont) {
+	public Swing_RechercheIngredients(Modele modl, ControleurRechercheIngredients cont) {
 		
 		if (modl.modeClair) {
 			try {
@@ -106,6 +110,27 @@ public class Swing_RechercheIngredients implements Observer {
 		txtPremierIngrdient.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
 		txtPremierIngrdient.setText("Premier ingr\u00E9dient");
 		txtPremierIngrdient.setBounds(10, 10, 232, 22);
+		txtPremierIngrdient.addMouseListener(new MouseAdapter() {           
+		    @Override
+		    public void mouseReleased(MouseEvent e) {}         
+		    @Override
+		    public void mousePressed(MouseEvent e) {}          
+		    @Override
+		    public void mouseExited(MouseEvent e) {}           
+		    @Override
+		    public void mouseEntered(MouseEvent e) {}          
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		        JTextField txtPremierIngrdient = ((JTextField)e.getSource());
+		        txtPremierIngrdient.setText("");
+		        if (m.modeClair) {
+		        	txtPremierIngrdient.setForeground(Color.black);
+		        } else {
+		        	txtPremierIngrdient.setForeground(Color.white);
+		        }
+		        txtPremierIngrdient.removeMouseListener(this);
+		    }
+		});
 		panel.add(txtPremierIngrdient);
 		txtPremierIngrdient.setColumns(10);
 		
@@ -119,23 +144,45 @@ public class Swing_RechercheIngredients implements Observer {
 		txtSecondIngrdient.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
 		txtSecondIngrdient.setColumns(10);
 		txtSecondIngrdient.setBounds(10, 34, 232, 22);
+		txtSecondIngrdient.addMouseListener(new MouseAdapter() {           
+		    @Override
+		    public void mouseReleased(MouseEvent e) {}         
+		    @Override
+		    public void mousePressed(MouseEvent e) {}          
+		    @Override
+		    public void mouseExited(MouseEvent e) {}           
+		    @Override
+		    public void mouseEntered(MouseEvent e) {}          
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		        JTextField txtSecondIngrdient = ((JTextField)e.getSource());
+		        txtSecondIngrdient.setText("");
+		        if (m.modeClair) {
+		        	txtSecondIngrdient.setForeground(Color.black);
+		        } else {
+		        	txtSecondIngrdient.setForeground(Color.white);
+		        }
+		        txtSecondIngrdient.removeMouseListener(this);
+		    }
+		});
 		panel.add(txtSecondIngrdient);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 66, 272, 334);
 		panel.add(scrollPane);
 		
-		JList list_1 = new JList();
+		this.list_1 = new JList();
 		if (m.modeClair) {
 			list_1.setBackground(Color.WHITE);
 		} else {
 			list_1.setBackground(Color.BLACK);
 		}
 		list_1.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 15));
-		String[] values = new String[m.LRecette.size()];
+		this.values = new String[m.LRecette.size()];
 		for (int i=0; i<this.m.LRecette.size(); i++) {
 			values[i]=m.LRecette.get(i).Nom;
 		}
+		this.monTableau = values;
 		list_1.setModel(new AbstractListModel() {
 			//String[] values = new String[] {"Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3", "Recette 1", "Recette 2", "Recette 3"};
 			public int getSize() {
@@ -145,6 +192,8 @@ public class Swing_RechercheIngredients implements Observer {
 				return values[index];
 			}
 		});
+		list_1.setSelectedIndex(0);
+		list_1.addListSelectionListener(ctrl);
 		scrollPane.setViewportView(list_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
@@ -170,6 +219,7 @@ public class Swing_RechercheIngredients implements Observer {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				System.out.println("Le bouton \"Search \" vient d'être cliqué.");
+				m.listeRechercheIngredients(txtPremierIngrdient.getText(), txtSecondIngrdient.getText(),values);
 			}
 		});
 		panel.add(lblNewLabel_2);
@@ -184,13 +234,13 @@ public class Swing_RechercheIngredients implements Observer {
 		panel_1.setBounds(292, 10, 254, 390);
 		panel.add(panel_1);
 		
-		JLabel lblNewLabel_3 = new JLabel("Image illustration");
+		this.lblNewLabel_3 = new JLabel("Image illustration");
 		lblNewLabel_3.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));
 		lblNewLabel_3.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel_3.setBounds(10, 10, 234, 137);
 		panel_1.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_1_1 = new JLabel(m.LRecette.get(Recette).Nom);
+		this.lblNewLabel_1_1 = new JLabel(m.LRecette.get(Recette).Nom);
 		lblNewLabel_1_1.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 16));
@@ -208,7 +258,7 @@ public class Swing_RechercheIngredients implements Observer {
 		else {
 			cuisson+= m.LRecette.get(Recette).TempsCuisson + " min";
 		}
-		JLabel lblNewLabel_4 = new JLabel(cuisson);
+		this.lblNewLabel_4 = new JLabel(cuisson);
 		lblNewLabel_4.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_4.setForeground(new Color(255, 127, 80));
@@ -226,7 +276,7 @@ public class Swing_RechercheIngredients implements Observer {
 		else {
 			prepa+= m.LRecette.get(Recette).TempsPreparation + " min";
 		}	
-		JLabel lblNewLabel_5 = new JLabel(prepa);
+		this.lblNewLabel_5 = new JLabel(prepa);
 		lblNewLabel_5.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_5.setForeground(new Color(255, 127, 80));
@@ -234,7 +284,7 @@ public class Swing_RechercheIngredients implements Observer {
 		lblNewLabel_5.setBounds(10, 214, 100, 20);
 		panel_1.add(lblNewLabel_5);
 		
-		JSpinner spinner = new JSpinner(new SpinnerNumberModel(m.LRecette.get(Recette).Personnes,0,100,1));
+		this.spinner = new JSpinner(new SpinnerNumberModel(m.LRecette.get(Recette).Personnes,0,100,1));
 		spinner.setForeground(new Color(255, 127, 80));
 		spinner.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
 		spinner.setBounds(37, 265, 50, 20);
@@ -372,8 +422,54 @@ public class Swing_RechercheIngredients implements Observer {
 	}
 
 	@Override
-	public void update(Observable arg0, Object arg1) {
-		// TODO Auto-generated method stub
+	public void update(Observable modl, Object arg) {
+		if (arg instanceof Integer) {
+			int Recettes=(Integer) arg;
+			if (Recettes == -1 ) {
+				
+			}
+			else {
+			for (int i=0; i<m.LRecette.size();i++) {
+				if (m.LRecette.get(i).Nom==this.monTableau[Recettes]) {
+					//System.out.println(this.monTableau[Recettes]);
+					this.Recette=i;
+				}
+			}
+			
+			this.lblNewLabel_3.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));;
+			this.lblNewLabel_1_1.setText(m.LRecette.get(Recette).Nom);
+
+			String cuisson ="";
+			if (m.LRecette.get(Recette).TempsCuisson > 60 ) {
+				cuisson+= m.LRecette.get(Recette).TempsCuisson/60 + " h " + m.LRecette.get(Recette).TempsCuisson%60 + " min";
+			}
+			else if (m.LRecette.get(Recette).TempsCuisson == 60) {
+				cuisson+= "1 h";
+			}
+			else {
+				cuisson+= m.LRecette.get(Recette).TempsCuisson + " min";
+			}
+			this.lblNewLabel_4.setText(cuisson);
+		
+			String prepa ="";
+			if (m.LRecette.get(Recette).TempsPreparation > 60 ) {
+				prepa+= m.LRecette.get(Recette).TempsPreparation/60 + " h " + m.LRecette.get(Recette).TempsPreparation%60 + " min";
+			}
+			else if (m.LRecette.get(Recette).TempsPreparation == 60) {
+				prepa+= "1 h";
+			}
+			else {
+				prepa+= m.LRecette.get(Recette).TempsPreparation + " min";
+			}		
+			this.lblNewLabel_5.setText(prepa);
+
+			this.spinner.setValue(m.LRecette.get(Recette).Personnes) ;}
+			
+		}else if (arg instanceof String[]){
+				this.monTableau = (String[])arg;
+				Swing_RechercheIngredients.list_1.setListData (monTableau);
+
+			}
 		
 	}
 }

@@ -22,6 +22,7 @@ public class Swing_Accueil implements WindowListener {
 	
 	Modele m;
 	Controleur ctrl;
+	ControleurRechercheIngredients ctrl2;
 
 	private JFrame frmRecettesDeCuisine;
 
@@ -60,6 +61,7 @@ public class Swing_Accueil implements WindowListener {
 	private void initialize() {
 		this.m = new Modele();
 		this.ctrl = new Controleur(m);
+		this.ctrl2 = new ControleurRechercheIngredients (m);
 		
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
@@ -110,7 +112,7 @@ public class Swing_Accueil implements WindowListener {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Swing_RechercheIngredients recette = new Swing_RechercheIngredients(m,ctrl);
+				Swing_RechercheIngredients recette = new Swing_RechercheIngredients(m,ctrl2);
 				recette.setVisible2();
 			}
 		});
