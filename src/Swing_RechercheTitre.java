@@ -160,7 +160,11 @@ public class Swing_RechercheTitre implements Observer{
 		panel.setLayout(null);
 		
 		this.lblNewLabel = new JLabel("Image illustration");
-		lblNewLabel.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));
+		ImageIcon imageIcon = new ImageIcon(m.LRecette.get(Recette).Image);
+		Image image = imageIcon.getImage();
+		Image newimg = image.getScaledInstance(234, 137, Image.SCALE_SMOOTH);
+		imageIcon = new ImageIcon(newimg);
+		lblNewLabel.setIcon(imageIcon);
 		lblNewLabel.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel.setBounds(10, 10, 234, 137);
 		panel.add(lblNewLabel);
@@ -442,8 +446,11 @@ public class Swing_RechercheTitre implements Observer{
 					this.Recette=i;
 				}
 			}
-			
-			this.lblNewLabel.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));;
+			ImageIcon imageIcon = new ImageIcon(m.LRecette.get(Recette).Image);
+			Image image = imageIcon.getImage();
+			Image newimg = image.getScaledInstance(234, 137, Image.SCALE_SMOOTH);
+			imageIcon = new ImageIcon(newimg);
+			lblNewLabel.setIcon(imageIcon);
 			this.lblNewLabel_1.setText(m.LRecette.get(Recette).Nom);
 			/*int duree = m.LRecette.get(Recette).TempsCuisson +  m.LRecette.get(Recette).TempsPreparation;
 			String temps ="";

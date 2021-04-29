@@ -17,6 +17,8 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.JScrollPane;
 import javax.swing.AbstractListModel;
 import javax.swing.ImageIcon;
@@ -235,7 +237,11 @@ public class Swing_RechercheIngredients implements Observer {
 		panel.add(panel_1);
 		
 		this.lblNewLabel_3 = new JLabel("Image illustration");
-		lblNewLabel_3.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));
+		ImageIcon imageIcon = new ImageIcon(m.LRecette.get(Recette).Image);
+		Image image = imageIcon.getImage();
+		Image newimg = image.getScaledInstance(234, 137, Image.SCALE_SMOOTH);
+		imageIcon = new ImageIcon(newimg);
+		lblNewLabel_3.setIcon(imageIcon);
 		lblNewLabel_3.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel_3.setBounds(10, 10, 234, 137);
 		panel_1.add(lblNewLabel_3);
@@ -436,7 +442,11 @@ public class Swing_RechercheIngredients implements Observer {
 				}
 			}
 			
-			this.lblNewLabel_3.setIcon(new ImageIcon(m.LRecette.get(Recette).Image));;
+			ImageIcon imageIcon = new ImageIcon(m.LRecette.get(Recette).Image);
+			Image image = imageIcon.getImage();
+			Image newimg = image.getScaledInstance(234, 137, Image.SCALE_SMOOTH);
+			imageIcon = new ImageIcon(newimg);
+			lblNewLabel_3.setIcon(imageIcon);
 			this.lblNewLabel_1_1.setText(m.LRecette.get(Recette).Nom);
 
 			String cuisson ="";

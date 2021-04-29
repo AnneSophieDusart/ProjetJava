@@ -17,6 +17,8 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 import javax.swing.JSpinner;
@@ -118,6 +120,11 @@ public class Swing_MenuJour {
 		panel.setLayout(null);
 		
 		JSpinner spinner = new JSpinner();
+		if (m.modeClair) {
+			spinner.setBackground(Color.WHITE);
+		} else {
+			spinner.setBackground(Color.BLACK);
+		}
 		spinner.setModel(new SpinnerNumberModel(1, 1, 99, 1));
 		spinner.setBounds(491, 18, 45, 20);
 		panel.add(spinner);
@@ -127,7 +134,12 @@ public class Swing_MenuJour {
 		
 		
 		this.lblNewLabel_4 = new JLabel("Image");
-		lblNewLabel_4.setIcon(new ImageIcon(Recette1.Image));
+		ImageIcon imageIcon1 = new ImageIcon(Recette1.Image);
+		Image image1 = imageIcon1.getImage();
+		Image newimg1 = image1.getScaledInstance(160, 100, Image.SCALE_SMOOTH);
+		imageIcon1 = new ImageIcon(newimg1);
+		lblNewLabel_4.setIcon(imageIcon1);
+		//lblNewLabel_4.setIcon(new ImageIcon(Recette1.Image));
 		lblNewLabel_4.setBounds(15, 61, 160, 100);
 		panel.add(lblNewLabel_4);
 		
@@ -204,7 +216,12 @@ public class Swing_MenuJour {
 		String temps2 = tempsRecette(Recette2);		
 		
 		this.lblNewLabel_4_1 = new JLabel("Image");
-		lblNewLabel_4_1.setIcon(new ImageIcon(Recette2.Image));
+		ImageIcon imageIcon2 = new ImageIcon(Recette2.Image);
+		Image image2 = imageIcon2.getImage();
+		Image newimg2 = image2.getScaledInstance(160, 100, Image.SCALE_SMOOTH);
+		imageIcon2 = new ImageIcon(newimg2);
+		lblNewLabel_4_1.setIcon(imageIcon2);
+		//lblNewLabel_4_1.setIcon(new ImageIcon(Recette2.Image));
 		lblNewLabel_4_1.setBounds(194, 61, 160, 100);
 		panel.add(lblNewLabel_4_1);
 		
@@ -281,7 +298,12 @@ public class Swing_MenuJour {
 		String temps3 = tempsRecette (Recette3);		
 		
 		this.lblNewLabel_4_1_1 = new JLabel("Image");
-		lblNewLabel_4_1_1.setIcon(new ImageIcon(Recette3.Image));
+		ImageIcon imageIcon3 = new ImageIcon(Recette3.Image);
+		Image image3 = imageIcon3.getImage();
+		Image newimg3 = image3.getScaledInstance(160, 100, Image.SCALE_SMOOTH);
+		imageIcon3 = new ImageIcon(newimg3);
+		lblNewLabel_4_1_1.setIcon(imageIcon3);
+		//lblNewLabel_4_1_1.setIcon(new ImageIcon(Recette3.Image));
 		lblNewLabel_4_1_1.setBounds(371, 61, 160, 100);
 		panel.add(lblNewLabel_4_1_1);
 		
@@ -426,19 +448,34 @@ public class Swing_MenuJour {
 			public void mouseClicked(MouseEvent e) {
 				Recette1 = m.LRecette.get(randomRecette("Entrée"));
 				String temps1 = tempsRecette(Recette1);
-				lblNewLabel_4.setIcon(new ImageIcon(Recette1.Image));;
+				ImageIcon imageIcon1 = new ImageIcon(Recette1.Image);
+				Image image1 = imageIcon1.getImage();
+				Image newimg1 = image1.getScaledInstance(160, 100, Image.SCALE_SMOOTH);
+				imageIcon1 = new ImageIcon(newimg1);
+				lblNewLabel_4.setIcon(imageIcon1);
+				//lblNewLabel_4.setIcon(new ImageIcon(Recette1.Image));;
 				lblNewLabel_5.setText(Recette1.Nom);
 				lblNewLabel_5_1.setText(temps1);
 				
 				Recette2 = m.LRecette.get(randomRecette("Plat"));
 				String temps2 = tempsRecette(Recette2);
-				lblNewLabel_4_1.setIcon(new ImageIcon(Recette2.Image));;
+				ImageIcon imageIcon2 = new ImageIcon(Recette2.Image);
+				Image image2 = imageIcon2.getImage();
+				Image newimg2 = image2.getScaledInstance(160, 100, Image.SCALE_SMOOTH);
+				imageIcon2 = new ImageIcon(newimg2);
+				lblNewLabel_4_1.setIcon(imageIcon2);
+				//lblNewLabel_4_1.setIcon(new ImageIcon(Recette2.Image));;
 				lblNewLabel_5_2.setText(Recette2.Nom);
 				lblNewLabel_5_1_1.setText(temps2);
 				
 				Recette3 = m.LRecette.get(randomRecette("Dessert"));
 				String temps3 = tempsRecette(Recette3);
-				lblNewLabel_4_1_1.setIcon(new ImageIcon(Recette3.Image));;
+				ImageIcon imageIcon3 = new ImageIcon(Recette3.Image);
+				Image image3 = imageIcon3.getImage();
+				Image newimg3 = image3.getScaledInstance(160, 100, Image.SCALE_SMOOTH);
+				imageIcon3 = new ImageIcon(newimg3);
+				lblNewLabel_4_1_1.setIcon(imageIcon3);
+				//lblNewLabel_4_1_1.setIcon(new ImageIcon(Recette3.Image));;
 				lblNewLabel_5_2_1.setText(Recette3.Nom);
 				lblNewLabel_5_1_1_1.setText(temps3);
 			}

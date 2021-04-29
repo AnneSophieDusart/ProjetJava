@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -91,7 +92,12 @@ public class Swing_Details {
 		frame.getContentPane().add(panel);
 		
 		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon(Recette.Image));
+		ImageIcon imageIcon = new ImageIcon(Recette.Image);
+		Image image = imageIcon.getImage();
+		Image newimg = image.getScaledInstance(234, 137, Image.SCALE_SMOOTH);
+		imageIcon = new ImageIcon(newimg);
+		lblNewLabel.setIcon(imageIcon);
+		//lblNewLabel.setIcon(new ImageIcon(Recette.Image));
 		lblNewLabel.setBackground(Color.LIGHT_GRAY);
 		lblNewLabel.setBounds(10, 10, 234, 137);
 		panel.add(lblNewLabel);

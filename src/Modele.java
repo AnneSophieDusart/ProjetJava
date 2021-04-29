@@ -195,6 +195,9 @@ public class Modele extends Observable{
 		//System.out.println(ingredient1);
 		//System.out.println(ingredient2);
 		String[] newTableau;
+		
+		ingredient1=ingredient1.toLowerCase();
+		ingredient2=ingredient2.toLowerCase();
 
 		ArrayList<String> listIngredients1 = new ArrayList<String>();
 		String[] Tableau1;
@@ -205,7 +208,7 @@ public class Modele extends Observable{
 		//System.out.println(ingredient1.equals("") || ingredient1.equals("Premier ingrédient"));
         	for (int i=0; i<LRecette.size();i++) {
         		for (int j=0; j<LRecette.get(i).Ingredients.size();j++) {
-        			if (ingredient1.contains(LRecette.get(i).Ingredients.get(j).ingredient)==true || LRecette.get(i).Ingredients.get(j).ingredient.contains(ingredient1) || ingredient1.equals(LRecette.get(i).Ingredients.get(j).ingredient)  ) {
+        			if (ingredient1.contains(LRecette.get(i).Ingredients.get(j).ingredient.toLowerCase())==true || LRecette.get(i).Ingredients.get(j).ingredient.toLowerCase().contains(ingredient1) || ingredient1.equals(LRecette.get(i).Ingredients.get(j).ingredient.toLowerCase())  ) {
         				if (listIngredients1.contains(LRecette.get(i).Nom)==false) {
         					listIngredients1.add(LRecette.get(i).Nom);}
         			}
@@ -222,7 +225,7 @@ public class Modele extends Observable{
 		else {
 			for (int i=0; i<LRecette.size();i++) {
         		for (int j=0; j<LRecette.get(i).Ingredients.size();j++) {
-        			if (ingredient2.contains(LRecette.get(i).Ingredients.get(j).ingredient)==true || LRecette.get(i).Ingredients.get(j).ingredient.contains(ingredient2) || ingredient2.equals(LRecette.get(i).Ingredients.get(j).ingredient)  ) {
+        			if (ingredient2.contains(LRecette.get(i).Ingredients.get(j).ingredient.toLowerCase())==true || LRecette.get(i).Ingredients.get(j).ingredient.toLowerCase().contains(ingredient2) || ingredient2.equals(LRecette.get(i).Ingredients.get(j).ingredient.toLowerCase())  ) {
         				if (listIngredients2.contains(LRecette.get(i).Nom)==false) {
         					listIngredients2.add(LRecette.get(i).Nom);}
         			}

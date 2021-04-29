@@ -3426,5 +3426,512 @@
     </void>
    </object>
   </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Épluchez les courgettes et coupez-les en fines tranches. Faites de même avec les oignons.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Dans une poêle, mettez un peu d’huile d’olive.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faites cuire les courgettes et les oignons à feu vif pendant cinq minutes.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Après les cinq minutes, couvrez, baissez le feu et laissez cuire encore 15 minutes en remuant de temps en temps.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Assaisonnez de sel et poivre.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mixer le tout.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajouter a la mixture la crème fraîche et les œufs, vous pouvez également ajouter du gruyère.</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Versez la préparation dans des ramequins ou un plat beurré.</string>
+        </void>
+        <void property="numEtape">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Saupoudrez de gruyère râpé.</string>
+        </void>
+        <void property="numEtape">
+         <int>9</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Enfournez dans un four préchauffé à 210°C pendant 10 minutes.</string>
+        </void>
+        <void property="numEtape">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/mousse_courgettes.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>courgettes</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>oignons</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>crème fraîche</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>oeufs</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>gruyère râpé</string>
+        </void>
+        <void property="mesure">
+         <string>sachet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Mousse de courgettes</string>
+    </void>
+    <void property="personnes">
+     <int>5</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>10</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>30</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>France</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Dans un saladier, mélangez la farine et les œufs .</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajoutez le lait, la crème, le gruyère râpé, le sel, le poivre et les lardons en remuant soigneusement.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Répartissez le mélange dans des ramequins préalablement beurrés.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Cuisez au four, à 220°C pendant 40 minutes environ.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Servez chaud, tièdes ou froids selon vos préférences</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/quiche_ramequins.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>oeufs</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>lait</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>25</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>crème fraîche</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>farine</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>lardons</string>
+        </void>
+        <void property="mesure">
+         <string>paquet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Quiche en ramequins</string>
+    </void>
+    <void property="personnes">
+     <int>6</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>40</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>15</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>France</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faire cuire les pâtes</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Dans une poêle, faire revenir les oignons puis rajouter la sauce tomate. Faire mijoter un bon moment.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faire le cuire les œufs (10min)</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Dans un plat à four, mettre des pâtes puis des œufs, recouvrir de la sauce tomate et du fromage. Recommencer pour un second étage.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string> Avant de servir, faire cuire au four pendant 20min a 200° environ.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/patesitalienne.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>pâtes</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>400</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>oeufs</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>sauce tomate</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>800</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>oignons</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>emmental</string>
+        </void>
+        <void property="mesure">
+         <string>sachet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>parmesan</string>
+        </void>
+        <void property="mesure">
+         <string>sachet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Pates à l&apos;italienne</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>20</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>20</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Italie</string>
+    </void>
+   </object>
+  </void>
  </object>
 </java>
