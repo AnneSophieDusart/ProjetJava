@@ -201,7 +201,7 @@ public class Modele extends Observable{
 
 		ArrayList<String> listIngredients1 = new ArrayList<String>();
 		String[] Tableau1;
-		if (ingredient1.equals("") || ingredient1.equals("Premier ingrédient")) {
+		if (ingredient1.equals("") || ingredient1.equals("premier ingrédient")) {
 			Tableau1 = tableau;
 		}
 		else {
@@ -219,7 +219,7 @@ public class Modele extends Observable{
         
         	ArrayList<String> listIngredients2 = new ArrayList<String>();
 			String[] Tableau2;
-		if (ingredient2.equals("") || ingredient2.equals("Second ingrédient")) {
+		if (ingredient2.equals("") || ingredient2.equals("second ingrédient")) {
 				Tableau2 = tableau;
 			}
 		else {
