@@ -120,9 +120,6 @@ public class Swing_Etape implements Observer {
 		frame.setResizable(false);
 		
 		
-		
-		
-		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
@@ -305,9 +302,11 @@ public class Swing_Etape implements Observer {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String etp = JOptionPane.showInputDialog(frame, "Modifier l'étape", recette.getEtapes().get(num_etp).getInstrution());
+				System.out.println(etp);
+				if (etp!=null) {
 				recette.changeEtape(num_etp, etp);
 				lblNewLabel_4.setText(recette.getEtapes().get(num_etp).getInstrution());
-				m.enregistrer();
+				m.enregistrer();}
 			}
 		});
 		
@@ -333,8 +332,7 @@ public class Swing_Etape implements Observer {
 		lblNewLabel_5.setBounds(10, 60, 406, 260);
 		panel.add(lblNewLabel_5);
 		
-		
-		KeyboardFocusManager keyManager;
+		/*KeyboardFocusManager keyManager;
 
 		keyManager=KeyboardFocusManager.getCurrentKeyboardFocusManager();
 		keyManager.addKeyEventDispatcher(new KeyEventDispatcher() {
@@ -351,6 +349,7 @@ public class Swing_Etape implements Observer {
 		    		  lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
 		    	  } else if (num_etp==1) {
 		    		  if (m.modeClair) {
+			    		  System.out.println("coucou");
 		    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
 		    		  } else {
 		    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
@@ -406,6 +405,88 @@ public class Swing_Etape implements Observer {
 		    return false;
 		  }
 
+		});*/
+		frame.setFocusable(true);
+		frame.requestFocus();
+		frame.addKeyListener(new KeyListener () {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				System.out.println(e.getKeyCode());
+				if(e.getKeyCode()==KeyEvent.VK_RIGHT || e.getKeyCode()==KeyEvent.VK_KP_RIGHT){
+				      
+				      if (num_etp<(recette.getEtapes().size())-1) {
+				    	  System.out.println("Droite");
+				    	  progressBar.setValue(progressBar.getValue()+valeurProgression);
+				    	  num_etp++;
+				    	  if (num_etp==(recette.getEtapes().size())-1) { 
+				    		  lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
+				    	  } else if (num_etp==1) {
+				    		  if (m.modeClair) {
+					    		  System.out.println("coucou");
+				    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
+				    		  } else {
+				    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
+							  }
+						  }
+						  m.changeEtape(recette,num_etp);
+					  } else {
+						  frame.dispose();
+					  }
+				    } else if(e.getKeyCode()==KeyEvent.VK_LEFT || e.getKeyCode()==KeyEvent.VK_KP_LEFT) {
+				    	System.out.println("Gauche");
+				    	if (num_etp==1) {
+							progressBar.setValue(progressBar.getValue()-valeurProgression);
+							lblNewLabel_1_1.setIcon(null);
+							num_etp--;
+							m.changeEtape(recette,num_etp);
+						} else if (num_etp==0) {
+							//Do nothing
+						} else {
+							progressBar.setValue(progressBar.getValue()-valeurProgression);
+							if (num_etp==(recette.getEtapes().size())-1) {
+								if (m.modeClair) {
+									lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_black.png"));
+								} else {
+									lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\next_white.png"));
+								}
+							}
+							num_etp--;
+							m.changeEtape(recette,num_etp);
+						}
+				    } else if(e.getKeyCode()==KeyEvent.VK_SPACE) {
+				    	System.out.println("Espace");
+				    	if (num_etp<(recette.getEtapes().size())-1) {
+							progressBar.setValue(progressBar.getValue()+valeurProgression);
+							num_etp++;
+							m.changeEtape(recette,num_etp);
+							if (num_etp==(recette.getEtapes().size())-1) {
+								lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
+							} else if (num_etp==1) {
+								if (m.modeClair) {
+									lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
+								} else {
+									lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
+								}
+							}
+						} else {
+							frame.dispose();
+						}
+				    }
+				
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
 		});
 		
 		
