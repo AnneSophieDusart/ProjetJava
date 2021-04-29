@@ -96,8 +96,9 @@ public class Swing_RechercheIngredients implements Observer {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 570, 450);
-		frame.setTitle("Délice !");
+		frame.setTitle("Recherche par ingrédients");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setResizable(false);
 		
 		JPanel panel = new JPanel();
 		frame.getContentPane().add(panel, BorderLayout.CENTER);

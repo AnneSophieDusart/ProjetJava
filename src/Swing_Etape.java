@@ -116,6 +116,8 @@ public class Swing_Etape implements Observer {
 		});
 		frame.setBounds(100, 100, 440, 422);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setTitle(recette.Nom);
+		frame.setResizable(false);
 		
 		
 		

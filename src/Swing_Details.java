@@ -80,6 +80,8 @@ public class Swing_Details {
 		frame.setTitle("Délice !");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setTitle(Recette.Nom);
+		frame.setResizable(false);
 		
 		JPanel panel = new JPanel();
 		if (m.modeClair) {

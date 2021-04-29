@@ -114,7 +114,7 @@ public class Swing_RechercheTitre implements Observer{
 		frmRecettesDeCuisine = new JFrame();
 		frmRecettesDeCuisine.setResizable(false);
 		//frmRecettesDeCuisine.setBackground(Color.WHITE);
-		frmRecettesDeCuisine.setTitle("Délice !");
+		frmRecettesDeCuisine.setTitle("Recherche par titre");
 		frmRecettesDeCuisine.setBounds(100, 100, 570, 450);
 		frmRecettesDeCuisine.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		

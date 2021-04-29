@@ -93,9 +93,10 @@ public class Swing_ListeRecettes implements Observer{
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 560, 427);
-		frame.setTitle("Délice !");
+		frame.setTitle("Gérer les recettes");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setResizable(false);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 50, 526, 330);

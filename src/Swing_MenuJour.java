@@ -83,8 +83,9 @@ public class Swing_MenuJour {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 560, 427);
-		frame.setTitle("Délice !");
+		frame.setTitle("Menu du jour");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setResizable(false);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
