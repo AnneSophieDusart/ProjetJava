@@ -107,11 +107,11 @@ public class Swing_Etape implements Observer {
 		frame.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				System.out.println("Test");
+				//System.out.println("Test");
 			}
 			@Override
 			public void keyTyped(KeyEvent e) {
-				System.out.println("Test2");
+				//System.out.println("Test2");
 			}
 		});
 		frame.setBounds(100, 100, 440, 422);
@@ -302,7 +302,7 @@ public class Swing_Etape implements Observer {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				String etp = JOptionPane.showInputDialog(frame, "Modifier l'étape", recette.getEtapes().get(num_etp).getInstrution());
-				System.out.println(etp);
+				//System.out.println(etp);
 				if (etp!=null) {
 				recette.changeEtape(num_etp, etp);
 				lblNewLabel_4.setText(recette.getEtapes().get(num_etp).getInstrution());
@@ -411,18 +411,18 @@ public class Swing_Etape implements Observer {
 		frame.addKeyListener(new KeyListener () {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				System.out.println(e.getKeyCode());
+				//System.out.println(e.getKeyCode());
 				if(e.getKeyCode()==KeyEvent.VK_RIGHT || e.getKeyCode()==KeyEvent.VK_KP_RIGHT){
 				      
 				      if (num_etp<(recette.getEtapes().size())-1) {
-				    	  System.out.println("Droite");
+				    	  //System.out.println("Droite");
 				    	  progressBar.setValue(progressBar.getValue()+valeurProgression);
 				    	  num_etp++;
 				    	  if (num_etp==(recette.getEtapes().size())-1) { 
 				    		  lblNewLabel_1.setIcon(new ImageIcon("ImageAppli\\check_souris.png"));
 				    	  } else if (num_etp==1) {
 				    		  if (m.modeClair) {
-					    		  System.out.println("coucou");
+					    		  //System.out.println("coucou");
 				    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_black.png"));
 				    		  } else {
 				    			  lblNewLabel_1_1.setIcon(new ImageIcon("ImageAppli\\previous_white.png"));
@@ -433,7 +433,7 @@ public class Swing_Etape implements Observer {
 						  frame.dispose();
 					  }
 				    } else if(e.getKeyCode()==KeyEvent.VK_LEFT || e.getKeyCode()==KeyEvent.VK_KP_LEFT) {
-				    	System.out.println("Gauche");
+				    	//System.out.println("Gauche");
 				    	if (num_etp==1) {
 							progressBar.setValue(progressBar.getValue()-valeurProgression);
 							lblNewLabel_1_1.setIcon(null);
@@ -454,7 +454,7 @@ public class Swing_Etape implements Observer {
 							m.changeEtape(recette,num_etp);
 						}
 				    } else if(e.getKeyCode()==KeyEvent.VK_SPACE) {
-				    	System.out.println("Espace");
+				    	//System.out.println("Espace");
 				    	if (num_etp<(recette.getEtapes().size())-1) {
 							progressBar.setValue(progressBar.getValue()+valeurProgression);
 							num_etp++;

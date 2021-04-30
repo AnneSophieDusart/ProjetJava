@@ -48,7 +48,7 @@ public class Modele extends Observable{
 		
 		/*this.enregistrer();*/
 		this.charger();
-		System.out.println(this.LRecette);
+		//System.out.println(this.LRecette);
 		this.dicoType = new HashMap<>();
 		
 		ArrayList<String> listeEntree = new ArrayList<String>();
@@ -201,6 +201,22 @@ public class Modele extends Observable{
 
 		ArrayList<String> listIngredients1 = new ArrayList<String>();
 		String[] Tableau1;
+		
+		if (ingredient1.equals("oeufs") && ingredient2.equals("oeufs")) {
+			ArrayList<Ingredient> LIngre=new ArrayList<>();
+			ArrayList<Etape> LEtape=new ArrayList<>();
+			LIngre.add(new Ingredient (5 ,"Rhum", "cl"));
+			
+			LEtape.add(new Etape (1,"Mettre la farine dans une terrine et former un puits."));
+			
+			Recette crepe = new Recette("Surprise","Geek","Easter Egg",10,20,2,LIngre, LEtape,"ImageAppli/easter.jpg");
+			
+			Controleur ctrl = new Controleur(this);
+			
+			Swing_Details win = new Swing_Details(crepe, this, ctrl);
+			win.setVisible(crepe);
+		}
+		
 		if (ingredient1.equals("") || ingredient1.equals("premier ingrédient")) {
 			Tableau1 = tableau;
 		}
