@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="13.0.1" class="java.beans.XMLDecoder">
+<java version="1.8.0_281" class="java.beans.XMLDecoder">
  <boolean>true</boolean>
  <object class="java.util.ArrayList">
   <void method="add">
@@ -3930,6 +3930,2102 @@
     </void>
     <void property="type2">
      <string>Italie</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Commencez cette recette de poulet au gingembre en pelant et hachant l’oignon et l’ail. Épluchez et coupez le gingembre en bâtonnets. Désossez et détaillez le poulet en morceaux.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faites chauffer l’huile dans un wok. Ajoutez l’oignon et l’ail et faites-les revenir 5 min, sans coloration. Incorporez le poulet et le gingembre, faites sauter 5 min.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Versez le caramel, le bouillon, la sauce soja et le nuoc-mâm, prolongez la cuisson 12 à 15 min sur feu vif, jusqu’à ce que le poulet soit cuit. Servez aussitôt avec du riz nature.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/pouletGingembre.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Blanc et cuisse de poulet</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>850</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Gingembre frais</string>
+        </void>
+        <void property="mesure">
+         <string>cm</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignon</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Gousse d&apos;ail</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Nuoc-mâm</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Caramel liquide</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sauce soja</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Bouillon de volaille</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>15</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Huile d&apos;arachide</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Poulet au gingembre</string>
+    </void>
+    <void property="personnes">
+     <int>6</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>25</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>30</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Vietnam</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Commencez cette recette de rouleaux de printemps aux crevettes et porc en faisant cuire les vermicelles de riz 5 min à l’eau bouillante salée. Égouttez-les, rincez-les à l’eau froide et réservez-les dans une passoire.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Décortiquez les crevettes et coupez-les en deux dans l’épaisseur. Détaillez la viande en fines lamelles. Rincez et coupez l’extrémité des ciboules. Lavez, essorez et ciselez les sucrines. Rincez et effeuillez la menthe.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Versez de l’eau chaude dans un plat à tarte. Humidifiez la première galette de riz et égouttez-la sur un linge.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Déposez un peu de menthe et de salade, du porc et des vermicelles. Faites un premier tour en enfermant la garniture. Rabattez les côtés vers le centre, puis insérez 1 ciboule et 2 demi-crevettes. Roulez la galette jusqu’en haut en serrant bien.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Réalisez les autres galettes de la même façon. Servez avec une sauce pour nems ou une sauce cacahuètes.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/rouleauxPrintemps.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Galette de riz</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>12</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Reste de porc cuit</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>300</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Grosse crevette cuite</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>12</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Vermicelle de riz</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>200</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Menthe</string>
+        </void>
+        <void property="mesure">
+         <string>bouquet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Ciboule</string>
+        </void>
+        <void property="mesure">
+         <string>botte</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucrine ou coeur de laitue</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Rouleaux de printemps aux crevettes et au porc</string>
+    </void>
+    <void property="personnes">
+     <int>6</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>5</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>45</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>Vietnam</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Réalisez la sauce en mélangeant tous les ingrédients dans un bol. Commencez par la fleur de maïs et l’eau puis ajoutez le sucre et la sauce soja. Faites chauffer au micro-ondes jusqu’à ce que la sauce soit nappante.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Pour la pâte, incorporez petit à petit l’eau à la farine. Pétrissez la pâte jusqu’à ce qu’elle devienne compacte et souple.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Abaissez la pâte en formant un rouleau et coupez celui-ci en 16 morceaux égaux. Formez ensuite des petites boules.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faites chauffer un grand volume d’eau, une fois que des petites bulles apparaissent, déposez  les boules de mochi et mélangez délicatement de temps en temps pour éviter qu’elles ne collent à la casserole.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Une fois que l’eau bout, laissez cuire pendant 3 minutes et stoppez la cuisson en les plongeant dans l’eau froide. Piquez ensuite les boules sur des pics.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Cette dernière étape est facultative, mais rendra vos brochettes de mochi encore meilleures ! Faites dorer sur feu doux les brochettes sans rajouter de matière grasse. Surveillez et tournez régulièrement les mochi.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Terminez en les nappant de sauce au soja et régalez-vous !</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/dango.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Dangoko</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>110</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Eau</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>85</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sauce soja</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Fleur de maïs</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Dango (brochettes de mochi)</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>10</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>15</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Japon</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>A la veille du jour de la préparation, trempez vos raisins secs dans du rhum pour les hydrater. Conservez-les au frais.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Le lendemain, préchauffez votre four à 190°C (th.6-7).</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Lavez, pelez les pommes puis, sur une planche de cuisine coupez-les en petites lamelles.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Concassez vos amandes dans un mortier.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Retirez vos raisins du frais puis égouttez-les dans une passoire adaptée.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mettez ensuite, vos lamelles de pommes dans un saladier.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajoutez-y le sucre vanillé, la cannelle, les raisins égouttés, la crème fraîche et les amandes.</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélangez soigneusement le tout.</string>
+        </void>
+        <void property="numEtape">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Déroulez votre pâte feuilletée sur une surface plane et propre.</string>
+        </void>
+        <void property="numEtape">
+         <int>9</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Versez votre préparation au centre de la pâte puis avec un couteau, coupez des bandes tout autour de manière à former un soleil.</string>
+        </void>
+        <void property="numEtape">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Rabattez les bords en les croisant.</string>
+        </void>
+        <void property="numEtape">
+         <int>11</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Cassez 1 œuf en séparant le blanc du jaune puis récupérez le jaune dans un petit récipient.</string>
+        </void>
+        <void property="numEtape">
+         <int>12</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>A l&apos;aide d&apos;un pinceau, badigeonnez votre strudel du jaune d&apos;oeuf.</string>
+        </void>
+        <void property="numEtape">
+         <int>13</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Enfournez-le pendant 25 min.</string>
+        </void>
+        <void property="numEtape">
+         <int>14</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Servez tiède ou froid saupoudré de sucre glace.</string>
+        </void>
+        <void property="numEtape">
+         <int>15</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/strudelPommes.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Pâte feuilletée</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Pommes</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Amandes</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>50</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Raisins secs</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>50</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Canelle</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Rhum</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>20</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Crème fraîche épaisse</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre vanillé</string>
+        </void>
+        <void property="mesure">
+         <string>sachets</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeuf</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre glace</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Strudel aux pommes</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>25</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>20</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Allemagne</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faites tremper les haricots pendant 12 heures dans de l&apos;eau froide, puis faites-les cuire 1 h 30 dans une cocotte remplie d&apos;eau froide, à petit bouillon.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Pendant ce temps, hachez les oignons et l&apos;ail, et faites-les revenir dans une cocotte avec l&apos;huile, jusqu’à qu’ils deviennent translucides.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajoutez la viande hachée, mélangez et remuez à feu moyen.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajoutez les tomates mondées, épépinées et coupées en dés, le piment, l’origan et le cumin, puis le jus de tomates et laissez mijoter 5 min.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Égouttez les haricots et ajoutez-les au mélange. Mélangez et laisser cuire 20 min à feu doux.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Rectifiez l&apos;assaisonnement selon votre goût et servez.  </string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/chiliConCarne.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Viande de boeuf hachée</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>600</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Haricots rouges secs</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>300</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Tomates</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Ail</string>
+        </void>
+        <void property="mesure">
+         <string>gousses</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignons</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Jus de Tomates</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>25</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Cumin</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Origan séché</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Piment</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Chili con carne</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>80</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>45</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Autre</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffez le four à 180°C (thermostat 6). Tapissez de papier sulfurisé et préalablement beurré un moule de 23 cm de diamètre.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélangez les biscuits, la muscade et le beurre fondu.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Tapissez le fond du moule de ce mélange en tassant bien avec le dos d&apos;une cuillère. Placez au réfrigérateur.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Battez la faisselle au fouet jusqu&apos;à ce qu&apos;elle soit lisse, puis ajoutez le sucre et la farine et les oeufs un par un. Ajoutez ensuite la crème et le parfum de votre choix.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Versez cette préparation sur la croûte biscuitée (si la croûte &quot;dépasse&quot; de la crème, enlevez le surplus à la cuillère, cela risque de brûler).</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Enfournez pour 50-55 minutes de cuisson jusqu&apos;à ce que la préparation au fromage soit ferme au toucher.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Laissez refroidir, démoulez et servez frais.</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/cheesecake.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Muscade râpée</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Biscuit émiettés</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>250</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Beurre doux fondu</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>125</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Extrait de vanille</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Farine</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre semoule</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>150</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Fromage blanc</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>500</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeufs</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Crème fraîche</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>25</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Cheesecake</string>
+    </void>
+    <void property="personnes">
+     <int>8</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>55</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>30</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Etats-Unis</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préparez le sirop à l’avance : dans une petite casserole, versez l’eau, le sucre, le bâton de cannelle et les clous de girofle. Portez le mélange à ébullition 15 mn, puis laissez-le refroidir. Ôtez le bâton de cannelle.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffez le four sur th. 5-6/165°. Mélangez la chapelure avec les 3 quarts des noix concassées et les épices en poudre.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Séparez les jaunes des blancs d’œufs. Montez les blancs en neige en versant la moitié du sucre à mi-parcours, puis ajoutez le sucre restant progressivement, jusqu’à ce que l’ensemble soit ferme et brillant.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string> Incorporez les jaunes et mélangez l’ensemble en soulevant délicatement.</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Beurrez un moule à tarte (carré ou rond à fond amovible de préférence) et saupoudrez de la chapelure restante. Etalez la pâte par-dessus et mettez au four 35 mn.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Laissez refroidir, versez le sirop, parsemez des noix concassées restantes et découpez des carrés. </string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/karidopita.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Chapelure de pain</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>90</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Noix concassés</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>230</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Canelle</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Badiane</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeufs</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>350</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Canelle</string>
+        </void>
+        <void property="mesure">
+         <string>petit bâton</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Eau</string>
+        </void>
+        <void property="mesure">
+         <string>cl</string>
+        </void>
+        <void property="quantite">
+         <int>25</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Karidopita (gâteau aux noix)</string>
+    </void>
+    <void property="personnes">
+     <int>6</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>50</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>20</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Grèce</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffer le four à 200°C ( Th 6 ).</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélanger les fromages râpés ou coupés en petits dés, la tomate coupée en petits dés, les oignons, les jalapenos et les épices, et éventuellement le lard.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Beurrer une face de chaque tortilla. Farcir du mélange la moitié de la face non beurrée, bien étaler. Replier l&apos;autre moitié.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Disposer sur une plaque à pâtisserie. Enfourner. Au bout de 5 mn, retourner les tortillas et laisser encore 5 mn.  </string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Retirer du four et couper en morceaux.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/quesadillas.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Paprika</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Cumin</string>
+        </void>
+        <void property="mesure">
+         <string>pincée</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Tomate</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Tortilla</string>
+        </void>
+        <void property="mesure">
+         <string>paquet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignons</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Jalapeno</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Mozzarella</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Fromage de chèvre frais</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Cheddar</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Lard coupé</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>100</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Beurre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>50</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Quesadillas</string>
+    </void>
+    <void property="personnes">
+     <int>6</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>10</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>20</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>Mexique</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Préchauffez votre four à th.6 (180°C).</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Déposez la noix de coco râpée dans un bol puis arrosez-la avec l’eau tiède.  </string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mélangez légèrement puis laissez le tout reposer pendant 5 min.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Dans le bol de votre blender, versez le sucre en poudre, le beurre, les jaunes d’œufs et la noix de coco râpée (avec son eau si tout n’a pas été absorbé). Mixez le tout pendant environ 2 min.  </string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Beurrez légèrement vos moules et chemisez-les avec du sucre en poudre.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Versez votre préparation à quindim.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Faites cuire vos quindim au bain-marie pendant 50 min dans votre four à th.6 (180°C).</string>
+        </void>
+        <void property="numEtape">
+         <int>7</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>A la fin de la cuisson, laissez vos quindim refroidir complètement, à température ambiante, avant de les démouler délicatement en décollant les bords à l’aide d’un couteau.</string>
+        </void>
+        <void property="numEtape">
+         <int>8</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Réservez vos quindim au moins 2 h au réfrigérateur avant de les servir.</string>
+        </void>
+        <void property="numEtape">
+         <int>9</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Servez vos quindim bien frais, accompagnés d’un coulis ou d’une salade de fruits mélangés.</string>
+        </void>
+        <void property="numEtape">
+         <int>10</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/quindim.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeufs</string>
+        </void>
+        <void property="mesure">
+         <string>jaunes</string>
+        </void>
+        <void property="quantite">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Beurre doux</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>15</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sucre en poudre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>150</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Eau tiède</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>70</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Noix de coco râpée</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>35</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Quindim</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>55</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>10</int>
+    </void>
+    <void property="type1">
+     <string>Dessert</string>
+    </void>
+    <void property="type2">
+     <string>Autre</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mettre dans le robot le persil et l&apos;oignon.</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Hacher quelque secondes, puis ajouter le pain coupé en petits dés, mixer quelque secondes.</string>
+        </void>
+        <void property="numEtape">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Ajouter la viande, le sel, le poivre, le ketchup, l&apos;oeuf et la muscade.</string>
+        </void>
+        <void property="numEtape">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mixer 5 secondes</string>
+        </void>
+        <void property="numEtape">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Mettre le hachis dans un plat en lui donnant la forme d&apos;une boule de pain.</string>
+        </void>
+        <void property="numEtape">
+         <int>5</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Cuire 45 min à 175°C, thermostat 5-6.</string>
+        </void>
+        <void property="numEtape">
+         <int>6</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/painDeViande.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Ketchup</string>
+        </void>
+        <void property="mesure">
+         <string>càs</string>
+        </void>
+        <void property="quantite">
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Muscade</string>
+        </void>
+        <void property="mesure">
+         <string>pincée</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Poivre</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Sel</string>
+        </void>
+        <void property="mesure">
+         <string>càc</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Persil</string>
+        </void>
+        <void property="mesure">
+         <string>bouquet</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Boeuf maigre haché</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>500</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oignon</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Pain</string>
+        </void>
+        <void property="mesure">
+         <string>g</string>
+        </void>
+        <void property="quantite">
+         <int>20</int>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Oeuf</string>
+        </void>
+        <void property="mesure">
+         <string></string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>Pain de viande</string>
+    </void>
+    <void property="personnes">
+     <int>4</int>
+    </void>
+    <void property="tempsCuisson">
+     <int>45</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>10</int>
+    </void>
+    <void property="type1">
+     <string>Plat</string>
+    </void>
+    <void property="type2">
+     <string>Etats-Unis</string>
     </void>
    </object>
   </void>
