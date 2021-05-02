@@ -151,18 +151,6 @@ public class Swing_Details {
 		
 		JTextPane txtpnHello = new JTextPane();
 		
-		JSpinner spinner = new JSpinner(new SpinnerNumberModel(Recette.Personnes,0,100,1));
-		spinner.addChangeListener(new ChangeListener() {
-
-	        public void stateChanged(ChangeEvent e) {
-				txtpnHello.setText(Recette.afficherIngredients((Integer) spinner.getValue()));
-	        }
-	    });
-		spinner.setForeground(new Color(255, 127, 80));
-		spinner.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
-		spinner.setBounds(104, 273, 50, 20);
-		panel.add(spinner);
-		
 		JLabel lblNewLabel_7_1 = new JLabel("Pr\u00E9paration");
 		lblNewLabel_7_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_7_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
@@ -175,11 +163,33 @@ public class Swing_Details {
 		lblNewLabel_7_1_1.setBounds(144, 199, 100, 13);
 		panel.add(lblNewLabel_7_1_1);
 		
-		JLabel lblNewLabel_7_1_2 = new JLabel("Nombre de personne");
-		lblNewLabel_7_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_7_1_2.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
-		lblNewLabel_7_1_2.setBounds(66, 254, 121, 13);
-		panel.add(lblNewLabel_7_1_2);
+		JLabel lblNewLabel_7_1_3 = new JLabel("Type");
+		lblNewLabel_7_1_3.setBounds(10, 251, 100, 13);
+		panel.add(lblNewLabel_7_1_3);
+		lblNewLabel_7_1_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7_1_3.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		
+		JLabel lblNewLabel_5_1 = new JLabel(Recette.Type1);
+		lblNewLabel_5_1.setBounds(10, 267, 100, 20);
+		panel.add(lblNewLabel_5_1);
+		lblNewLabel_5_1.setVerticalAlignment(SwingConstants.TOP);
+		lblNewLabel_5_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5_1.setForeground(new Color(255, 127, 80));
+		lblNewLabel_5_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 14));
+		
+		JLabel lblNewLabel_7_1_1_1 = new JLabel("Origine");
+		lblNewLabel_7_1_1_1.setBounds(144, 252, 100, 13);
+		panel.add(lblNewLabel_7_1_1_1);
+		lblNewLabel_7_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7_1_1_1.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		
+		JLabel lblNewLabel_4_1 = new JLabel(Recette.Type2);
+		lblNewLabel_4_1.setBounds(144, 267, 100, 20);
+		panel.add(lblNewLabel_4_1);
+		lblNewLabel_4_1.setVerticalAlignment(SwingConstants.BOTTOM);
+		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_4_1.setForeground(new Color(255, 127, 80));
+		lblNewLabel_4_1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 14));
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
@@ -207,13 +217,31 @@ public class Swing_Details {
 		}
 		txtpnHello.setEditable(false);
 		txtpnHello.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
-		txtpnHello.setText(Recette.afficherIngredients((Integer) spinner.getValue()));
-		txtpnHello.setBounds(10, 24, 244, 260);
+		txtpnHello.setBounds(10, 59, 244, 243);
 		panel_1.add(txtpnHello);
 		
 		JLabel lblNewLabel_2 = new JLabel("New label");
 		lblNewLabel_2.setBounds(255, 332, 30, 30);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_7_1_2 = new JLabel("Nombre de personne");
+		lblNewLabel_7_1_2.setBounds(70, 10, 121, 13);
+		panel_1.add(lblNewLabel_7_1_2);
+		lblNewLabel_7_1_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_7_1_2.setFont(new Font("Segoe UI Light", Font.PLAIN, 12));
+		
+		JSpinner spinner = new JSpinner(new SpinnerNumberModel(Recette.Personnes,0,100,1));
+		spinner.setBounds(108, 29, 50, 20);
+		panel_1.add(spinner);
+		spinner.addChangeListener(new ChangeListener() {
+
+	        public void stateChanged(ChangeEvent e) {
+				txtpnHello.setText(Recette.afficherIngredients((Integer) spinner.getValue()));
+	        }
+	    });
+		spinner.setForeground(new Color(255, 127, 80));
+		spinner.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
+		txtpnHello.setText(Recette.afficherIngredients((Integer) spinner.getValue()));
 		if (m.modeClair) {
 			lblNewLabel_2.setIcon(new ImageIcon("ImageAppli\\start_black.png"));
 		} else {

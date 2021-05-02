@@ -205,11 +205,28 @@ public class Modele extends Observable{
 		if (ingredient1.equals("oeufs") && ingredient2.equals("oeufs")) {
 			ArrayList<Ingredient> LIngre=new ArrayList<>();
 			ArrayList<Etape> LEtape=new ArrayList<>();
-			LIngre.add(new Ingredient (5 ,"Rhum", "cl"));
+			LIngre.add(new Ingredient (100 ,"de gentillesse", "g"));
+			LIngre.add(new Ingredient (10 ,"étoiles", ""));
+			LIngre.add(new Ingredient (3 ,"câlins", ""));
+			LIngre.add(new Ingredient (100 ,"de chanson", "cl"));
+			LIngre.add(new Ingredient (900 ,"de \" Je t'aime \"", "cl"));
+			LIngre.add(new Ingredient (10 ,"de solidarité", "g"));
+			LIngre.add(new Ingredient (250 ,"de mer", "cl"));
+			LIngre.add(new Ingredient (200 ,"de soleil", "g"));
 			
-			LEtape.add(new Etape (1,"Mettre la farine dans une terrine et former un puits."));
+			LEtape.add(new Etape (1,"Couper les étoiles en tranches"));
+			LEtape.add(new Etape (2,"Les faire cuire dans une poêle à feu doux"));
+			LEtape.add(new Etape (3,"Mettre les cl de \"Je t'aime\" dans un saladier."));
+			LEtape.add(new Etape (4,"Enlever les étoiles (elles ne sont pas commestibles)"));
+			LEtape.add(new Etape (5,"Disposer les câlins sur une plaque"));
+			LEtape.add(new Etape (6,"Verser la solidarité sur la plaque"));
+			LEtape.add(new Etape (7,"Verser les paroles de la chanson dans un saladier"));
+			LEtape.add(new Etape (8,"Asperger avec la mer"));
+			LEtape.add(new Etape (9,"Mettre tout les ingrédients sur la plaque"));
+			LEtape.add(new Etape (10,"Enfourner au four"));
+			LEtape.add(new Etape (1,"Faire cuire pendant toute une vie avec le soleil"));
 			
-			Recette crepe = new Recette("Surprise","Geek","Easter Egg",10,20,2,LIngre, LEtape,"ImageAppli/easter.jpg");
+			Recette crepe = new Recette("Easter Egg","Geek","Bonheur",0,0,1,LIngre, LEtape,"ImageAppli/easter.jpg");
 			
 			Controleur ctrl = new Controleur(this);
 			
