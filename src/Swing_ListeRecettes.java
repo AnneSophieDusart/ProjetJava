@@ -533,7 +533,7 @@ public class Swing_ListeRecettes implements Observer{
 							}
 							nbr_etapes = Integer.parseInt(str);
 							incorrect=false;
-							if (nbr_ingredients!=recette.getIngredients().size()) {
+							if (nbr_etapes!=recette.getEtapes().size()){
 								int popup1 = JOptionPane.showConfirmDialog(frame, "Le nombre d'étape est différent de celui de la recette originale ! Si vous souhaitez continuer, il vous faudra saisir à nouveau toutes les étapes !", "Attention !", JOptionPane.ERROR_MESSAGE);
 								if (popup1==0) {
 									new_etapes=true;
