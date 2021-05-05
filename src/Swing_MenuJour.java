@@ -257,7 +257,7 @@ public class Swing_MenuJour {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				Recette r = Recette2;
-				System.out.println(r);
+				//System.out.println(r);
 				String liste = r.afficherIngredients((Integer) spinner.getValue());
 				JOptionPane.showMessageDialog(frame, liste, "Liste ingrédients", JOptionPane.INFORMATION_MESSAGE);
 			}

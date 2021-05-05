@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.8.0_281" class="java.beans.XMLDecoder">
- <boolean>true</boolean>
+ <boolean>false</boolean>
  <object class="java.util.ArrayList">
   <void method="add">
    <object class="Recette">
@@ -1412,6 +1412,9 @@
       </void>
       <void method="add">
        <object class="Etape">
+        <void property="instrution">
+         <string>Servez aussitôt avec une salade verte et quelques pommes de terre sautées.  </string>
+        </void>
         <void property="numEtape">
          <int>5</int>
         </void>
@@ -6026,6 +6029,59 @@
     </void>
     <void property="type2">
      <string>Etats-Unis</string>
+    </void>
+   </object>
+  </void>
+  <void method="add">
+   <object class="Recette">
+    <void property="etapes">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Etape">
+        <void property="instrution">
+         <string>Boire</string>
+        </void>
+        <void property="numEtape">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="image">
+     <string>ImageRecette/eau.jpg</string>
+    </void>
+    <void property="ingredients">
+     <object class="java.util.ArrayList">
+      <void method="add">
+       <object class="Ingredient">
+        <void property="ingredient">
+         <string>Eau</string>
+        </void>
+        <void property="mesure">
+         <string>L</string>
+        </void>
+        <void property="quantite">
+         <int>1</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+    <void property="nom">
+     <string>RecetteASuprimer</string>
+    </void>
+    <void property="personnes">
+     <int>10</int>
+    </void>
+    <void property="tempsPreparation">
+     <int>1</int>
+    </void>
+    <void property="type1">
+     <string>Entrée</string>
+    </void>
+    <void property="type2">
+     <string>France</string>
     </void>
    </object>
   </void>

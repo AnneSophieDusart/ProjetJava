@@ -142,7 +142,14 @@ public class Swing_Etape implements Observer {
 		
 		
 		JProgressBar progressBar = new JProgressBar();
-		int valeurProgression = 100 / ((recette.Etapes.size())-1);
+		int nbrEtape=(recette.Etapes.size())-1;
+		int valeurProgression;
+		if (nbrEtape ==0) {
+			valeurProgression = 100;
+		}
+		else{
+			valeurProgression = 100 / ((recette.Etapes.size())-1);
+		}
 		progressBar.setValue(0);
 		progressBar.setBounds(10, 329, 406, 5);
 		panel.add(progressBar);
